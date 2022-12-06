@@ -1,0 +1,166 @@
+@import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
+
+.footerHomepage {
+  background-color: #293227;
+  padding: 0 26px 28px;
+  height: 470px;
+  position: relative;
+
+  .footerWrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    min-height: 100%;
+
+    @include desktop-lg {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    @include mobile {
+      min-height: 290px;
+      padding: 0 15px 28px;
+    }
+
+    h4 {
+      @include fontStyles($grey-20, "Editorial New", 200, 80px);
+      position: relative;
+      width: max-content;
+      margin-left: 14rem;
+      margin-bottom: 10rem;
+      span {
+        text-transform: uppercase;
+      }
+    }
+    sup {
+      @include fontStyles($grey-20, "Notera", 400, 63px);
+      position: absolute;
+      top: -1.2vw;
+      left: -5.2vw;
+    }
+  }
+
+  .discover {
+    position: absolute;
+    top: 20%;
+    left: 50vw;
+    height: 6.5vw;
+    width: 6.5vw;
+    @media (max-width: 980px) {
+      display: none;
+    }
+  }
+  .houseImg {
+    position: absolute;
+    right: 8vw;
+    top: -7vw;
+    width: 30%;
+    max-width: 100%;
+    height: auto;
+    @media (max-width: 980px) {
+      display: none;
+    }
+  }
+
+  .crookedLine {
+    margin-bottom: 4rem;
+    @media (max-width: 980px) {
+      margin-bottom: -12rem;
+      margin-top: 5rem;
+      > path {
+        stroke-width: 1px;
+        stroke: white;
+        stroke-opacity: 0.5;
+      }
+    }
+  }
+  .brandName {
+    margin-bottom: 5.25rem;
+    @media (max-width: 980px) {
+      margin-bottom: 4.25rem;
+      > path {
+        stroke: white;
+        stroke-opacity: 0.5;
+      }
+    }
+  }
+
+  .footerLinksWrapper {
+    display: flex;
+    justify-content: space-between;
+    @include fontStyles($grey-10, "Manrope", 400, 1.125rem);
+    width: 100%;
+
+    @include mobile {
+      flex-direction: column-reverse;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: $grey-10;
+  }
+
+  .themeText {
+    position: relative;
+    width: 100%;
+    height: 185px;
+    top: 112px;
+
+    @include mobile {
+      width: 90%;
+      height: auto;
+      top: 60px;
+    }
+
+    img {
+      position: absolute;
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  // rightFooter
+  .rightFooter {
+    display: flex;
+    gap: 0 20px;
+
+    @include mobile {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-top: 1px solid rgba(#f9f6ed, 0.1);
+      padding-top: 27px;
+      margin-bottom: 27px;
+    }
+  }
+
+  .footerLinks {
+    display: flex;
+    gap: 0 10px;
+    color: #f7f0ec;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 0.01em;
+    justify-content: space-between;
+
+    @include mobile {
+      font-weight: 400;
+      font-size: 12px;
+      text-align: center;
+      justify-content: space-between;
+    }
+  }
+
+  // themeTextBold
+  .themeTextBold {
+    position: relative;
+
+    @include mobile {
+      display: none;
+    }
+  }
+}

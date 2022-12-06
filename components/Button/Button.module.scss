@@ -1,0 +1,29 @@
+@import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
+
+.btn {
+  padding: 0.5rem 1.25rem;
+  text-align: center;
+  @include flex(center, center);
+  gap: 0.6rem;
+  border-radius: 3rem;
+  cursor: pointer;
+  min-width: 8rem;
+  &:disabled {
+    background-color: $teal-50;
+    cursor: auto;
+  }
+}
+.rounded {
+  border-radius: 50%;
+}
+.primary {
+  @include fontStyles($brown-80, "Manrope", 400, 1rem);
+  background-color: $cream-50;
+  border: 1.5px solid $cream-50;
+}
+.secondary {
+  @include fontStyles($cream-100, "Manrope", 400, 1rem);
+  background-color: transparent;
+  border: 1.5px solid $cream-100;
+}

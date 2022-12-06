@@ -1,0 +1,142 @@
+@use "sass:math";
+@import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
+
+// Variables
+$millgrove-font-size: 86px;
+
+// Animations
+@mixin ladder-up($name, $translate) {
+  @keyframes #{$name} {
+    0% {
+      transform: translateY($translate);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+}
+
+@mixin slide-in(
+  $name,
+  $translateX,
+  $translateY,
+  $translateToX,
+  $translateToY,
+  $rotateZ
+) {
+  @keyframes #{$name} {
+    0% {
+      transform: rotateZ($rotateZ) translate($translateX, $translateY);
+    }
+    100% {
+      transform: rotateZ($rotateZ) translate($translateToX, $translateToY);
+    }
+  }
+}
+
+@keyframes elongate {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.millgrove-home {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(68, 88, 64, 1);
+  color: rgba(244, 241, 236, 1);
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 9;
+
+  .millgrove-tree {
+    position: fixed;
+    top: 20%;
+    margin: 0 auto;
+    width: 100%;
+    z-index: 1;
+    > svg {
+      margin: 0 auto;
+    }
+    @media (max-width: 980px) {
+      > svg {
+        width: 70%;
+      }
+    }
+  }
+  .millgrove-title {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    // height: 100px;
+    overflow: hidden;
+    font-size: $millgrove-font-size;
+
+    .millgrove-logo {
+      > path {
+        transform: translateY(110px);
+        @include ladder-up(logo-anim, 110px);
+        animation: 1s logo-anim ease-out forwards;
+      }
+      @for $num from 1 through 9 {
+        > path {
+          &:nth-of-type(#{$num}) {
+            animation-delay: math.log($num, 10) + s;
+          }
+        }
+      }
+    }
+  }
+
+  .millgrove-home-loading {
+    display: flex;
+    position: absolute;
+    margin: 0 auto;
+    width: 100%;
+    bottom: 10vh;
+    overflow: hidden;
+    > span {
+      margin: 0 auto;
+      transform: translateY(20px);
+      @include ladder-up(loading-anim, 20px);
+      animation: 1s loading-anim ease-in-out forwards;
+    }
+    @include mobile {
+      bottom: 7vh;
+      font-weight: 400;
+      font-size: 18px;
+      text-align: center;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #f4f1ec;
+    }
+  }
+  .millgrove-home-loading-bar {
+    position: absolute;
+    margin: 0 35%;
+    width: 30%;
+    bottom: 8vh;
+    background-color: rgba(244, 241, 236, 0.3);
+    height: 1px;
+    .millgrove-home-loading-bar-fill {
+      background-color: rgba(244, 241, 236, 1);
+      width: 0%;
+      height: 100%;
+      animation: 5s elongate ease-out forwards;
+    }
+    @media (max-width: 980px) {
+      width: 85%;
+      margin: 0 7.5%;
+      bottom: 5vh;
+    }
+  }
+}

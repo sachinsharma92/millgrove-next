@@ -1,0 +1,81 @@
+.mg-cookies-popup {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: #5c5043;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  z-index: 100;
+  padding: 14px 22px 32px 22px;
+  .mg-cookies-cross {
+    position: absolute;
+    right: 22px;
+    top: 14px;
+    cursor: pointer;
+  }
+  .mg-cookies-heading {
+    font-family: "Notera";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 63.1px;
+    letter-spacing: -0.01em;
+    color: #f1efe5;
+  }
+  .mg-cookies-subtext {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    color: #f1efe5;
+    width: 46ch;
+    > span {
+      cursor: pointer;
+      text-decoration: underline;
+      text-decoration-thickness: 0.5px;
+      text-underline-offset: 2px;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  .mg-cookies-btns {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 31px;
+    .mg-cookies-understand {
+      background: #f1efe5;
+      border-radius: 49px;
+      padding: 5px 11px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      color: #5c5043;
+      > svg {
+        margin: 3.5px;
+      }
+    }
+    .mg-cookies-tweak {
+      margin-left: 4px;
+      border: 1px solid rgba(241, 239, 229, 0.4);
+      border-radius: 49px;
+      padding: 5px 11px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      color: #f1efe5;
+      > svg {
+        margin: 3.5px;
+      }
+    }
+  }
+}

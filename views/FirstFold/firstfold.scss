@@ -1,0 +1,259 @@
+@import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
+
+.first-fold-section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  .footer-mobile {
+    display: none;
+    align-items: center;
+    flex-grow: 2;
+    justify-content: center;
+    padding: 0 20px;
+    color: #f7f0ec;
+
+    .content {
+      width: 100%;
+    }
+
+    .space-links {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      gap: 0 10px;
+      margin-top: 20px;
+
+      a {
+        color: #f7f0ec;
+        font-weight: 400;
+        font-size: 12px;
+      }
+    }
+
+    @include mobile {
+      display: flex;
+    }
+  }
+
+  .mg-first-fold {
+    // height: 100vh;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include mobile {
+      border-radius: 0px 0px 16px 16px;
+      overflow: hidden;
+      // height: calc(100vh - 87px);
+    }
+
+    .mg-first-fold-top-text {
+      position: absolute;
+      top: 26px;
+      right: 46px;
+      z-index: 1;
+      font-weight: 600;
+      font-size: 14px;
+      text-align: right;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      color: #f7f0ec;
+
+      @include mobile {
+        display: none;
+      }
+
+      a {
+        margin-bottom: 8px;
+        display: block;
+        text-decoration: none;
+      }
+    }
+    .mg-first-fold-header {
+      position: absolute;
+      top: 0;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 34px;
+
+      .mg-first-fold-menu {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        border: 1px solid #dacfba;
+        border-radius: 150px;
+        padding: 10px 21px;
+
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        text-align: center;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: #dacfba;
+        > svg {
+          margin-right: 10px;
+        }
+      }
+      .mg-first-fold-login {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        border: 1px solid #dacfba;
+        border-radius: 150px;
+        padding: 10px 50px;
+
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        text-align: center;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: #dacfba;
+      }
+      @include mobile {
+        padding-top: 51px;
+        > svg {
+          width: 45vw !important;
+        }
+      }
+    }
+    .mg-first-fold-text {
+      // height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding-top: 9vh;
+
+      @include iphone5 {
+        padding-top: 20px;
+      }
+
+      .mg-first-fold-heading {
+        font-family: "Editorial New";
+        font-style: normal;
+        font-weight: 200;
+        font-size: 90px;
+        text-align: center;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        color: #f9f6ed;
+
+        @include mobile {
+          font-size: 50px;
+          line-height: 1.6em;
+        }
+
+        @include iphone5 {
+          font-size: 40px;
+        }
+      }
+
+      .mg-first-fold-subheading {
+        margin: 19px auto 74px;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 170%;
+        text-align: center;
+        color: #f9f6ed;
+        max-width: 673px;
+        position: relative;
+
+        @include mobile {
+          font-size: 14px;
+          max-width: 90%;
+          margin: 19px auto 34px;
+        }
+        @include iphone5 {
+          font-size: 12px;
+          max-width: 90%;
+          margin: 19px auto 34px;
+        }
+
+        .mg-play-reel-btn {
+          position: absolute;
+          right: -300px;
+          top: 0;
+          cursor: pointer;
+        }
+      }
+    }
+    .mg-discover-more {
+      width: 600px;
+      height: 260px;
+      // background: #404040;
+      z-index: 1;
+      margin: 0 auto;
+      position: absolute;
+      bottom: -120px;
+      left: 0;
+      right: 0;
+      border-radius: 50%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1rem;
+      text-align: center;
+      // text-transform: uppercase;
+      color: #f1efe5;
+      > svg {
+        margin-bottom: 20px;
+      }
+      @media (max-width: 980px) {
+        display: none;
+      }
+    }
+  }
+
+  .mg-first-fold-auth-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: fit-content;
+    margin: auto;
+    margin-top: 1rem;
+    z-index: 99;
+    cursor: pointer;
+
+    @include mobile {
+      flex-direction: column;
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    .btn-hero-sec {
+      height: 58px;
+      min-width: 240px;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 110%;
+
+      @include mobile {
+        width: 100%;
+      }
+
+      @include iphone5 {
+        height: 50px;
+      }
+
+      &:hover {
+        background: rgba(#dacfba, 0.3);
+      }
+    }
+  }
+}

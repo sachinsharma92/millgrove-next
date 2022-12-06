@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import Homepage from './homepage'
+import Login from '../views/Login/Login'
+import { AuthCycle } from './AuthCycle'
 
 export default function Home() {
   return (
@@ -11,16 +12,16 @@ export default function Home() {
         <meta name="robots" content="index, follow" />
         <meta
           name="description"
-          content="The energy of a start-up combined with 30 years of experience"
+          content="Living at Millgrove transcends ordinary notions of luxury. It is a
+              natural haven that gives you a complete sense of belonging. A place
+              where you can nurture relationships and make time for what matters
+              most."
         />
-        <title>Bring every idea to life</title>
-
-        {/* <a href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" /> */}
-        {/* <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" async></script> */}
+        <title>Millgrove</title>
       </Head>
 
       <main className="main">
-        <Homepage />
+        <AuthCycle />
       </main>
     </div>
   )

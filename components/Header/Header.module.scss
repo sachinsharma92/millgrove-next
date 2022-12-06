@@ -1,0 +1,33 @@
+@import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
+
+.header {
+  @include flex(center, center);
+  position: absolute;
+  top: 0;
+  padding: calc(15px + 0.5625vw) calc(26px + 0.5625vw);
+  width: 100%;
+  color: $grey-10;
+  z-index: 9;
+  @include fontStyles($white-100, "Manrope", 400, calc(10.5px + 0.390625vw));
+
+  @include mobile {
+    padding-top: 5vh;
+    > div {
+      > svg {
+        width: 45vw !important;
+      }
+    }
+  }
+}
+
+.reraDetails {
+  position: absolute;
+  top: 25px;
+  right: 46px;
+  text-align: right;
+
+  @include mobile {
+    display: none;
+  }
+}

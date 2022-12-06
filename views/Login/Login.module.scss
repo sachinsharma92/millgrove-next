@@ -1,0 +1,298 @@
+@import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
+
+.loginMainContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+
+  .headSection {
+    @include mobile {
+      margin-bottom: 40px;
+    }
+  }
+
+  .mainWrapper {
+    padding: calc(10px + 0.5625vw);
+    background-color: $cream-40;
+    position: relative;
+    width: calc(27rem + 1.5625vw);
+    max-width: 100%;
+
+    @include mobile {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      border-radius: 16px 16px 0 0;
+    }
+  }
+
+  .bgTree {
+    position: absolute;
+    top: 50px;
+    left: 10%;
+    right: 0;
+    height: 129px;
+    width: 171px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include mobile {
+      top: 50px;
+    }
+  }
+
+  .otpMainWrapper {
+    @extend .mainWrapper;
+    width: calc(30rem + 1.5625vw);
+    .bgTree {
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .formWrapper {
+    border: 1px solid $brown-80-30;
+    padding: 50px 20px;
+
+    @include mobile {
+      padding: 60px 20px 100px;
+    }
+
+    form {
+      width: 95%;
+      margin: 0 auto;
+    }
+    text-align: center;
+  }
+  .otpFormWrapper {
+    @extend .formWrapper;
+    .headingWrapper {
+      width: 100%;
+      margin: 0 auto;
+      margin-bottom: calc(50px + 1.5625vw);
+      .heading {
+        font-size: calc(40px + 0.5625vw);
+
+        @include mobile {
+          font-size: 34px;
+        }
+      }
+    }
+  }
+
+  .headingWrapper {
+    margin: 0 auto;
+  }
+  .heading {
+    @include fontStyles(
+      $black-100,
+      "Editorial New",
+      200,
+      calc(30px + 0.390625vw)
+    );
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .notRegisteredText {
+    font-weight: 400;
+    font-size: 12px;
+    color: $black-100-70;
+    margin-bottom: calc(8px + 1.5625vw);
+    margin-top: 0;
+    span {
+      color: $brown-70;
+      cursor: pointer;
+    }
+  }
+
+  .otpWrapper {
+    margin-bottom: calc(15px + 0.390625vw);
+    display: flex;
+    justify-content: center;
+    .otpInput {
+      @include fontStyles(
+        $black-90-70,
+        "Manrope",
+        200,
+        calc(26px + 0.390625vw)
+      );
+      margin: 0 calc(8px + 00.390625vw) !important;
+      border: none;
+      border-bottom: 1px solid $black-90-20;
+      margin-right: 0.5rem;
+      background-color: transparent;
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.2);
+      }
+      &:focus {
+        outline: 1px solid transparent;
+      }
+    }
+  }
+  .phoneNosWrapper {
+    gap: 1rem;
+    width: 100%;
+    margin: 0 auto 0.5rem;
+    position: relative;
+    border-bottom: 1px solid $black-90-20;
+    padding-bottom: 10px;
+
+    input {
+      width: 100% !important;
+      border: none;
+      font-size: 20px;
+      font-weight: 200;
+      color: $black-90-70;
+      background-color: transparent;
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.2);
+      }
+      &:focus {
+        outline: 1px solid transparent;
+      }
+    }
+  }
+
+  .errorText {
+    font-weight: 400;
+    font-size: 12px;
+    text-align: left;
+    position: absolute;
+    bottom: 0px;
+    color: $red-100;
+
+    span {
+      color: $black-90;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  .countryCodeWrapper {
+    @include flex(center, center);
+    gap: 2px;
+    .countryCode {
+      @include fontStyles($black-100-70, "Manrope", 300, calc(26px + 0.5625vw));
+      @include flex(flex-start, center);
+    }
+    .downArrowWrapper {
+      @include flex(flex-start, center);
+      width: calc(12px + 0.5625vw);
+    }
+  }
+
+  .resendMsg {
+    color: $brown-70;
+    font-size: 12px;
+    line-height: 130%;
+
+    .resend {
+      @include fontStyles($black-90, "Manrope", 400, 0.875rem);
+      cursor: pointer;
+    }
+  }
+
+  // .submitBtnWrapper {
+  //   @include flex(center, center);
+  //   margin-top: 80px;
+
+  //   button {
+  //     background-color: $green-100;
+  //     color: $cream-50;
+
+  //     @include mobile {
+  //       border: none;
+  //       border-radius: 0;
+  //       width: 100%;
+  //     }
+  //   }
+  // }
+
+  .submitBtnWrapper {
+    @include flex(center, center);
+    margin-top: 80px;
+
+    @include mobile {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    button {
+      background-color: $green-100;
+      color: $cream-50;
+
+      @include mobile {
+        border: none;
+        border-radius: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  select {
+    background: transparent;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 130%;
+
+    &:focus {
+      border: none;
+      outline: 1px solid transparent;
+    }
+
+    option {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 130%;
+    }
+  }
+
+  // @include for-phone-only {
+  //   .mainWrapper {
+  //     margin-top: 1.25rem;
+  //   }
+  //   .bgTree {
+  //     position: absolute;
+  //     top: 25%;
+  //     left: 50%;
+  //     transform: translate(-50%, -50%);
+  //     height: 40%;
+  //     width: 40%;
+  //     margin: 0 auto;
+  //     display: flex;
+  //     align-items: center;
+  //     justify-content: center;
+  //   }
+  //   .heading {
+  //     font-size: calc(24px + 0.390625vw);
+  //   }
+  //   .formInputWrapper {
+  //     margin-bottom: calc(1.5rem + 0.5625vw);
+  //   }
+  //   .errorText {
+  //     margin-bottom: calc(3.5rem + 0.5625vw);
+  //   }
+  //   .formInput {
+  //     font-size: calc(0.875rem + 00.390625vw);
+  //   }
+  //   .submitBtnWrapper {
+  //     margin-top: calc(1rem + 00.5625vw);
+  //   }
+  // }
+}

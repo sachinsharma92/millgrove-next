@@ -1,11 +1,59 @@
-// // ######################################## //
-// // ## FONTS.SCSS ## //
-// // ######################################## //
+// ######################################## //
+// ## FONTS.SCSS ## //
+// ######################################## //
 
-// @font-face {
-//   font-family: "messina-sans";
-//   font-style: normal;
-//   font-weight: 100;
-//   src: url("../assets/fonts/MessinaSansTrial-Hairline.otf"); /* IE9 Compat Modes */
-//   src: url("../assets/fonts/MessinaSansTrial-Hairline.otf") format('truetype');
-// }
+@font-face {
+  font-family: "Editorial New";
+  font-style: normal;
+  font-weight: 100;
+  src: url("/fonts/PPEditorialNew-Ultralight.otf"); /* IE9 Compat Modes */
+  src: url("/fonts/PPEditorialNew-Ultralight.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Editorial New";
+  font-style: italic;
+  font-weight: 100;
+  src: url("/fonts/PPEditorialNew-UltralightItalic.otf"); /* IE9 Compat Modes */
+  src: url("/fonts/PPEditorialNew-UltralightItalic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Editorial New";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/PPEditorialNew-Regular.otf"); /* IE9 Compat Modes */
+  src: url("/fonts/PPEditorialNew-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Editorial New";
+  font-style: italic;
+  font-weight: 500;
+  src: url("/fonts/PPEditorialNew-Italic.otf"); /* IE9 Compat Modes */
+  src: url("/fonts/PPEditorialNew-Italic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Editorial New";
+  font-style: bold;
+  font-weight: 900;
+  src: url("/fonts/PPEditorialNew-Ultrabold.otf"); /* IE9 Compat Modes */
+  src: url("/fonts/PPEditorialNew-Ultrabold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Editorial New";
+  font-style: italic;
+  font-weight: 900;
+  src: url("/fonts/PPEditorialNew-UltraboldItalic.otf"); /* IE9 Compat Modes */
+  src: url("/fonts/PPEditorialNew-UltraboldItalic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Notera";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/Notera.ttf"); /* IE9 Compat Modes */
+  src: url("/fonts/Notera.ttf") format("truetype");
+}

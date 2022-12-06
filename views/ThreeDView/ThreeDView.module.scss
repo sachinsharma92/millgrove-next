@@ -1,0 +1,139 @@
+@import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
+
+.wrapper {
+  background-color: #434f50;
+
+  @include mobile {
+    padding-top: 0;
+  }
+
+  .flexSection {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-bottom: 150px;
+
+    @include mobile {
+      margin-bottom: 100px;
+    }
+
+    .third {
+      font-family: "Editorial New";
+      font-weight: 200;
+      font-size: 70px;
+      line-height: 110%;
+      color: #f9f6ed;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .description {
+      max-width: 539px;
+      margin: 0;
+
+      @include mobile {
+        max-width: 98%;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 14px;
+        line-height: 170%;
+        color: #f9f6ed;
+      }
+
+      @include iphone5 {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.textWrapperDesktop {
+  margin: auto;
+  width: 85%;
+
+  @include desktop-lg {
+    max-width: 1440px;
+  }
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.textWrapperMobile {
+  margin: auto;
+  width: 85%;
+  display: none;
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include desktop-lg {
+    margin-top: 80px;
+  }
+}
+.description {
+  @include fontStyles($grey-60, "Manrope", 400, 1rem);
+  position: relative;
+  > p {
+    width: 49ch;
+  }
+  text-align: left;
+}
+.first {
+  font-family: "Editorial New";
+  align-self: center;
+  text-transform: uppercase;
+  display: flex;
+  font-weight: 200;
+  font-size: 90px;
+  line-height: 110%;
+  color: $cream-40;
+  margin: 0;
+
+  @include mobile {
+    font-size: 40px;
+    flex-direction: column;
+  }
+
+  @include iphone5 {
+    font-size: 35px;
+    flex-direction: column;
+  }
+
+  .second {
+    align-self: center;
+    @include fontStyles($brown-50, "Notera", 400, 2.5rem);
+    margin: 0 0 0 20px;
+
+    @include mobile {
+      font-size: 25px;
+      margin: 10px 0;
+    }
+  }
+}
+
+.threeDView {
+  position: relative;
+}
+.interactBtn {
+  display: none;
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  @include mobile {
+    display: none;
+  }
+}

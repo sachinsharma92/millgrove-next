@@ -1,5 +1,5 @@
 {
-  "name": "wishit",
+  "name": "millgrove",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "aos": "^2.3.4",
+    "axios": "^1.2.1",
     "bootstrap": "^5.2.3",
     "formik": "^2.2.9",
     "framer-motion": "^6.3.4",
@@ -27,10 +28,13 @@
     "react-hover-video-player": "^9.6.1",
     "react-icons": "^4.6.0",
     "react-modal-video": "^1.2.8",
+    "react-phone-number-input": "^3.2.13",
     "react-responsive": "^9.0.0-beta.10",
+    "react-responsive-carousel": "^3.2.23",
     "react-slick": "^0.28.1",
     "react-use-scrollspy": "^3.0.2",
     "react-visibility-sensor": "^5.1.1",
+    "react18-input-otp": "^1.1.1",
     "scrollmagic": "^2.0.8",
     "slick-carousel": "^1.8.1",
     "swiper": "^7.4.1"

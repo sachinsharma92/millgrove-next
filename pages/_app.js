@@ -1,6 +1,6 @@
-import '../styles/theme.scss';
 import AOS from "aos";
 import { useEffect } from 'react';
+import '../styles/theme.scss';
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {

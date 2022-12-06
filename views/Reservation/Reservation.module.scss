@@ -1,0 +1,290 @@
+@import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
+
+.wrapper {
+  background-color: #f9f6ed;
+  padding-top: 68px;
+  margin: auto;
+  text-align: left;
+  position: relative;
+  z-index: $z-99;
+
+  @include mobile {
+    background-color: #ebe5d3;
+    padding: 20px;
+  }
+  > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  @include mobile {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
+  }
+}
+
+.reservationCard {
+  background-color: white;
+  width: 1051px;
+  position: relative;
+  padding: 4.5rem;
+  overflow: hidden;
+  margin: 20px 0;
+
+  @include mobile {
+    padding: 26px;
+    background: #f9f6ed;
+    width: 85%;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 97%;
+    height: 96%;
+    margin: auto;
+    content: "";
+    border: 0.664418px solid #434f50;
+
+    @include mobile {
+      width: 95%;
+      border-color: rgba(#434f50, 0.2);
+    }
+  }
+}
+.halfBorder {
+  //   height: 120%;
+  //   width: 95%;
+  position: absolute;
+  top: 16px;
+  left: 21px;
+  @media (max-width: 980px) {
+    display: none;
+  }
+}
+
+.treeSection {
+  position: absolute;
+  top: -5.375rem;
+  right: 0;
+  width: 30rem;
+  height: 34rem;
+
+  @include mobile {
+    display: none;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 71%;
+    height: 68%;
+    margin: auto;
+    content: "";
+    background: white;
+  }
+
+  .treePrint {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+}
+
+.verticalDash {
+  height: 6rem;
+  width: 1px;
+  background-color: rgba(93, 63, 50, 0.3);
+  @media (max-width: 980px) {
+    display: none;
+  }
+}
+
+.formContainer {
+  position: relative;
+
+  @include mobile {
+    margin-top: 30px;
+  }
+
+  &::before {
+    position: absolute;
+    bottom: 24px;
+    right: -25px;
+    width: 71%;
+    height: 78%;
+    margin: auto;
+    content: "";
+    border-right: 1px solid #5c5043;
+    opacity: 0.1;
+
+    @include mobile {
+      display: none;
+    }
+  }
+}
+
+.formWrapper {
+  width: 60%;
+  z-index: 2;
+  margin-top: -50px;
+  position: relative;
+  z-index: 2;
+
+  @include mobile {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .inputSection {
+    padding-right: 70px;
+
+    @include mobile {
+      padding: 0;
+    }
+  }
+}
+
+.formHeadingWrapper {
+  width: 25rem;
+  margin-bottom: 1rem;
+
+  @include mobile {
+    width: 100%;
+  }
+}
+.formHeading {
+  font-family: "Editorial New";
+  font-weight: 200;
+  font-size: 80px;
+  line-height: 140.8%;
+  letter-spacing: 0.01em;
+  color: #262e2f;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0;
+  position: relative;
+
+  @include mobile {
+    font-size: 28px;
+    text-align: center;
+    margin-top: 0;
+  }
+
+  span {
+    @include fontStyles($brown-50, "Notera", 400, 4.5rem);
+    text-transform: lowercase;
+  }
+}
+.formInputWrapper {
+  margin-bottom: 2.5rem;
+}
+.formInput {
+  border: none;
+  border-bottom: 1px solid $brown-40;
+  width: 100%;
+  outline: 1px solid transparent;
+  padding: 0.5rem 0;
+  letter-spacing: 0.5px;
+  background: none;
+  @include fontStyles($brown-80, "Manrope", 400, 1.125rem);
+
+  @include mobile {
+    font-size: 15px;
+  }
+}
+
+.agreementCheck {
+  display: flex;
+  align-items: center;
+  gap: 0 20px;
+  .round {
+    label {
+      top: 0.25rem;
+    }
+  }
+  p {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+    letter-spacing: 0.01em;
+    color: #262e2f;
+    margin-top: 18px;
+
+    @include mobile {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 130%;
+    }
+  }
+}
+
+.reserveVisit {
+  position: absolute;
+  bottom: 57px;
+  right: 108px;
+  @media (max-width: 980px) {
+    display: none;
+  }
+}
+
+.requestAVisitBtn {
+  display: none;
+  background: #2e3430;
+  border-radius: 250px;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #f1efe5;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 16px 70px;
+  margin-bottom: 30px;
+  cursor: pointer;
+
+  @include mobile {
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 30px;
+  }
+}
+
+.reservationBorder {
+  // display: none;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  border: 0.664418px solid rgba(67, 79, 80, 0.2);
+  // border-radius: 8px;
+  z-index: 0;
+  @media (max-width: 980px) {
+    display: block;
+  }
+}
+.gradientLeaf {
+  display: none;
+  position: absolute;
+  bottom: -25px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+
+  @include mobile {
+    display: block;
+  }
+}

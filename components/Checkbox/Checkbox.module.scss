@@ -1,0 +1,45 @@
+@import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
+
+.round {
+  position: relative;
+}
+
+.round label {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 24px;
+  left: 0;
+  position: absolute;
+  top: -2px;
+  width: 24px;
+}
+
+.round label:after {
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+  content: "";
+  height: 6px;
+  left: 5px;
+  opacity: 0;
+  position: absolute;
+  top: 7px;
+  transform: rotate(-45deg);
+  width: 12px;
+}
+
+.round input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.round input[type="checkbox"]:checked + label {
+  background-color: $brown-30;
+  border-color: $brown-30;
+}
+
+.round input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+}

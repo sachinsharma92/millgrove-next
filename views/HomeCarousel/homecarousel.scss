@@ -1,0 +1,130 @@
+@import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
+
+.millglove-slider-section {
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  background: #f9f6ed;
+
+  @include mobile {
+    display: none;
+  }
+
+  .slide-sec {
+    padding: 0 80px;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 250px;
+      margin: auto;
+      content: "";
+      background: #9c7e61;
+    }
+  }
+
+  .slider-body {
+    display: flex;
+    gap: 0 59px;
+    position: relative;
+    padding-bottom: 179px;
+  }
+
+  .img-box {
+    width: 50%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .carousel-text-div {
+    width: 50%;
+    text-align: left;
+    position: relative;
+    top: -50px;
+  }
+
+  .mg-first-fold-header {
+    margin-top: 34px;
+    text-align: center;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .mg-first-fold-top-text {
+    position: absolute;
+    top: 26px;
+    right: 46px;
+    z-index: 1;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: right;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #3a3723;
+
+    @include mobile {
+      display: none;
+    }
+
+    a {
+      margin-bottom: 8px;
+      display: block;
+      color: #3a3723;
+      text-decoration: none;
+    }
+  }
+
+  .carousel-heading {
+    display: flex;
+    align-items: flex-start;
+    text-transform: uppercase;
+
+    span {
+      text-transform: capitalize;
+    }
+  }
+
+  .carousel-subtext {
+    padding-left: 100px;
+    font-size: 17px;
+  }
+
+  .notera-text-style {
+    font-family: "Notera";
+    font-weight: 400;
+    font-size: 63px;
+    line-height: 110%;
+    letter-spacing: 0.01em;
+    color: #9c7e61;
+    margin-right: 20px;
+  }
+
+  #pinContainer {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+  }
+  #slideContainer {
+    width: 400%; /* to contain 4 panels, each with 100% of window width */
+    height: 100%;
+  }
+  .panel {
+    height: 100vh;
+    width: 25%; /* relative to parent -> 25% of 400% = 100% of window width */
+    float: left;
+  }
+}

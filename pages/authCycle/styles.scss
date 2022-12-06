@@ -1,0 +1,28 @@
+@import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
+
+// login-process
+.login-process {
+  @include mobile {
+    // height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  .main-components {
+    position: relative;
+    z-index: 9;
+  }
+}
+
+.login-page-style {
+  @include mobile {
+    footer {
+      display: none;
+    }
+
+    .login-mobile {
+      height: 100vh;
+    }
+  }
+}

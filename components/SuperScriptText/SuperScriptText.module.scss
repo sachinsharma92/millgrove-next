@@ -1,0 +1,16 @@
+@import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
+
+.mainText {
+  @include fontStyles($grey-20, "Editorial New", 200, 7vw);
+  position: relative;
+  width: max-content;
+}
+.supText {
+  @include fontStyles($grey-20, "Notera", 400, 5.5vw);
+  position: absolute;
+  top: -15%;
+  left: -30%;
+  // top: -15%;
+  // left: -30%;
+}

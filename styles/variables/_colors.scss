@@ -1,65 +1,54 @@
-// ######################################## //
-// ## COLORS.SCSS ## //
-// ######################################## //
-
-// Black (Gray) Color Shades
-$black: #000000;
-$gray-1: #111111;
-$gray-2: #222222;
-$gray-3: #333333;
-$gray-4: #444444;
-$gray-5: #555555;
-$gray-6: #666666;
-$gray-7: #777777;
-$gray-8: #888888;
-$gray-9: #999999;
-$gray-a: #aaaaaa;
-$gray-b: #bbbbbb;
-$gray-c: #cccccc;
-$gray-d: #dddddd;
-$gray-e: #eeeeee;
 $white: #ffffff;
-$gray-f9: #f9f9f9;
-$gray-f5: #f5f5f5;
-$blue-light: #eff0fe;
+$black: #000000;
 
-// Text colors
-$text-secondary: #ccd1d7;
-$subtextColor: #a3adb7;
-$textmuted: #617183;
-$textLight: #e0e3e7;
+//grey
+$grey-100: #404040;
+$grey-60: #9daaa2;
+$grey-50: #8a7f7f;
+$grey-30: #f9f6ed58;
+$grey-20: #e7e5df;
+$grey-10: #f7f0ec;
 
-// Extra Color
-$gray-dark: #c9cdd8;
-$text-dark: #25282b;
-$gray-light: #efefef;
-$label-text: #6f7588;
-$arrow-color: #a8b1ce;
-$textDarkColor: #425466;
-$textColor-dark: #1e265e;
-$borderColor: #edf2f7;
-$shadowColor: #3232470d;
-$border-color: #eee3d6;
-$border-color-2: #dcc797;
+//brown
+$brown-100: #5d3f32;
+$brown-80: #5c5043;
+$brown-80-10: #5c50431a;
+$brown-80-30: #5c50434d;
+$brown-70: #9c7e61;
+$brown-50: #97784c;
+$brown-40: #8a7f7fb0;
+$brown-10: #8a7f7f14;
+$brown-30: #a68563;
+//green
+$green-100: #2e3430;
+$green-80: #293227;
+//cream
+$cream-100: #dacfba;
+$cream-50: #f1efe5;
+$cream-40: #f9f6ed;
 
-// Theme Based
-$bodycolor: #001a37;
-$theme: #001937;
-$theme-primary: #07e0fe;
-$theme-secondary: #004799;
-$accent1: #fb78ff;
-$accent2: #f8cf61;
-$theme-yellow: #ffc640;
-$theme-pink: #ff85b3;
+//black
+$black-100: #262e2f;
+$black-100-70: #262e2fb8;
+$black-90: #434f50;
+$black-90-20: #434f5032;
+$black-90-70: #434f50b2;
 
-// Color Shades
-$theme-success: #4aae8c;
-$theme-dark: #25282b;
-$theme-info: #9c6dff;
-$theme-warning: #f59e0b;
-$theme-green: #36942f;
-$theme-warning-light: #fef6e0;
-$theme-danger: #cf3701;
-$theme-cyan: #35d2cc;
-$theme-link: #004b8f;
-$theme-blue: #50abed;
+// Primary Colors
+$theme-primary: #293227;
+
+//white
+$white-100: #f4f1ec;
+
+//teal
+$teal-50: #8c9b9c;
+
+//red
+$red-100: #9f5454;
+
+//zindices
+$z-0: 0;
+$z-9: 9;
+$z-99: 9;
+$z-999: 999;
+$z-9999: 9999;

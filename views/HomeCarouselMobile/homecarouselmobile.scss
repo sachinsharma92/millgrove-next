@@ -1,0 +1,118 @@
+@import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
+
+.home-carousel-mobile {
+  height: fit-content;
+  width: 100vw;
+  background-color: #9d7f63;
+  padding: 51px 10px 30px;
+  display: none;
+
+  @include mobile {
+    display: block;
+  }
+
+  .mg-first-fold-header {
+    margin: 0px 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.8);
+  }
+
+  .slider-wrapper {
+    margin-bottom: 50px;
+  }
+
+  .carousel-text-mobile {
+    position: relative;
+    width: 100%;
+
+    padding: 33px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f9f6ed;
+
+    .carousel-heading-mobile {
+      font-family: "Editorial New";
+      font-weight: 200;
+      font-size: 40px;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      color: #262e2f;
+      width: fit-content;
+      position: relative;
+      &::before {
+        position: absolute;
+        left: -44px;
+        content: "The";
+        font-family: "Notera";
+        text-transform: capitalize;
+        font-weight: 400;
+        font-size: 28px;
+        color: #9c7e61;
+      }
+    }
+    .carousel-subtext-mobile {
+      font-size: 14px;
+      line-height: 170%;
+      letter-spacing: -0.01em;
+      color: #262e2f;
+      margin-top: 20px;
+      display: -webkit-box;
+      -webkit-line-clamp: 6;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .carousel-btns-mobile {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      > div {
+        > svg {
+          width: 30px;
+          height: 30px;
+        }
+        cursor: pointer;
+        margin: 0 20px;
+      }
+      padding-bottom: 26px;
+      padding-top: 15px;
+    }
+  }
+  .carousel-img-mobile {
+    position: relative;
+    width: 100%;
+    height: 239px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      object-fit: cover;
+    }
+  }
+
+  .carousel .control-dots .dot {
+    opacity: 1;
+    box-shadow: none;
+    background: none;
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+
+    &.selected {
+      background: white;
+    }
+  }
+
+  // slider-item
+  .slider-item {
+    width: 100%;
+  }
+}
