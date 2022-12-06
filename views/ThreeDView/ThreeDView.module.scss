@@ -12,7 +12,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 150px;
 
     @include mobile {
@@ -97,8 +97,8 @@
   text-transform: uppercase;
   display: flex;
   font-weight: 200;
-  font-size: 90px;
-  line-height: 110%;
+  font-size: 75px;
+  line-height: 1.3em;
   color: $cream-40;
   margin: 0;
 
@@ -126,6 +126,7 @@
 
 .threeDView {
   position: relative;
+  height: 330px;
 }
 .interactBtn {
   display: none;

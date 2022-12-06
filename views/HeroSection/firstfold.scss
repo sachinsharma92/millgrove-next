@@ -14,89 +14,13 @@
     @include mobile {
       overflow: hidden;
     }
-
-    .mg-first-fold-top-text {
-      position: absolute;
-      top: 26px;
-      right: 46px;
-      z-index: 1;
-      font-weight: 600;
-      font-size: 14px;
-      text-align: right;
-      letter-spacing: 0.01em;
-      text-transform: uppercase;
-      color: #f7f0ec;
-
-      @include mobile {
-        display: none;
-      }
-
-      a {
-        margin-bottom: 8px;
-        display: block;
-        color: white;
-        text-decoration: none;
-      }
-    }
-    .mg-first-fold-header {
-      position: absolute;
-      top: 0;
-      margin: 0 auto;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding-top: 34px;
-
-      .mg-first-fold-menu {
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        border: 1px solid #dacfba;
-        border-radius: 150px;
-        padding: 10px 21px;
-
-        font-style: normal;
-        font-weight: 400;
-        font-size: 14px;
-        text-align: center;
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
-        color: #dacfba;
-        > svg {
-          margin-right: 10px;
-        }
-      }
-      .mg-first-fold-login {
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        border: 1px solid #dacfba;
-        border-radius: 150px;
-        padding: 10px 50px;
-
-        font-style: normal;
-        font-weight: 400;
-        font-size: 14px;
-        text-align: center;
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
-        color: #dacfba;
-      }
-      @include mobile {
-        padding-top: 51px;
-        > svg {
-          width: 45vw !important;
-        }
-      }
-    }
     .mg-first-fold-text {
       height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      padding-top: 4vh;
+      padding-top: 13vh;
 
       @include iphone5 {
         padding-top: 20px;
@@ -104,9 +28,9 @@
 
       .mg-first-fold-heading {
         font-family: "Editorial New";
-        font-style: normal;
         font-weight: 200;
-        font-size: 90px;
+        font-size: 75px;
+        line-height: 1.3em;
         text-align: center;
         letter-spacing: 0.01em;
         text-transform: uppercase;
@@ -126,10 +50,10 @@
         margin: 19px auto 74px;
         font-weight: 400;
         font-size: 20px;
-        line-height: 170%;
+        line-height: 34px;
         text-align: center;
         color: #f9f6ed;
-        max-width: 673px;
+        max-width: 560px;
         position: relative;
 
         @include mobile {
@@ -191,7 +115,7 @@
     }
 
     .btn-hero-sec {
-      height: 58px;
+      height: 50px;
       min-width: 240px;
       font-weight: 400;
       font-size: 20px;
@@ -255,7 +179,7 @@
     color: rgba(#f9f6ed, 0.7);
     text-decoration: none;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 170%;
     bottom: 33px;
 
@@ -271,6 +195,12 @@
         width: 40px;
       }
     }
+  }
+
+  .scroll-down {
+    width: 22px;
+    height: 22px;
+    position: relative;
   }
 
   .mg-bg-video {

@@ -7,8 +7,12 @@ const Footer = () => {
     <div className={styles.footerHomepage}>
       <div className={styles.footerWrapper}>
         <div className={styles.themeText}>
-          <Image src="/images/millglove-footer-bold.svg" className={styles.themeTextBold} alt="" layout="fill" />
-          <Image src="/images/millglove-footer.svg" alt="" layout="fill" />
+          <div className={styles.themeText1}>
+            <Image src="/images/millglove-footer-bold.svg" alt="" layout="fill" />
+          </div>
+          <div className={styles.themeText2}>
+            <Image src="/images/millglove-footer.svg" alt="" layout="fill" />
+          </div>
         </div>
         <div className={styles.footerLinksWrapper}>
           <div className={styles.footerLinks}>

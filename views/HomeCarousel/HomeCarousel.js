@@ -4,14 +4,6 @@ import Image from "next/image";
 function HomeCarousel() {
   return (
     <div className="millglove-slider-section">
-      <div className="mg-first-fold-header" >
-        <MILLGROVE_LOGO style={{ color: '#3A3723' }} />
-      </div>
-
-      <div className="mg-first-fold-top-text">
-        <a href="www.haryanarera.gov.in">www.haryanarera.gov.in</a>
-        <div>HRERA2020A0009</div>
-      </div>
       <div className="slide1 slide-sec">
         <div className="slider-body">
           <div className="img-box">

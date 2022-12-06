@@ -19,12 +19,11 @@
     .mg-second-fold-heading {
       font-family: "Editorial New";
       font-weight: 200;
-      font-size: 90px;
-      line-height: 110%;
+      font-size: 75px;
+      line-height: 1.3em;
       text-align: center;
       letter-spacing: 0.01em;
       text-transform: uppercase;
-      color: #262e2f;
 
       @include mobile {
         font-size: 40px;
@@ -35,7 +34,7 @@
         font-size: 63px;
         line-height: 110%;
         text-transform: lowercase;
-        color: #a65a42;
+        color: #9c7e61;
 
         @include mobile {
           font-size: 23px;
@@ -46,9 +45,9 @@
       font-size: 20px;
       line-height: 170%;
       text-align: center;
-      color: #9c9c9c;
       margin: 40px auto 0;
       max-width: 678px;
+      color: rgba(#262e2f, 0.7);
 
       @include mobile {
         max-width: 293px;
@@ -59,9 +58,9 @@
       font-weight: 400;
       font-size: 63px;
       letter-spacing: -0.01em;
-      color: #a65a42;
-      margin-top: 80px;
+      margin-top: 60px;
       text-align: center;
+      color: #9c7e61;
 
       @include mobile {
         margin-top: 50px;

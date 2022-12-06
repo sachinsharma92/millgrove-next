@@ -1,6 +1,97 @@
-
-
 // home-section
 .home-section {
   overflow-x: hidden;
+}
+
+.header-home {
+  display: flex;
+  z-index: 999;
+  width: 100%;
+  position: fixed;
+  top: -100px;
+  height: 82px;
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(37px);
+  transition: all 0.5s ease-in-out;
+
+  &.active {
+    top: 0px;
+  }
+
+  .mg-first-fold-top-text {
+    position: absolute;
+    top: 16px;
+    right: 46px;
+    z-index: 1;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: right;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #f7f0ec;
+
+    @include mobile {
+      display: none;
+    }
+
+    a {
+      margin-bottom: 8px;
+      display: block;
+      color: white;
+      text-decoration: none;
+      background: none;
+    }
+  }
+  .mg-first-fold-header {
+    position: absolute;
+    top: 0;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+
+    .mg-first-fold-menu {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      border: 1px solid #dacfba;
+      border-radius: 150px;
+      padding: 10px 21px;
+
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      text-align: center;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #dacfba;
+      > svg {
+        margin-right: 10px;
+      }
+    }
+    .mg-first-fold-login {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      border: 1px solid #dacfba;
+      border-radius: 150px;
+      padding: 10px 50px;
+
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      text-align: center;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #dacfba;
+    }
+    @include mobile {
+      padding-top: 51px;
+      > svg {
+        width: 45vw !important;
+      }
+    }
+  }
 }
