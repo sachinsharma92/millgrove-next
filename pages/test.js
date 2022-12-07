@@ -1,9 +1,37 @@
-import { useEffect } from "react";
-import Image from "next/image";
+import gsap from 'gsap';
+import Image from 'next/image';
+import React, { useEffect } from 'react'
 
-function HomeCarousel() {
+export default function Test() {
+  useEffect(() => {
+
+    let controller = new ScrollMagic.Controller({
+      globalSceneOptions: {
+        triggerHook: 0,
+        duration: 1300,
+        offset: 76,
+      },
+    });
+
+    let slides = document.querySelectorAll("section.slide-sec");
+
+    for (let i = 0; i < slides.length; i++) {
+      let animation = TweenMax.to(slides[i], 0.7, {
+        scale: 0,
+        opacity: 0,
+        ease: Quad.easeInOut,
+      });
+      new ScrollMagic.Scene({
+        triggerElement: slides[i],
+      })
+        .setPin(slides[i], { pushFollowers: false })
+        .addTo(controller)
+        .setTween(animation);
+    }
+  }, [])
 
   return (
+
     <div className="millglove-slider-section">
       <section className="slide1 slide-sec">
         <div className="slider-body">
@@ -81,7 +109,5 @@ function HomeCarousel() {
         </div>
       </section>
     </div>
-  );
+  )
 }
-
-export default HomeCarousel;

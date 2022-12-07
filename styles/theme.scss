@@ -51,6 +51,10 @@ body {
   @include scrollbarCustom;
 }
 
+.animation-block {
+  overflow: hidden;
+}
+
 .login-video-bg {
   position: absolute;
   z-index: 0;

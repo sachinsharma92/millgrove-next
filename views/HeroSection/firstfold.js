@@ -1,22 +1,43 @@
 // Assets
+import gsap from "gsap";
 import Image from "next/image";
+import { useEffect } from "react";
 
 function HeroSection() {
+  const tl = gsap.timeline();
+  useEffect(() => {
+    tl.from(".animation-block .animation-text", 1.8, {
+      y: 100,
+      ease: "power4.out",
+      delay: 1,
+      skewY: 0,
+      stagger: {
+        amount: 0.3
+      },
+      autoAlpha: 0,
+    })
+  }, [tl])
   return (
     <div className="hero-section-fold">
       <div className="mg-first-fold">
         <div className="mg-first-fold-text">
           <div>
-            <div className="mg-first-fold-heading">
-              MEANINGFUL <br />
-              LIVING
+            <div className="mg-first-fold-heading animation-block">
+              <div className="animation-text">
+                MEANINGFUL
+              </div>
+              <div className="animation-text">
+                LIVING
+              </div>
             </div>
-            <div
-              className="mg-first-fold-subheading">
-              Living at Millgrove transcends ordinary notions of luxury. It is a
-              natural haven that gives you a complete sense of belonging. A place
-              where you can nurture relationships and make time for what matters
-              most.
+            <div className="animation-block">
+              <div
+                className="mg-first-fold-subheading animation-text">
+                Living at Millgrove transcends ordinary notions of luxury. It is a
+                natural haven that gives you a complete sense of belonging. A place
+                where you can nurture relationships and make time for what matters
+                most.
+              </div>
             </div>
           </div>
         </div>
