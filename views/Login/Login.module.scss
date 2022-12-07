@@ -7,7 +7,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 50px;
   position: relative;
   z-index: 1;
   width: 100%;
@@ -22,8 +21,8 @@
     padding: calc(10px + 0.5625vw);
     background-color: $cream-40;
     position: relative;
-    width: calc(27rem + 1.5625vw);
-    max-width: 100%;
+    width: 460px;
+    max-width: 460px;
 
     @include mobile {
       width: 100%;
@@ -52,16 +51,18 @@
 
   .otpMainWrapper {
     @extend .mainWrapper;
-    width: calc(30rem + 1.5625vw);
+    width: 460px;
+    max-width: 460px;
+
     .bgTree {
-      top: 30%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      top: 40px;
+      left: 0;
     }
   }
   .formWrapper {
     border: 1px solid $brown-80-30;
     padding: 50px 20px;
+    text-align: center;
 
     @include mobile {
       padding: 60px 20px 100px;
@@ -71,17 +72,18 @@
       width: 95%;
       margin: 0 auto;
     }
-    text-align: center;
   }
   .otpFormWrapper {
     @extend .formWrapper;
     .headingWrapper {
       width: 100%;
-      margin: 0 auto;
-      margin-bottom: calc(50px + 1.5625vw);
-      .heading {
-        font-size: calc(40px + 0.5625vw);
+      margin: 20px auto 50px;
 
+      .heading {
+        font-weight: 200;
+        font-size: 30px;
+        line-height: 140.8%;
+        letter-spacing: 0.01em;
         @include mobile {
           font-size: 34px;
         }
@@ -90,17 +92,20 @@
   }
 
   .headingWrapper {
-    margin: 0 auto;
+    margin: 30px auto 0;
   }
+
   .heading {
+    text-transform: uppercase;
+    max-width: 80%;
+    margin: 0 auto 14px;
+
     @include fontStyles(
       $black-100,
       "Editorial New",
       200,
       calc(30px + 0.390625vw)
     );
-    text-transform: uppercase;
-    margin-bottom: 14px;
   }
 
   .notRegisteredText {
@@ -202,22 +207,6 @@
     }
   }
 
-  // .submitBtnWrapper {
-  //   @include flex(center, center);
-  //   margin-top: 80px;
-
-  //   button {
-  //     background-color: $green-100;
-  //     color: $cream-50;
-
-  //     @include mobile {
-  //       border: none;
-  //       border-radius: 0;
-  //       width: 100%;
-  //     }
-  //   }
-  // }
-
   .submitBtnWrapper {
     @include flex(center, center);
     margin-top: 80px;
@@ -262,37 +251,4 @@
       line-height: 130%;
     }
   }
-
-  // @include for-phone-only {
-  //   .mainWrapper {
-  //     margin-top: 1.25rem;
-  //   }
-  //   .bgTree {
-  //     position: absolute;
-  //     top: 25%;
-  //     left: 50%;
-  //     transform: translate(-50%, -50%);
-  //     height: 40%;
-  //     width: 40%;
-  //     margin: 0 auto;
-  //     display: flex;
-  //     align-items: center;
-  //     justify-content: center;
-  //   }
-  //   .heading {
-  //     font-size: calc(24px + 0.390625vw);
-  //   }
-  //   .formInputWrapper {
-  //     margin-bottom: calc(1.5rem + 0.5625vw);
-  //   }
-  //   .errorText {
-  //     margin-bottom: calc(3.5rem + 0.5625vw);
-  //   }
-  //   .formInput {
-  //     font-size: calc(0.875rem + 00.390625vw);
-  //   }
-  //   .submitBtnWrapper {
-  //     margin-top: calc(1rem + 00.5625vw);
-  //   }
-  // }
 }

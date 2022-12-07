@@ -15,9 +15,8 @@
   padding: calc(10px + 0.5625vw);
   background-color: $cream-40;
   position: relative;
-  width: 536px;
-  max-width: 536px;
-  margin-top: 9vh;
+  width: 460px;
+  max-width: 460px;
 
   @include mobile {
     width: 100%;
@@ -62,6 +61,7 @@
     text-transform: uppercase;
     margin-bottom: 0;
     text-align: center;
+    margin-top: 20px;
   }
 }
 
@@ -102,7 +102,7 @@
   display: flex;
   align-items: center;
   gap: 0 20px;
-  margin-top: 56px;
+  margin-top: 36px;
 
   @include desktop-lg {
     margin-top: 66px;
@@ -135,7 +135,7 @@
   button {
     background-color: $green-100;
     color: $cream-50;
-    width: 159.17px;
+    width: 139px;
 
     @include mobile {
       border: none;
@@ -154,7 +154,7 @@
   justify-content: center;
   text-align: center;
   .title2 {
-    @include fontStyles($cream-40, "Editorial New", 200, 50px);
+    @include fontStyles($cream-40, "Editorial New", 200, 45px);
     text-transform: uppercase;
     margin-bottom: 1.5rem;
     .smallTxt {
@@ -166,7 +166,7 @@
     width: 66%;
     margin: auto;
     p {
-      @include fontStyles($cream-40, "Manrope", 400, 20px);
+      @include fontStyles($cream-40, "Manrope", 400, 18px);
       line-height: 170%;
     }
   }
