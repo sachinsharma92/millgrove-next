@@ -1,6 +1,5 @@
 import Head from 'next/head'
-import Login from '../views/Login/Login'
-import { AuthCycle } from './AuthCycle'
+import { AuthCycle } from './authCycle'
 
 export default function Home() {
   return (
