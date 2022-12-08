@@ -61,7 +61,7 @@ function HomeCarousel() {
       pin: ".philosophie .wrapper",
       pinSpacing: true,
       id: "pinning",
-      markers: true
+      markers: false
     })
 
     points.forEach(function (elem, i) {

@@ -16,7 +16,6 @@ const SignupSuccess = () => {
 					</div>
 				</div>
 			</div>
-
 		</Layout>
 
 	)
