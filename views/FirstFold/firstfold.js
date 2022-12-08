@@ -8,7 +8,7 @@ import Header from "../../components/Header";
 // import "./firstfold.scss";
 
 function Firstfold({ setIsRegistering, setIsLoggingIn }) {
-  // const { isLoggedIn, userToken } = useContext(AuthContext);
+  const { userToken } = useContext(AuthContext);
 
   return (
     <Layout>
@@ -21,25 +21,28 @@ function Firstfold({ setIsRegistering, setIsLoggingIn }) {
                 MEANINGFUL <br />
                 LIVING
               </div>
-              <div
-                className="mg-first-fold-subheading">
-                Living at Millgrove transcends ordinary notions of luxury. It is a natural haven that gives you a complete sense of belonging. A place where you can nurture relationships and make time for the things that matter most.
+              <div className="mg-first-fold-subheading">
+                Living at Millgrove transcends ordinary notions of luxury. It is
+                a natural haven that gives you a complete sense of belonging. A
+                place where you can nurture relationships and make time for the
+                things that matter most.
               </div>
-              <div className="mg-first-fold-auth-btns"
-              >
-                <Button
-                  clickhandler={() => setIsLoggingIn(true)}
-                  text={"LOGIN"}
-                  variant="secondary"
-                  classname="btn-hero-sec"
-                />
-                <Button
-                  clickhandler={() => setIsRegistering(true)}
-                  text={"REGISTER"}
-                  variant="secondary"
-                  classname="btn-hero-sec"
-                />
-              </div>
+              {!userToken ? (
+                <div className="mg-first-fold-auth-btns">
+                  <Button
+                    clickhandler={() => setIsLoggingIn(true)}
+                    text={"LOGIN"}
+                    variant="secondary"
+                    classname="btn-hero-sec"
+                  />
+                  <Button
+                    clickhandler={() => setIsRegistering(true)}
+                    text={"REGISTER"}
+                    variant="secondary"
+                    classname="btn-hero-sec"
+                  />
+                </div>
+              ) : null}
             </div>
           </div>
         </div>
