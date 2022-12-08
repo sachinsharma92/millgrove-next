@@ -68,18 +68,18 @@ function HomeCarousel() {
       gsap.set(elem, { position: "absolute", top: 0 });
       if (i == 0) {
         tl.to(indicators[i], { backgroundColor: "#2e3430", duration: 0.25 }, i)
-        tl.from(elem.querySelector('img'), { autoAlpha: 1, translateY: 0 }, i)
-        tl.from(elem.querySelector('article'), { autoAlpha: 1, translateY: 0 }, i)
+        tl.from(elem.querySelector('img'), { translateY: -100, scale: 1.2 }, i)
+        tl.from(elem.querySelector('article'), { autoAlpha: 1, translateY: 0, }, i)
       } else {
         tl.to(indicators[i], { backgroundColor: "#2e3430", duration: 0.25 }, i)
-        tl.from(elem.querySelector('img'), { autoAlpha: 0, translateY: -100 }, i)
-        tl.from(elem.querySelector('article'), { autoAlpha: 0, translateY: 100 }, i)
+        tl.from(elem.querySelector('img'), { opacity: 0, translateY: 100, scale: 1 }, i)
+        tl.from(elem.querySelector('article'), { autoAlpha: 0, translateY: 100, }, i)
       }
       tl.add("label" + i);
-      if (i != points.length - 1) {
+      if (i != points + 1) {
         tl.to(indicators[i], { backgroundColor: "#fff", duration: 0.25 }, i + 0.75)
-        tl.to(elem.querySelector('article'), { autoAlpha: 0, translateY: -100 }, i + 0.75)
-        tl.to(elem.querySelector('img'), { autoAlpha: 0, translateY: -100 }, i + 0.75)
+        tl.to(elem.querySelector('article'), { autoAlpha: 0, translateY: 0 }, i + 0.75)
+        tl.to(elem.querySelector('img'), { translateY: 0, scale: 1 }, i + 0.75)
       }
 
     });
@@ -115,7 +115,7 @@ function HomeCarousel() {
             </div>
           </div>
 
-          <div className="slide1 slide-sec point">
+          <div className="slide2 slide-sec point">
             <div className="slider-body">
               <figure className="img-box">
                 <img src="/images/carousel-img-2.png" alt="" className="carousel-img" />
@@ -134,7 +134,7 @@ function HomeCarousel() {
             </div>
           </div>
 
-          <div className="slide1 slide-sec point">
+          <div className="slide3 slide-sec point">
             <div className="slider-body">
               <figure className="img-box">
                 <img src="/images/carousel-img-3.png" alt="" className="carousel-img" />
@@ -153,7 +153,7 @@ function HomeCarousel() {
             </div>
           </div>
 
-          <div className="slide1 slide-sec point">
+          <div className="slide4 slide-sec point">
             <div className="slider-body">
               <figure className="img-box">
                 <img src="/images/carousel-img-4.png" alt="" className="carousel-img" />
@@ -172,7 +172,7 @@ function HomeCarousel() {
             </div>
           </div>
 
-          <div className="slide1 slide-sec point">
+          <div className="slide5 slide-sec point">
             <div className="slider-body">
               <figure className="img-box">
                 <img src="/images/carousel-img-5.jpg" alt="" className="carousel-img" />

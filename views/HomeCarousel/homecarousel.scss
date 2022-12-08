@@ -129,6 +129,7 @@
     align-items: flex-start;
     text-transform: uppercase;
     color: #262e2f;
+    overflow: hidden;
 
     span {
       text-transform: capitalize;
@@ -138,6 +139,7 @@
   .carousel-subtext {
     padding-left: 100px;
     font-size: 17px;
+    overflow: hidden;
   }
 
   .notera-text-style {
