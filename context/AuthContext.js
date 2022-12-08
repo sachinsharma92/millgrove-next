@@ -10,14 +10,6 @@ const AuthProvider = ({ children }) => {
     name: "",
     email: "",
   });
-  // const token = JSON.parse(localStorage?.getItem("userToken")) || {
-  //   authToken: null,
-  //   name: "",
-  //   email: "",
-  // };
-  // if (token?.authToken) {
-  //   setupAuthHeaderForServiceCalls(token?.authToken);
-  // }
   const [userToken, setUserToken] = useState(authDetails?.authToken);
   const [userDetails, setUserDetails] = useState({
     name: authDetails?.name,
