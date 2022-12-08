@@ -17,7 +17,9 @@ const Input = ({ placeholder, type = "text", value }) => {
 };
 
 const ReservationForm = ({ isBoxChecked, setIsBoxChecked }) => {
-  // const { userDetails: { name, email, phone }, } = useContext(AuthContext);
+  const {
+    userDetails: { name, email, phone },
+  } = useContext(AuthContext);
 
   return (
     <div className={styles.formWrapper}>
@@ -30,13 +32,13 @@ const ReservationForm = ({ isBoxChecked, setIsBoxChecked }) => {
       <form className={styles.formContainer}>
         <div className={styles.inputSection}>
           <div className={styles.formInputWrapper}>
-            <Input value="Name" placeholder={"Name"} type="text" />
+            <Input value={name || ""} placeholder={"Name"} type="text" />
           </div>
           <div className={styles.formInputWrapper}>
-            <Input value="Phone" placeholder={"Phone"} type="text" />
+            <Input value={phone || ""} placeholder={"Phone"} type="text" />
           </div>
           <div className={styles.formInputWrapper}>
-            <Input value="Email" placeholder={"Email"} type="email" />
+            <Input value={email || ""} placeholder={"Email"} type="email" />
           </div>
         </div>
         <div className={styles.agreementCheck}>

@@ -28,7 +28,7 @@ const Signup = ({
     emailError: "",
   });
 
-  const isInvalidPhoneNumber = (str) => {
+  const isInvalidPhoneNumber = (str = "") => {
     if (str.startsWith("+91") && str.slice(3).length !== 10) return true;
     return false;
   };

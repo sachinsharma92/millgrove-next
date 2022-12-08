@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 // Views Sections here
 import HeroSection from "../../views/HeroSection/firstfold";
@@ -10,10 +10,14 @@ import ThreeDView from "../../views/ThreeDView";
 import Layout from "../../components/Layout/Layout";
 import Footer from "../../views/Footer/Footer";
 import { MILLGROVE_LOGO } from "../../utils/assets";
+import { AuthContext } from "../../context/AuthContext";
+import { useRouter } from "next/router";
 
 export default function Home() {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const { userToken } = useContext(AuthContext);
+  const router = useRouter();
 
   const controlNavbar = () => {
     if (typeof window !== "undefined") {
@@ -40,6 +44,11 @@ export default function Home() {
   //     };
   //   }
   // }, [lastScrollY]);
+  useEffect(() => {
+    if (!userToken) {
+      router.push("/");
+    }
+  });
   return (
     <>
       <div className={`header-home ${show ? "active" : "inactive"} `}>

@@ -18,9 +18,9 @@ const OtpForm = ({ setIsLoggingIn, otpToken }) => {
     try {
       const res = await loginWithCredentials(otp, otpToken);
       if (res) {
+        router.push("/home");
         setIsLoggingIn(false);
         setIsLoggedIn(true);
-        router.push("/home");
       }
     } catch (err) {
       console.log(err);
