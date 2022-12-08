@@ -48,7 +48,7 @@ export default function Home() {
     if (!userToken) {
       router.push("/");
     }
-  });
+  }, [userToken]);
   return (
     <>
       <div className={`header-home ${show ? "active" : "inactive"} `}>
