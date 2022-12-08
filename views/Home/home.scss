@@ -56,7 +56,8 @@ $millgrove-font-size: 86px;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  z-index: 9;
+  z-index: 99999;
+  top: 0;
 
   .millgrove-tree {
     position: fixed;

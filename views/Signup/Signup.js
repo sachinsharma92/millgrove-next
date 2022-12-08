@@ -227,10 +227,6 @@ const Signup = ({
           </div>
         )}
       </div>
-
-      <div className="login-video-bg">
-        <video src="/videos/temp-video.mp4" autoPlay muted playsInline loop />
-      </div>
     </Layout>
   );
 };
