@@ -1,15 +1,16 @@
+import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
-import React, { createContext, useState } from "react";
 import { apiKey, baseUrl } from "../utils/constants";
 
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-  const token = JSON.parse(localStorage?.getItem("userToken")) || {
-    authToken: null,
-    name: "",
-    email: "",
-  };
+  const [token, setToken] = useState({ authToken: null, name: "", email: "" });
+  // const token = JSON.parse(localStorage?.getItem("userToken")) || {
+  //   authToken: null,
+  //   name: "",
+  //   email: "",
+  // };
   //   if (token?.authToken) {
   //     setupAuthHeaderForServiceCalls(token?.authToken);
   //   }
@@ -67,6 +68,12 @@ const AuthProvider = ({ children }) => {
     setUserToken(null);
     setUserDetails({ name: "", email: "" });
   }
+
+  useEffect(() => {
+    if (window !== undefined) {
+      setToken(JSON.parse(localStorage?.getItem("userToken")));
+    }
+  }, []);
 
   return (
     <AuthContext.Provider

@@ -1,6 +1,7 @@
 import AOS from "aos";
-import { useEffect } from 'react';
-import '../styles/theme.scss';
+import { useEffect } from "react";
+import AuthProvider from "../context/AuthContext";
+import "../styles/theme.scss";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -10,7 +11,11 @@ function MyApp({ Component, pageProps }) {
       offset: 50,
     });
   }, []);
-  return <Component {...pageProps} />
+  return (
+    <AuthProvider>
+      <Component {...pageProps} />
+    </AuthProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;

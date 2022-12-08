@@ -90,7 +90,7 @@ const PhoneNumberForm = ({
         <div className={styles.submitBtnWrapper}>
           <Button
             type="submit"
-            clickhandler={() => continueHandler()}
+            clickhandler={(e) => continueHandler(e)}
             text={"Continue"}
             classname="button-style48"
           />

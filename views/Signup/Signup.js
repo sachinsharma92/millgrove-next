@@ -78,7 +78,6 @@ const Signup = ({
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (isAnyFieldEmpty()) return;
-    console.log("resetting error");
     setError((prev) => ({
       ...prev,
       errorOccured: false,
@@ -86,6 +85,7 @@ const Signup = ({
       phoneError: "",
       emailError: "",
     }));
+    console.log({ baseUrl });
     const res = await axios.post(
       `${baseUrl}/client/register`,
       {
@@ -135,10 +135,14 @@ const Signup = ({
             <div className={styles.formWrapper}>
               <div className={styles.headingWrapper}>
                 <h3 className={styles.heading}>
-                  Register <span className={styles.smallText}>your</span> Details
+                  Register <span className={styles.smallText}>your</span>{" "}
+                  Details
                 </h3>
                 <div className={styles.bgTree}>
-                  <MILLGROVE_TREE style={{ height: `6vw` }} fillColor="#8a7f7f14" />
+                  <MILLGROVE_TREE
+                    style={{ height: `6vw` }}
+                    fillColor="#8a7f7f14"
+                  />
                 </div>
               </div>
               <p className={styles.fieldRequiredText}>
@@ -178,7 +182,7 @@ const Signup = ({
                       style={{
                         opacity:
                           (error.errorOccured && !userInfo.phone) ||
-                            isInvalidPhoneNumber(userInfo.phone)
+                          isInvalidPhoneNumber(userInfo.phone)
                             ? 1
                             : 0,
                       }}

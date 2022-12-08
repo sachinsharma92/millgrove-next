@@ -10,23 +10,22 @@ import Timer from "./Timer";
 const OtpForm = ({ setIsLoggingIn, otpToken }) => {
   const [otp, setOtp] = useState(null);
   const otpWrapperRef = useRef();
-  // const { isLoggedIn, setIsLoggedIn, loginWithCredentials } =
-  //   useContext(AuthContext);
+  const { setIsLoggedIn, loginWithCredentials } = useContext(AuthContext);
 
-  // const handleSubmit = async () => {
-  //   try {
-  //     if (loginWithCredentials(otp, otpToken)) {
-  //       setIsLoggingIn(false);
-  //       setIsLoggedIn(true);
-  //     }
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
+  const handleSubmit = async () => {
+    try {
+      if (loginWithCredentials(otp, otpToken)) {
+        setIsLoggingIn(false);
+        setIsLoggedIn(true);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-  // const handleChange = (otp) => {
-  //   setOtp(otp);
-  // };
+  const handleChange = (otp) => {
+    setOtp(otp);
+  };
 
   return (
     <div className={styles.otpMainWrapper}>
@@ -42,7 +41,7 @@ const OtpForm = ({ setIsLoggingIn, otpToken }) => {
             inputStyle={styles.otpInput}
             value={otp}
             shouldAutoFocus
-            // onChange={handleChange}
+            onChange={handleChange}
             numInputs={6}
             isInputNum
             placeholder="000000"
