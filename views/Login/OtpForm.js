@@ -6,17 +6,21 @@ import OtpInput from "react18-input-otp";
 import { MILLGROVE_TREE } from "../../utils/assets";
 import styles from "./Login.module.scss";
 import Timer from "./Timer";
+import { useRouter } from "next/router";
 
 const OtpForm = ({ setIsLoggingIn, otpToken }) => {
   const [otp, setOtp] = useState(null);
   const otpWrapperRef = useRef();
   const { setIsLoggedIn, loginWithCredentials } = useContext(AuthContext);
+  const router = useRouter();
 
   const handleSubmit = async () => {
     try {
-      if (loginWithCredentials(otp, otpToken)) {
+      const res = await loginWithCredentials(otp, otpToken);
+      if (res) {
         setIsLoggingIn(false);
         setIsLoggedIn(true);
+        router.push("/home");
       }
     } catch (err) {
       console.log(err);

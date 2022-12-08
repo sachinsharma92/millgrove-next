@@ -27,22 +27,20 @@ function Firstfold({ setIsRegistering, setIsLoggingIn }) {
                 place where you can nurture relationships and make time for the
                 things that matter most.
               </div>
-              {!userToken ? (
-                <div className="mg-first-fold-auth-btns">
-                  <Button
-                    clickhandler={() => setIsLoggingIn(true)}
-                    text={"LOGIN"}
-                    variant="secondary"
-                    classname="btn-hero-sec"
-                  />
-                  <Button
-                    clickhandler={() => setIsRegistering(true)}
-                    text={"REGISTER"}
-                    variant="secondary"
-                    classname="btn-hero-sec"
-                  />
-                </div>
-              ) : null}
+              <div className="mg-first-fold-auth-btns">
+                <Button
+                  clickhandler={() => setIsLoggingIn(true)}
+                  text={"LOGIN"}
+                  variant="secondary"
+                  classname="btn-hero-sec"
+                />
+                <Button
+                  clickhandler={() => setIsRegistering(true)}
+                  text={"REGISTER"}
+                  variant="secondary"
+                  classname="btn-hero-sec"
+                />
+              </div>
             </div>
           </div>
         </div>
