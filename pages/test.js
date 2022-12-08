@@ -1,109 +1,196 @@
+/* eslint-disable @next/next/no-img-element */
 import gsap from 'gsap';
 import Image from 'next/image';
-import React, { useEffect } from 'react'
+import { useEffect } from 'react';
 
 export default function Test() {
-  useEffect(() => {
+  // useEffect(() => {
+  //   gsap.registerPlugin(ScrollTrigger);
 
-    let controller = new ScrollMagic.Controller({
-      globalSceneOptions: {
-        triggerHook: 0,
-        duration: 1300,
-        offset: 76,
-      },
-    });
+  //   let sections = gsap.utils.toArray(".snappoint");
 
-    let slides = document.querySelectorAll("section.slide-sec");
+  //   function goToSection(i) {
+  //     gsap.to(window, {
+  //       scrollTo: { y: i * innerHeight, autoKill: false, ease: "Power3.easeInOut" },
+  //       duration: 0.3
+  //     });
+  //   }
 
-    for (let i = 0; i < slides.length; i++) {
-      let animation = TweenMax.to(slides[i], 0.7, {
-        scale: 0,
-        opacity: 0,
-        ease: Quad.easeInOut,
-      });
-      new ScrollMagic.Scene({
-        triggerElement: slides[i],
-      })
-        .setPin(slides[i], { pushFollowers: false })
-        .addTo(controller)
-        .setTween(animation);
-    }
-  }, [])
+  //   ScrollTrigger.defaults({
+  //     markers: false
+  //   });
+
+  //   sections.forEach((eachPanel, i) => {
+  //     const mainAnim = gsap.timeline({ paused: true });
+
+  //     ScrollTrigger.create({
+  //       trigger: eachPanel,
+  //       onEnter: () => goToSection(i)
+  //     });
+
+  //     ScrollTrigger.create({
+  //       trigger: eachPanel,
+  //       start: "bottom bottom",
+  //       onEnterBack: () => goToSection(i)
+  //     });
+  //   });
+
+  //   var points = gsap.utils.toArray('.point');
+  //   var indicators = gsap.utils.toArray('.indicator');
+
+  //   var height = 100 * points.length;
+
+  //   gsap.set('.indicators', { display: "flex" });
+
+  //   var tl = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: ".philosophie",
+  //       start: "top center",
+  //       end: "+=" + height + "%",
+  //       scrub: true,
+  //       id: "points",
+  //       snap: "labelsDirectional"
+  //     }
+  //   })
+
+  //   ScrollTrigger.create({
+  //     trigger: ".philosophie .wrapper",
+  //     start: "top top",
+  //     end: "+=" + height + "%",
+  //     scrub: true,
+  //     pin: ".philosophie .wrapper",
+  //     pinSpacing: true,
+  //     id: "pinning",
+  //     markers: true
+  //   })
+
+
+
+  //   points.forEach(function (elem, i) {
+  //     gsap.set(elem, { position: "absolute", top: 0 });
+  //     if (i == 0) {
+  //       tl.to(indicators[i], { backgroundColor: "#2e3430", duration: 0.25 }, i)
+  //       tl.from(elem.querySelector('img'), { autoAlpha: 1, translateY: 0 }, i)
+  //       tl.from(elem.querySelector('article'), { autoAlpha: 1, translateY: 0 }, i)
+  //     } else {
+  //       tl.to(indicators[i], { backgroundColor: "#2e3430", duration: 0.25 }, i)
+  //       tl.from(elem.querySelector('img'), { autoAlpha: 0, translateY: -100 }, i)
+  //       tl.from(elem.querySelector('article'), { autoAlpha: 0, translateY: 100 }, i)
+  //     }
+  //     tl.add("label" + i);
+  //     if (i != points.length - 1) {
+  //       tl.to(indicators[i], { backgroundColor: "#fff", duration: 0.25 }, i + 0.75)
+  //       tl.to(elem.querySelector('article'), { autoAlpha: 0, translateY: -100 }, i + 0.75)
+  //       tl.to(elem.querySelector('img'), { autoAlpha: 0, translateY: -100 }, i + 0.75)
+  //     }
+
+  //   });
+  // }, [])
 
   return (
-
     <div className="millglove-slider-section">
-      <section className="slide1 slide-sec">
-        <div className="slider-body">
-          <div className="img-box">
-            <Image src="/images/carousel-img-1.png" alt="" className="carousel-img" layout="fill" />
+      <section className="philosophie">
+        <div className="wrapper">
+          <div className="indicators">
+            <div className="indicator"></div>
+            <div className="indicator"></div>
+            <div className="indicator"></div>
+            <div className="indicator"></div>
+            <div className="indicator"></div>
           </div>
-          <div className="carousel-text-div">
-            <div className="carousel-heading title1"> <span className="notera-text-style">The</span> Homes</div>
-            <div className="carousel-subtext description">
-              Millgrove homes embrace grand proportions. They are flooded with
-              natural light and designed with sophisticated elegance and intricate
-              craftsmanship. With an abundance of flexible space within each
-              ‘shell & core’ home, you can finish the interior to suit your
-              personal needs and taste. It is a place to be yourself, on a scale
-              like no other.
+
+          <div className="slide1 slide-sec point">
+            <div className="slider-body">
+              <figure className="img-box">
+                <img src="/images/carousel-img-1.png" alt="" className="carousel-img" />
+              </figure>
+              <article className="carousel-text-div">
+                <div className="carousel-heading title1"> <span className="notera-text-style">The</span> Homes</div>
+                <div className="carousel-subtext description">
+                  Millgrove homes embrace grand proportions. They are flooded with
+                  natural light and designed with sophisticated elegance and intricate
+                  craftsmanship. With an abundance of flexible space within each
+                  ‘shell & core’ home, you can finish the interior to suit your
+                  personal needs and taste. It is a place to be yourself, on a scale
+                  like no other.
+                </div>
+              </article>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section className="slide2 slide-sec">
-        <div className="slider-body">
-          <div className="img-box">
-            <Image src="/images/carousel-img-2.png" alt="" className="carousel-img" layout="fill" />
-          </div>
-          <div className="carousel-text-div">
-            <div className="carousel-heading title1"> <span className="notera-text-style">The</span> Homes 2</div>
-            <div className="carousel-subtext description">
-              Millgrove homes embrace grand proportions. They are flooded with
-              natural light and designed with sophisticated elegance and intricate
-              craftsmanship. With an abundance of flexible space within each
-              ‘shell & core’ home, you can finish the interior to suit your
-              personal needs and taste. It is a place to be yourself, on a scale
-              like no other.
+          <div className="slide1 slide-sec point">
+            <div className="slider-body">
+              <figure className="img-box">
+                <img src="/images/carousel-img-2.png" alt="" className="carousel-img" />
+              </figure>
+              <article className="carousel-text-div">
+                <div className="carousel-heading title1"> <span className="notera-text-style">The</span> Grounds</div>
+                <div className="carousel-subtext description">
+                  Millgrove homes embrace grand proportions. They are flooded with
+                  natural light and designed with sophisticated elegance and intricate
+                  craftsmanship. With an abundance of flexible space within each
+                  ‘shell & core’ home, you can finish the interior to suit your
+                  personal needs and taste. It is a place to be yourself, on a scale
+                  like no other.
+                </div>
+              </article>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section className="slide3 slide-sec">
-        <div className="slider-body">
-          <div className="img-box">
-            <Image src="/images/carousel-img-3.png" alt="" className="carousel-img" layout="fill" />
-          </div>
-          <div className="carousel-text-div">
-            <div className="carousel-heading title1"> <span className="notera-text-style">The</span> Homes 3</div>
-            <div className="carousel-subtext description">
-              Millgrove homes embrace grand proportions. They are flooded with
-              natural light and designed with sophisticated elegance and intricate
-              craftsmanship. With an abundance of flexible space within each
-              ‘shell & core’ home, you can finish the interior to suit your
-              personal needs and taste. It is a place to be yourself, on a scale
-              like no other.
+          <div className="slide1 slide-sec point">
+            <div className="slider-body">
+              <figure className="img-box">
+                <img src="/images/carousel-img-3.png" alt="" className="carousel-img" />
+              </figure>
+              <article className="carousel-text-div">
+                <div className="carousel-heading title1"> <span className="notera-text-style">The</span> Comforts</div>
+                <div className="carousel-subtext description">
+                  Millgrove homes embrace grand proportions. They are flooded with
+                  natural light and designed with sophisticated elegance and intricate
+                  craftsmanship. With an abundance of flexible space within each
+                  ‘shell & core’ home, you can finish the interior to suit your
+                  personal needs and taste. It is a place to be yourself, on a scale
+                  like no other.
+                </div>
+              </article>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section className="slide4 slide-sec">
-        <div className="slider-body">
-          <div className="img-box">
-            <Image src="/images/carousel-img-4.png" alt="" className="carousel-img" layout="fill" />
+          <div className="slide1 slide-sec point">
+            <div className="slider-body">
+              <figure className="img-box">
+                <img src="/images/carousel-img-4.png" alt="" className="carousel-img" />
+              </figure>
+              <article className="carousel-text-div">
+                <div className="carousel-heading title1"> <span className="notera-text-style">The</span> LOCATION</div>
+                <div className="carousel-subtext description">
+                  Millgrove homes embrace grand proportions. They are flooded with
+                  natural light and designed with sophisticated elegance and intricate
+                  craftsmanship. With an abundance of flexible space within each
+                  ‘shell & core’ home, you can finish the interior to suit your
+                  personal needs and taste. It is a place to be yourself, on a scale
+                  like no other.
+                </div>
+              </article>
+            </div>
           </div>
-          <div className="carousel-text-div">
-            <div className="carousel-heading title1"> <span className="notera-text-style">The</span> Homes 4</div>
-            <div className="carousel-subtext description">
-              Millgrove homes embrace grand proportions. They are flooded with
-              natural light and designed with sophisticated elegance and intricate
-              craftsmanship. With an abundance of flexible space within each
-              ‘shell & core’ home, you can finish the interior to suit your
-              personal needs and taste. It is a place to be yourself, on a scale
-              like no other.
+
+          <div className="slide1 slide-sec point">
+            <div className="slider-body">
+              <figure className="img-box">
+                <img src="/images/carousel-img-2.png" alt="" className="carousel-img" />
+              </figure>
+              <article className="carousel-text-div">
+                <div className="carousel-heading title1"> <span className="notera-text-style">The</span> Legacy</div>
+                <div className="carousel-subtext description">
+                  Millgrove homes embrace grand proportions. They are flooded with
+                  natural light and designed with sophisticated elegance and intricate
+                  craftsmanship. With an abundance of flexible space within each
+                  shell & core’ home, you can finish the interior to suit your
+                  personal needs and taste. It is a place to be yourself, on a scale
+                  like no other.
+                </div>
+              </article>
             </div>
           </div>
         </div>
