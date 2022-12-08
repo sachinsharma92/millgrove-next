@@ -88,26 +88,22 @@
     width: 50%;
     text-align: left;
     top: -30px;
+  }
 
-    article {
-      overflow: hidden;
-      position: relative;
-      display: flex;
+  .heading-sec {
+    overflow: hidden;
+    position: relative;
+    display: flex;
 
-      &::before {
-        content: "The";
-        font-family: "Notera";
-        font-weight: 400;
-        font-size: 63px;
-        line-height: 110%;
-        letter-spacing: 0.01em;
-        color: #9c7e61;
-        margin-right: 20px;
-      }
-
-      // h1 {
-      //   background-color: #f9f6ed;
-      // }
+    &::before {
+      content: "The";
+      font-family: "Notera";
+      font-weight: 400;
+      font-size: 63px;
+      line-height: 110%;
+      letter-spacing: 0.01em;
+      color: #9c7e61;
+      margin-right: 20px;
     }
   }
 

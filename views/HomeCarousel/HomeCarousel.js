@@ -125,9 +125,9 @@ function HomeCarousel() {
                 <img src="/images/carousel-img-1.png" alt="" className="carousel-img" />
               </figure>
               <div className="carousel-text-div">
-                <article>
+                <div className="heading-sec">
                   <h1 className="carousel-heading title1">Homes</h1>
-                </article>
+                </div>
                 <div className="carousel-subtext">
                   <p className="description">
                     Millgrove homes embrace grand proportions. They are flooded with
@@ -148,9 +148,9 @@ function HomeCarousel() {
                 <img src="/images/carousel-img-2.png" alt="" className="carousel-img" />
               </figure>
               <div className="carousel-text-div">
-                <article>
+                <div className="heading-sec">
                   <h1 className="carousel-heading title1">Grounds</h1>
-                </article>
+                </div>
                 <div className="carousel-subtext">
                   <p className="description">
                     Millgrove homes embrace grand proportions. They are flooded with
@@ -171,9 +171,9 @@ function HomeCarousel() {
                 <img src="/images/carousel-img-3.png" alt="" className="carousel-img" />
               </figure>
               <div className="carousel-text-div">
-                <article>
+                <div className="heading-sec">
                   <h1 className="carousel-heading title1">Comforts</h1>
-                </article>
+                </div>
                 <div className="carousel-subtext">
                   <p className="description">
                     Millgrove homes embrace grand proportions. They are flooded with
@@ -194,9 +194,9 @@ function HomeCarousel() {
                 <img src="/images/carousel-img-4.png" alt="" className="carousel-img" />
               </figure>
               <div className="carousel-text-div">
-                <article>
+                <div className="heading-sec">
                   <h1 className="carousel-heading title1">LOCATION</h1>
-                </article>
+                </div>
                 <div className="carousel-subtext">
                   <p className="description">
                     Millgrove homes embrace grand proportions. They are flooded with
@@ -217,9 +217,9 @@ function HomeCarousel() {
                 <img src="/images/carousel-img-5.jpg" alt="" className="carousel-img" />
               </figure>
               <div className="carousel-text-div">
-                <article>
+                <div className="heading-sec">
                   <h1 className="carousel-heading title1">Legacy</h1>
-                </article>
+                </div>
                 <div className="carousel-subtext">
                   <p className="description">
                     Millgrove homes embrace grand proportions. They are flooded with
