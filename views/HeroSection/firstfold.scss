@@ -36,6 +36,10 @@
         text-transform: uppercase;
         color: #f9f6ed;
 
+        .animation-text {
+          font-family: "Editorial New";
+        }
+
         @include mobile {
           font-size: 50px;
           line-height: 1.6em;
@@ -224,7 +228,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      background: linear-gradient(0deg, rgba(#434f50, 0.5), rgba(#434f50, 0.5));
+      background: linear-gradient(0deg, rgba(black, 0.2), rgba(black, 0.2));
       backdrop-filter: blur(20px);
       content: "";
 
