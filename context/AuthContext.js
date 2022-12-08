@@ -1,23 +1,20 @@
+import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
-import React, { createContext, useState } from "react";
 import { apiKey, baseUrl } from "../utils/constants";
 
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-  const token = JSON.parse(localStorage?.getItem("userToken")) || {
+  const [authDetails, setAuthDetails] = useState({
     authToken: null,
     name: "",
     email: "",
-  };
-  //   if (token?.authToken) {
-  //     setupAuthHeaderForServiceCalls(token?.authToken);
-  //   }
-  const [userToken, setUserToken] = useState(token?.authToken);
+  });
+  const [userToken, setUserToken] = useState(authDetails?.authToken);
   const [userDetails, setUserDetails] = useState({
-    name: token?.name,
-    email: token?.email,
-    phone: token?.phone,
+    name: authDetails?.name,
+    email: authDetails?.email,
+    phone: authDetails?.phone,
   });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -38,7 +35,6 @@ const AuthProvider = ({ children }) => {
 
       if (res.status === 200) {
         setUserToken(res?.data.data.accessToken);
-        console.log(res);
         setUserDetails({
           name: res.data.data.name,
           email: res.data.data.email,
@@ -67,6 +63,22 @@ const AuthProvider = ({ children }) => {
     setUserToken(null);
     setUserDetails({ name: "", email: "" });
   }
+
+  useEffect(() => {
+    if (typeof window !== undefined) {
+      const authData = JSON.parse(localStorage?.getItem("userToken"));
+      setAuthDetails(authData);
+      setUserToken(authData?.authToken);
+      setUserDetails({
+        name: authData?.name,
+        email: authData?.email,
+        phone: authData?.phone,
+      });
+      if (authData?.authToken) {
+        setIsLoggedIn(true);
+      }
+    }
+  }, [userToken]);
 
   return (
     <AuthContext.Provider

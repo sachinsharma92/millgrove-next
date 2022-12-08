@@ -9,10 +9,10 @@ import TreePrint from "./TreePrint";
 
 const Reservation = () => {
   const [isBoxChecked, setIsBoxChecked] = useState(false);
-  // const { userToken } = useContext(AuthContext);
+  const { userToken } = useContext(AuthContext);
 
   const requestVisit = async () => {
-    // if (!isBoxChecked) return;
+    if (!isBoxChecked) return;
     try {
       const res = await axios.post(
         `${baseUrl}/client/request-visit`,
