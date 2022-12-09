@@ -1,41 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
 import { useEffect } from "react";
-import Image from "next/image";
 import gsap from "gsap";
 
 function HomeCarousel() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
-    let sections = gsap.utils.toArray(".snappoint");
-
-    function goToSection(i) {
-      gsap.to(window, {
-        scrollTo: { y: i * innerHeight, autoKill: false, ease: "Power3.easeInOut" },
-        duration: 0.3
-      });
-    }
-
     ScrollTrigger.defaults({
       markers: false
     });
 
-    sections.forEach((eachPanel, i) => {
-
-      ScrollTrigger.create({
-        trigger: eachPanel,
-        onEnter: () => goToSection(i)
-      });
-
-      ScrollTrigger.create({
-        trigger: eachPanel,
-        start: "bottom bottom",
-        onEnterBack: () => goToSection(i)
-      });
-    });
-
     var points = gsap.utils.toArray('.point');
     var indicators = gsap.utils.toArray('.indicator');
+    var bgStyle = gsap.utils.toArray('.slide-sec .bg-style');
+
+
 
     var height = 100 * points.length;
 
@@ -82,25 +60,44 @@ function HomeCarousel() {
         tl.from(elem.querySelector('img'), { opacity: 0, translateY: 100, ease: "Power2.easeInOut" }, i)
 
         tl.from(elem.querySelector('h1'), {
-          autoAlpha: 0, y: 100, ease: "Power2.easeInOut",
+          autoAlpha: 0, translateY: 100, ease: "Power2.easeInOut",
         }, i)
 
         tl.from(elem.querySelector('p'), {
-          autoAlpha: 0, y: 100, ease: "Power2.easeInOut",
+          autoAlpha: 0, translateY: 100, ease: "Power2.easeInOut",
         }, i)
       }
       tl.add("label" + i);
-      if (i != points + 1) {
+      if (i != points.length - 1) {
         tl.to(indicators[i], { backgroundColor: "#fff", duration: 0.25 }, i + 0.75)
 
         tl.to(elem.querySelector('h1'), {
-          autoAlpha: 0, y: 100, ease: "Power2.easeInOut",
+          autoAlpha: 0, translateY: -100, ease: "Power2.easeInOut",
         }, i + 0.75)
 
         tl.to(elem.querySelector('p'), {
-          autoAlpha: 0, y: 100, ease: "Power2.easeInOut",
+          autoAlpha: 0, translateY: -100, ease: "Power2.easeInOut",
         }, i + 0.75)
-        tl.to(elem.querySelector('img'), { translateY: 0, ease: "Power2.easeInOut", }, i + 0.75)
+        tl.to(elem.querySelector('img'), { ease: "Power2.easeInOut", }, i + 0.75)
+      }
+
+      if (i == -1) {
+        tl.to(bgStyle, { backgroundColor: "#9C7E61", })
+      }
+      if (i == 0) {
+        tl.to(bgStyle, { backgroundColor: "#4B5B47", })
+      }
+      if (i == 1) {
+        tl.to(bgStyle, { backgroundColor: "#6B4637", })
+      }
+      if (i == 2) {
+        tl.to(bgStyle, { backgroundColor: "#434F50", })
+      }
+      if (i == 3) {
+        tl.to(bgStyle, { backgroundColor: "#8B8458", })
+      }
+      if (i == 4) {
+        tl.to(bgStyle, { backgroundColor: "#8B8458", })
       }
 
     });
@@ -140,6 +137,7 @@ function HomeCarousel() {
                 </div>
               </div>
             </div>
+            <div className="bg-style"></div>
           </div>
 
           <div className="slide2 slide-sec point">
@@ -163,6 +161,7 @@ function HomeCarousel() {
                 </div>
               </div>
             </div>
+            <div className="bg-style"></div>
           </div>
 
           <div className="slide3 slide-sec point">
@@ -186,6 +185,7 @@ function HomeCarousel() {
                 </div>
               </div>
             </div>
+            <div className="bg-style"></div>
           </div>
 
           <div className="slide4 slide-sec point">
@@ -209,6 +209,7 @@ function HomeCarousel() {
                 </div>
               </div>
             </div>
+            <div className="bg-style"></div>
           </div>
 
           <div className="slide5 slide-sec point">
@@ -232,9 +233,12 @@ function HomeCarousel() {
                 </div>
               </div>
             </div>
+            <div className="bg-style"></div>
           </div>
         </div>
       </section>
+
+      <section className="vh"></section>
     </div>
   );
 }

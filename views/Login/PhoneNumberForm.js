@@ -6,6 +6,7 @@ import styles from "./Login.module.scss";
 import "react-phone-number-input/style.css";
 import axios from "axios";
 import { apiKey, baseUrl } from "../../utils/constants";
+import Link from "next/link";
 
 const PhoneNumberForm = ({
   setIsEnteringPhoneNos,
@@ -67,7 +68,7 @@ const PhoneNumberForm = ({
             <h3 className={styles.heading}>Enter Phone Number</h3>
           </div>
           <p className={styles.notRegisteredText}>
-            Not registered yet? <span>Register here</span>
+            Not registered yet? <Link href="">Register here</Link>
           </p>
         </div>
         <div className="input-relative-sec">

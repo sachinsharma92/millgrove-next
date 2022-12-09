@@ -27,3 +27,7 @@
   background-color: transparent;
   border: 1.5px solid $cream-100;
 }
+
+.btn[disabled] {
+  opacity: 0.4;
+}

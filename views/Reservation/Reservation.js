@@ -32,7 +32,7 @@ const Reservation = () => {
     }
   };
   return (
-    <div className={styles.wrapper} data-scroll-section>
+    <div className={styles.wrapper}>
       <div>
         <div className={styles.verticalDash}></div>
         <div className={styles.reservationCard}>

@@ -7,6 +7,7 @@ import { MILLGROVE_TREE } from "../../utils/assets";
 import styles from "./Login.module.scss";
 import Timer from "./Timer";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const OtpForm = ({ setIsLoggingIn, otpToken }) => {
   const [otp, setOtp] = useState(null);
@@ -39,6 +40,9 @@ const OtpForm = ({ setIsLoggingIn, otpToken }) => {
       <div className={styles.otpFormWrapper}>
         <div className={styles.headingWrapper}>
           <h3 className={styles.heading}>Enter One time password</h3>
+          <p className={styles.notRegisteredText}>
+            Not registered yet? <Link href="">Register here</Link>
+          </p>
         </div>
         <div ref={otpWrapperRef} className={styles.otpWrapper}>
           <OtpInput
@@ -47,8 +51,9 @@ const OtpForm = ({ setIsLoggingIn, otpToken }) => {
             shouldAutoFocus
             onChange={handleChange}
             numInputs={6}
-            isInputNum
-            placeholder="000000"
+            isInputNum={false}
+            placeholder=""
+            separator={false}
           />
         </div>
         <p className={styles.resendMsg}>
@@ -63,7 +68,7 @@ const OtpForm = ({ setIsLoggingIn, otpToken }) => {
             clickhandler={() => otp?.length === 6 && handleSubmit()}
             text={"Continue"}
             isDisabled={otp?.length === 6 ? false : true}
-            classname="button-style48"
+            classname={`${styles.otpBtnStyle} button-style48`}
           />
         </div>
       </div>
