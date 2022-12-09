@@ -81,24 +81,13 @@ function HomeCarousel() {
         tl.to(elem.querySelector('img'), { ease: "Power2.easeInOut", }, i + 0.75)
       }
 
-      if (i == -1) {
-        tl.to(bgStyle, { backgroundColor: "#9C7E61", })
-      }
-      if (i == 0) {
-        tl.to(bgStyle, { backgroundColor: "#4B5B47", })
-      }
-      if (i == 1) {
-        tl.to(bgStyle, { backgroundColor: "#6B4637", })
-      }
-      if (i == 2) {
-        tl.to(bgStyle, { backgroundColor: "#434F50", })
-      }
-      if (i == 3) {
-        tl.to(bgStyle, { backgroundColor: "#8B8458", })
-      }
-      if (i == 4) {
-        tl.to(bgStyle, { backgroundColor: "#8B8458", })
-      }
+      // bottom div background color change here
+      if (i == -1) { tl.to(bgStyle, { backgroundColor: "#9C7E61", }) }
+      if (i == 0) { tl.to(bgStyle, { backgroundColor: "#4B5B47", }) }
+      if (i == 1) { tl.to(bgStyle, { backgroundColor: "#6B4637", }) }
+      if (i == 2) { tl.to(bgStyle, { backgroundColor: "#434F50", }) }
+      if (i == 3) { tl.to(bgStyle, { backgroundColor: "#8B8458", }) }
+      if (i == 4) { tl.to(bgStyle, { backgroundColor: "#8B8458", }) }
 
     });
   }, [])
