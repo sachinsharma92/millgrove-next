@@ -15,8 +15,10 @@ const PhoneNumberForm = ({
   setOtpToken,
   setIsRegistering,
   setIsLoggingIn,
+  phoneNos,
+  setPhoneNos,
 }) => {
-  const [phoneNos, setPhoneNos] = useState(null);
+  // const [phoneNos, setPhoneNos] = useState(null);
   const [error, setError] = useState({ errorOccured: false, msg: "" });
 
   const continueHandler = async (e) => {
@@ -24,8 +26,6 @@ const PhoneNumberForm = ({
       const res = await verifyPhoneNumber({
         e,
         phoneNos,
-        setError,
-        setOtpToken,
       });
       if (res?.success) {
         setOtpToken(res.otpToken);

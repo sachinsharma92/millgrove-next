@@ -9,6 +9,8 @@ const Login = ({ setIsLoggingIn, setIsRegistering }) => {
   const [isEnteringPhoneNos, setIsEnteringPhoneNos] = useState(true);
   const [isEnteringOtp, setIsEnteringOtp] = useState(false);
   const [otpToken, setOtpToken] = useState(null);
+  const [phoneNos, setPhoneNos] = useState(null);
+
   return (
     <Layout layoutStyle="login-page-style">
       <div className={`${styles.loginMainContainer} login-mobile`}>
@@ -21,6 +23,8 @@ const Login = ({ setIsLoggingIn, setIsRegistering }) => {
             setOtpToken={setOtpToken}
             setIsRegistering={setIsRegistering}
             setIsLoggingIn={setIsLoggingIn}
+            phoneNos={phoneNos}
+            setPhoneNos={setPhoneNos}
           />
         )}
         {isEnteringOtp && (
@@ -28,6 +32,7 @@ const Login = ({ setIsLoggingIn, setIsRegistering }) => {
             setIsLoggingIn={setIsLoggingIn}
             otpToken={otpToken}
             setOtpToken={setOtpToken}
+            phoneNos={phoneNos}
           />
         )}
       </div>

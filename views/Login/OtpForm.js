@@ -8,16 +8,9 @@ import styles from "./Login.module.scss";
 import Timer from "./Timer";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { verifyPhoneNumber } from "./Login.helpers";
 
-const OtpForm = ({
-  setIsLoggingIn,
-  otpToken,
-  phoneNos,
-  setError,
-  setIsEnteringOtp,
-  setIsEnteringPhoneNos,
-  setOtpToken,
-}) => {
+const OtpForm = ({ setIsLoggingIn, otpToken, phoneNos, setOtpToken }) => {
   const [otp, setOtp] = useState(null);
   const otpWrapperRef = useRef();
   const { setIsLoggedIn, loginWithCredentials } = useContext(AuthContext);
@@ -42,10 +35,13 @@ const OtpForm = ({
 
   const resendOtp = async (e) => {
     try {
-      await verifyPhoneNumber({
+      const res = await verifyPhoneNumber({
         e,
         phoneNos,
       });
+      if (res?.success) {
+        setOtpToken(res.otpToken);
+      }
     } catch (err) {
       console.log(err);
     }
