@@ -170,11 +170,14 @@
 
         @include mobile {
           font-size: 14px;
+          line-height: 20px;
           max-width: 90%;
           margin: 19px auto 34px;
         }
+
         @include iphone5 {
           font-size: 12px;
+          line-height: 20px;
           max-width: 90%;
           margin: 19px auto 34px;
         }

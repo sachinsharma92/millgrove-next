@@ -46,7 +46,6 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 130%;
-    /* or 23px */
   }
   @include mobile {
     flex-direction: column-reverse;
@@ -60,4 +59,8 @@
 }
 .siteUrl {
   text-transform: uppercase;
+
+  @include mobile {
+    text-transform: lowercase;
+  }
 }

@@ -78,9 +78,15 @@ $millgrove-font-size: 86px;
     display: inline-block;
     position: relative;
     z-index: 2;
-    // height: 100px;
     overflow: hidden;
+    height: 130px;
     font-size: $millgrove-font-size;
+
+    @include mobile {
+      height: 100px;
+      display: flex;
+      padding: 30px;
+    }
 
     .millgrove-logo {
       > path {

@@ -21,7 +21,7 @@
     }
 
     @include mobile {
-      min-height: 290px;
+      // min-height: 290px;
       padding: 0 0px 28px;
     }
 
@@ -152,26 +152,20 @@
     }
 
     // themeTextBold
-    .themeText1 {
-      position: relative;
-      height: 96px;
-      width: 100%;
-
-      @include mobile {
-        display: none;
-      }
-    }
-
-    // themeTextBold
     .themeText2 {
       position: relative;
       height: 200px;
       width: 100%;
-      margin-top: -105px;
 
       @include mobile {
-        margin-top: 20px;
-        height: 100px;
+        margin-top: 40px;
+        height: 80px;
+      }
+
+      .imgbold {
+        @include mobile {
+          display: none;
+        }
       }
     }
   }

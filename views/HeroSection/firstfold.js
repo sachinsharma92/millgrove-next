@@ -1,20 +1,8 @@
 // Assets
 import Image from "next/image";
+import Link from "next/link";
 
 function HeroSection() {
-  // const tl = gsap.timeline();
-  // useEffect(() => {
-  //   tl.from(".animation-block .animation-text", 1.8, {
-  //     y: 100,
-  //     ease: "power4.out",
-  //     delay: 1,
-  //     skewY: 0,
-  //     stagger: {
-  //       amount: 0.3
-  //     },
-  //     autoAlpha: 0,
-  //   })
-  // }, [tl])
   return (
     <div className="hero-section-fold">
       <div className="mg-first-fold">
@@ -39,14 +27,12 @@ function HeroSection() {
             </div>
           </div>
         </div>
-
         <a href="#madeWithCare" className="more-button">
           <div className="scroll-down">
             <Image src="/images/arrow-down.svg" alt="" layout="fill" />
           </div>
           Discover more
         </a>
-
         <div className="mg-bg-video">
           <video src="/videos/temp-video.mp4" autoPlay muted playsInline loop />
         </div>

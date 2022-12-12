@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import styles from "./Footer.module.scss";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,11 +8,9 @@ const Footer = () => {
     <div className={styles.footerHomepage}>
       <div className={styles.footerWrapper}>
         <div className={styles.themeText}>
-          <div className={styles.themeText1}>
-            <Image src="/images/millglove-footer-bold.svg" alt="" layout="fill" />
-          </div>
           <div className={styles.themeText2}>
-            <Image src="/images/millglove-footer.svg" alt="" layout="fill" />
+            <img src="/images/millglove-footer-bold.svg" className={styles.imgbold} alt="" />
+            <img src="/images/millglove-footer.svg" alt="" />
           </div>
         </div>
         <div className={styles.footerLinksWrapper}>

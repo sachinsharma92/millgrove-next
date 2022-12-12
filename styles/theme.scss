@@ -44,7 +44,6 @@ body {
   padding: 0;
   margin: 0;
   font-size: 14px;
-  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -150,6 +149,11 @@ body {
   margin-bottom: 2px;
   color: #f7f0ec;
   text-decoration: none;
+
+  @include mobile {
+    text-transform: none;
+    margin-bottom: 4px;
+  }
 }
 
 // Title
