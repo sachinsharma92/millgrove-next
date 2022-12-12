@@ -1,8 +1,8 @@
 // Assets
 import Image from "next/image";
-import Link from "next/link";
 
 function HeroSection() {
+
   return (
     <div className="hero-section-fold">
       <div className="mg-first-fold">
