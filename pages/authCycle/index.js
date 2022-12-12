@@ -10,7 +10,7 @@ import Signup from "../../views/Signup/Signup";
 import SignupSuccess from "../../views/Signup/SignupSuccess";
 import CookiesPopup from "../../components/CookiesPopup/cookiesPopup";
 
-export const AuthCycle = () => {
+const AuthCycle = () => {
   const [menu, setMenu] = useState(false);
   const [loader, setLoader] = useState(true);
   const [cookiesPopup, setCookiesPopup] = useState(false);
@@ -55,7 +55,12 @@ export const AuthCycle = () => {
         )}
 
         {isRegisterationSuccessfull && <SignupSuccess />}
-        {isLoggingIn && <Login setIsLoggingIn={setIsLoggingIn} />}
+        {isLoggingIn && (
+          <Login
+            setIsLoggingIn={setIsLoggingIn}
+            setIsRegistering={setIsRegistering}
+          />
+        )}
       </div>
 
       <div className="login-video-bg">
@@ -64,3 +69,5 @@ export const AuthCycle = () => {
     </div>
   );
 };
+
+export default AuthCycle;

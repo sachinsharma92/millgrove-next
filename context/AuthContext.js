@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
 import { apiKey, baseUrl } from "../utils/constants";
+import { useRouter } from "next/router";
 
 const AuthContext = createContext();
 
@@ -17,6 +18,7 @@ const AuthProvider = ({ children }) => {
     phone: authDetails?.phone,
   });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const router = useRouter();
 
   async function loginWithCredentials(otp, otpToken) {
     try {
@@ -77,6 +79,28 @@ const AuthProvider = ({ children }) => {
       if (authData?.authToken) {
         setIsLoggedIn(true);
       }
+    }
+  }, [userToken]);
+
+  useEffect(() => {
+    function getParsedJwt(token) {
+      try {
+        return JSON.parse(atob(token.split(".")[1]));
+      } catch (error) {
+        return undefined;
+      }
+    }
+    const val = getParsedJwt(userToken);
+    const expirationTime = val?.exp * 1000 - 60000;
+    if (Date.now() >= expirationTime) {
+      localStorage?.removeItem("userToken");
+      setUserToken(null);
+      setUserDetails({
+        name: authDetails?.name,
+        email: authDetails?.email,
+        phone: authDetails?.phone,
+      });
+      router.push("/");
     }
   }, [userToken]);
 

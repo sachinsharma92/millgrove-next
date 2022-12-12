@@ -5,10 +5,12 @@ import OtpForm from "./OtpForm";
 import styles from "./Login.module.scss";
 import Header from "../../components/Header";
 
-const Login = ({ setIsLoggingIn }) => {
+const Login = ({ setIsLoggingIn, setIsRegistering }) => {
   const [isEnteringPhoneNos, setIsEnteringPhoneNos] = useState(true);
   const [isEnteringOtp, setIsEnteringOtp] = useState(false);
   const [otpToken, setOtpToken] = useState(null);
+  const [phoneNos, setPhoneNos] = useState(null);
+
   return (
     <Layout layoutStyle="login-page-style">
       <div className={`${styles.loginMainContainer} login-mobile`}>
@@ -19,6 +21,10 @@ const Login = ({ setIsLoggingIn }) => {
             setIsEnteringPhoneNos={setIsEnteringPhoneNos}
             setIsEnteringOtp={setIsEnteringOtp}
             setOtpToken={setOtpToken}
+            setIsRegistering={setIsRegistering}
+            setIsLoggingIn={setIsLoggingIn}
+            phoneNos={phoneNos}
+            setPhoneNos={setPhoneNos}
           />
         )}
         {isEnteringOtp && (
@@ -26,6 +32,7 @@ const Login = ({ setIsLoggingIn }) => {
             setIsLoggingIn={setIsLoggingIn}
             otpToken={otpToken}
             setOtpToken={setOtpToken}
+            phoneNos={phoneNos}
           />
         )}
       </div>

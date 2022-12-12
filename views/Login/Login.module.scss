@@ -209,14 +209,19 @@
   }
 
   .resendMsg {
-    color: $brown-70;
+    color: $black-90;
     font-size: 12px;
     line-height: 130%;
 
     .resend {
       @include fontStyles($black-90, "Manrope", 400, 0.875rem);
       cursor: pointer;
+      text-decoration: underline;
     }
+  }
+  .timerCount {
+    color: $brown-70;
+    font-size: 12px;
   }
 
   .submitBtnWrapper {

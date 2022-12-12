@@ -35,21 +35,21 @@ export default function Home() {
   };
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', controlNavbar);
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", controlNavbar);
 
       // cleanup function
       return () => {
-        window.removeEventListener('scroll', controlNavbar);
+        window.removeEventListener("scroll", controlNavbar);
       };
     }
   }, [lastScrollY]);
 
-  // useEffect(() => {
-  //   if (!userToken) {
-  //     router.push("/");
-  //   }
-  // }, [userToken]);
+  useEffect(() => {
+    if (!userToken) {
+      router.push("/");
+    }
+  }, [userToken]);
   return (
     <>
       <div className={`header-home ${show ? "active" : "inactive"} `}>

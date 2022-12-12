@@ -16,7 +16,7 @@ function Firstfold({ setIsRegistering, setIsLoggingIn }) {
     if (userToken) {
       router.push("/home");
     }
-  }, []);
+  }, [userToken]);
 
   return (
     <Layout>
