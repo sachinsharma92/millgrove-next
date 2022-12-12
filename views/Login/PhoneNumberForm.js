@@ -7,6 +7,7 @@ import "react-phone-number-input/style.css";
 import axios from "axios";
 import { apiKey, baseUrl } from "../../utils/constants";
 import Link from "next/link";
+import { verifyPhoneNumber } from "./Login.helpers";
 
 const PhoneNumberForm = ({
   setIsEnteringPhoneNos,
@@ -19,22 +20,15 @@ const PhoneNumberForm = ({
   const [error, setError] = useState({ errorOccured: false, msg: "" });
 
   const continueHandler = async (e) => {
-    e.preventDefault();
     try {
-      const res = await axios.post(
-        `${baseUrl}/client/login`,
-        {
-          phone: phoneNos,
-        },
-        {
-          headers: {
-            "rest-api-key": apiKey,
-          },
-        }
-      );
-      // console.log(res);
-      setOtpToken(res.data.data.otpToken);
-      if (res.status === 200) {
+      const res = await verifyPhoneNumber({
+        e,
+        phoneNos,
+        setError,
+        setOtpToken,
+      });
+      if (res?.success) {
+        setOtpToken(res.otpToken);
         setIsEnteringPhoneNos(false);
         setIsEnteringOtp(true);
       } else {
@@ -66,7 +60,7 @@ const PhoneNumberForm = ({
 
   return (
     <div className={styles.mainWrapper}>
-      <form onSubmit={continueHandler} className={styles.formWrapper}>
+      <form className={styles.formWrapper}>
         <div className={styles.headSection}>
           <div className={styles.bgTree}>
             <MILLGROVE_TREE fillColor="#8a7f7f14" />

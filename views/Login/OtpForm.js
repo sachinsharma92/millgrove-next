@@ -9,7 +9,15 @@ import Timer from "./Timer";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-const OtpForm = ({ setIsLoggingIn, otpToken }) => {
+const OtpForm = ({
+  setIsLoggingIn,
+  otpToken,
+  phoneNos,
+  setError,
+  setIsEnteringOtp,
+  setIsEnteringPhoneNos,
+  setOtpToken,
+}) => {
   const [otp, setOtp] = useState(null);
   const otpWrapperRef = useRef();
   const { setIsLoggedIn, loginWithCredentials } = useContext(AuthContext);
@@ -30,6 +38,17 @@ const OtpForm = ({ setIsLoggingIn, otpToken }) => {
 
   const handleChange = (otp) => {
     setOtp(otp);
+  };
+
+  const resendOtp = async (e) => {
+    try {
+      await verifyPhoneNumber({
+        e,
+        phoneNos,
+      });
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -57,10 +76,10 @@ const OtpForm = ({ setIsLoggingIn, otpToken }) => {
           />
         </div>
         <p className={styles.resendMsg}>
-          <span className={styles.resend}>
-            Click here to receive a new code
+          <span onClick={resendOtp} className={styles.resend}>
+            Click here
           </span>{" "}
-          in <Timer totalSeconds={60} /> secs
+          to receive a new code <Timer label={"in"} totalSeconds={60} />
         </p>
         <div className={styles.submitBtnWrapper}>
           <Button

@@ -1,8 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import styles from "./Login.module.scss";
 
 const Timer = (props) => {
-  const { totalSeconds = 0 } = props;
+  const { totalSeconds = 0, label } = props;
   const [seconds, setSeconds] = useState(totalSeconds);
 
   const remainingMinutes = Math.floor(seconds / 60);
@@ -35,13 +36,14 @@ const Timer = (props) => {
   }, [seconds]);
 
   return (
-    <span>
+    <>
+      {shouldShowTimer && <span>{seconds > 0 ? label : ""} </span>}
       {shouldShowTimer && (
-        <span>
-          {padWithZero(remainingMinutes)}:{padWithZero(remainingSeconds)}
+        <span className={styles.timerCount}>
+          {padWithZero(remainingMinutes)}:{padWithZero(remainingSeconds)} secs
         </span>
       )}
-    </span>
+    </>
   );
 };
 
