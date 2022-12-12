@@ -9,6 +9,7 @@ import Login from "../../views/Login/Login";
 import Signup from "../../views/Signup/Signup";
 import SignupSuccess from "../../views/Signup/SignupSuccess";
 import CookiesPopup from "../../components/CookiesPopup/cookiesPopup";
+import ReactPlayer from "react-player";
 
 const AuthCycle = () => {
   const [menu, setMenu] = useState(false);
@@ -64,7 +65,7 @@ const AuthCycle = () => {
       </div>
 
       <div className="login-video-bg">
-        <video src="/videos/temp-video.mp4" autoPlay muted playsInline loop />
+        <ReactPlayer url='https://youtu.be/9_N9rkuJOx0' width="100%" height="100%" playsinline loop muted playing />
       </div>
     </div>
   );

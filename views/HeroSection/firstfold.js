@@ -1,5 +1,6 @@
 // Assets
 import Image from "next/image";
+import ReactPlayer from "react-player";
 
 function HeroSection() {
 
@@ -34,7 +35,7 @@ function HeroSection() {
           Discover more
         </a>
         <div className="mg-bg-video">
-          <video src="../../static/videos/temp-video.mp4" autoPlay muted playsInline loop />
+          <ReactPlayer url='https://youtu.be/9_N9rkuJOx0' width="100%" height="100%" playsinline loop muted playing />
         </div>
       </div>
     </div>
