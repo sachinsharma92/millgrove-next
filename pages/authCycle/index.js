@@ -55,7 +55,12 @@ const AuthCycle = () => {
         )}
 
         {isRegisterationSuccessfull && <SignupSuccess />}
-        {isLoggingIn && <Login setIsLoggingIn={setIsLoggingIn} />}
+        {isLoggingIn && (
+          <Login
+            setIsLoggingIn={setIsLoggingIn}
+            setIsRegistering={setIsRegistering}
+          />
+        )}
       </div>
 
       <div className="login-video-bg">
