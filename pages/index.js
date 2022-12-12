@@ -1,5 +1,5 @@
-import Head from 'next/head'
-import { AuthCycle } from './authCycle'
+import Head from "next/head";
+import AuthCycle from "./authCycle";
 
 export default function Home() {
   return (
@@ -23,5 +23,5 @@ export default function Home() {
         <AuthCycle />
       </main>
     </div>
-  )
+  );
 }
