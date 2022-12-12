@@ -12,6 +12,8 @@ const PhoneNumberForm = ({
   setIsEnteringPhoneNos,
   setIsEnteringOtp,
   setOtpToken,
+  setIsRegistering,
+  setIsLoggingIn,
 }) => {
   const [phoneNos, setPhoneNos] = useState(null);
   const [error, setError] = useState({ errorOccured: false, msg: "" });
@@ -57,6 +59,11 @@ const PhoneNumberForm = ({
     setError({ errorOccured: false, msg: "" });
   };
 
+  const goToSignupPage = () => {
+    setIsRegistering(true);
+    setIsLoggingIn(false);
+  };
+
   return (
     <div className={styles.mainWrapper}>
       <form onSubmit={continueHandler} className={styles.formWrapper}>
@@ -68,7 +75,7 @@ const PhoneNumberForm = ({
             <h3 className={styles.heading}>Enter Phone Number</h3>
           </div>
           <p className={styles.notRegisteredText}>
-            Not registered yet? <Link href="">Register here</Link>
+            Not registered yet? <a onClick={goToSignupPage}>Register here</a>
           </p>
         </div>
         <div className="input-relative-sec">
@@ -84,7 +91,9 @@ const PhoneNumberForm = ({
           <div className="error-sec">
             <p className={styles.errorText}>
               {error.errorOccured ? error.msg : ""}
-              {error.errorOccured && <span> register here</span>}
+              {error.errorOccured && (
+                <span onClick={goToSignupPage}> register here</span>
+              )}
             </p>
           </div>
         </div>

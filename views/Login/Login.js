@@ -5,7 +5,7 @@ import OtpForm from "./OtpForm";
 import styles from "./Login.module.scss";
 import Header from "../../components/Header";
 
-const Login = ({ setIsLoggingIn }) => {
+const Login = ({ setIsLoggingIn, setIsRegistering }) => {
   const [isEnteringPhoneNos, setIsEnteringPhoneNos] = useState(true);
   const [isEnteringOtp, setIsEnteringOtp] = useState(false);
   const [otpToken, setOtpToken] = useState(null);
@@ -19,6 +19,8 @@ const Login = ({ setIsLoggingIn }) => {
             setIsEnteringPhoneNos={setIsEnteringPhoneNos}
             setIsEnteringOtp={setIsEnteringOtp}
             setOtpToken={setOtpToken}
+            setIsRegistering={setIsRegistering}
+            setIsLoggingIn={setIsLoggingIn}
           />
         )}
         {isEnteringOtp && (
