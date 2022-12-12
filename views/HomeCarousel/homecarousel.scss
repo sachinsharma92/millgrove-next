@@ -21,6 +21,14 @@
     align-items: flex-end;
   }
 
+  .title1 {
+    font-size: 75px;
+
+    @include desktop-lg {
+      font-size: 90px;
+    }
+  }
+
   .slide1 {
     .bg-style {
       position: absolute;
@@ -180,6 +188,11 @@
 
     .description {
       font-size: 17px;
+
+      @include desktop-lg {
+        font-size: 20px;
+        max-width: 75%;
+      }
     }
   }
 

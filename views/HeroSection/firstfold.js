@@ -34,7 +34,7 @@ function HeroSection() {
           Discover more
         </a>
         <div className="mg-bg-video">
-          <video src="/videos/temp-video.mp4" autoPlay muted playsInline loop />
+          <video src="../../static/videos/temp-video.mp4" autoPlay muted playsInline loop />
         </div>
       </div>
     </div>

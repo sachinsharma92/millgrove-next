@@ -45,11 +45,11 @@ export default function Home() {
     }
   }, [lastScrollY]);
 
-  useEffect(() => {
-    if (!userToken) {
-      router.push("/");
-    }
-  }, [userToken]);
+  // useEffect(() => {
+  //   if (!userToken) {
+  //     router.push("/");
+  //   }
+  // }, [userToken]);
   return (
     <>
       <div className={`header-home ${show ? "active" : "inactive"} `}>

@@ -33,6 +33,11 @@
     .description {
       max-width: 539px;
       margin: 0;
+      font-size: 17px;
+
+      @include desktop-lg {
+        font-size: 18px;
+      }
 
       @include mobile {
         max-width: 98%;
