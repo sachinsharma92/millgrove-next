@@ -93,6 +93,10 @@
     position: relative;
     overflow: hidden;
 
+    @include desktop-lg {
+      height: 580px;
+    }
+
     img {
       width: 100%;
       height: 100%;
@@ -191,20 +195,22 @@
 
   .philosophie {
     position: relative;
+
+    .pin-spacer {
+      height: 500vh !important;
+    }
   }
 
   .indicators {
     left: 2rem;
     top: 0%;
-    bottom: 0;
-    translate: 0% 50%;
-    margin: auto;
+    margin: 22vh auto 0;
     display: none;
     flex-direction: column;
     justify-content: center;
     position: absolute;
     gap: 29px 0;
-    min-height: 100vh;
+    height: 400px;
   }
 
   .indicator {
@@ -217,7 +223,7 @@
   }
 
   .vh {
-    height: 100vh;
+    height: 20vh;
     background-color: transparent;
   }
 }

@@ -13,8 +13,6 @@ function HomeCarousel() {
     var indicators = gsap.utils.toArray('.indicator');
     var bgStyle = gsap.utils.toArray('.slide-sec .bg-style');
 
-
-
     var height = 100 * points.length;
 
     gsap.set('.indicators', { display: "flex" });
@@ -94,6 +92,7 @@ function HomeCarousel() {
   return (
     <div className="millglove-slider-section">
       <section className="philosophie">
+
         <div className="wrapper">
           <div className="indicators">
             <div className="indicator"></div>
@@ -227,7 +226,7 @@ function HomeCarousel() {
         </div>
       </section>
 
-      <section className="vh"></section>
+      {/* <section className="vh"></section> */}
     </div>
   );
 }
