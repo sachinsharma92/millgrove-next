@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import styles from "./ThreeDView.module.scss";
 const ThreeDView = () => {
@@ -42,11 +43,10 @@ const ThreeDView = () => {
       </div>
 
       <div className={styles.threeDView}>
-        <Image
+        <img
           src="/images/threed.png"
           alt="Three-D view of millgrove properties site"
-          width="100%"
-          layout="fill"
+          className={styles.imgStyle}
         />
       </div>
     </div>
