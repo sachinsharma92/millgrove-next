@@ -86,13 +86,12 @@ body {
     }
   }
 
-  .video-style {
+  video {
     object-fit: cover;
     overflow: hidden;
     min-height: 100%;
     width: 100%;
     margin: 0 auto;
-    padding-top: 0 !important;
 
     @include mobile {
       height: calc(100vh - 135px);

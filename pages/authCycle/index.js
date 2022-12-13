@@ -65,9 +65,7 @@ const AuthCycle = () => {
       </div>
 
       <div className="login-video-bg">
-        <Player className="video-style" autoPlay playsInline muted>
-          <source src="/videos/bg.mp4" />
-        </Player>
+        <video src="http://techslides.com/demos/sample-videos/small.mp4" autoPlay muted playsInline loop />
       </div>
 
     </div>
