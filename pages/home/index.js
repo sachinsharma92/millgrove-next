@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 
 // Views Sections here
-import HeroSection from "../../views/HeroSection/firstfold";
+import HeroSection from "../../views/HeroSection/heroSection";
 import HomeCarousel from "../../views/HomeCarousel/HomeCarousel";
 import HomeCarouselMobile from "../../views/HomeCarouselMobile/HomeCarouselMobile";
 import Reservation from "../../views/Reservation";
@@ -45,11 +45,11 @@ export default function Home() {
     }
   }, [lastScrollY]);
 
-  // useEffect(() => {
-  //   if (!userToken) {
-  //     router.push("/");
-  //   }
-  // }, [userToken]);
+  useEffect(() => {
+    if (!userToken) {
+      router.push("/");
+    }
+  }, [userToken]);
   return (
     <>
       <div className={`header-home ${show ? "active" : "inactive"} `}>

@@ -1,8 +1,5 @@
 import React from "react";
 
-// // Styles
-// import "./home.scss";
-
 // Assets
 import { MILLGROVE_LOGO_BIG, MILLGROVE_TREE } from "../../utils/assets";
 
