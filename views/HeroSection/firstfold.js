@@ -1,6 +1,5 @@
 // Assets
 import Image from "next/image";
-import { Player } from "video-react";
 
 function HeroSection() {
 
@@ -35,7 +34,21 @@ function HeroSection() {
           Discover more
         </a>
         <div className="mg-bg-video">
-          <video src="http://techslides.com/demos/sample-videos/small.mp4" autoPlay muted playsInline loop />
+          <video
+            playsInline
+            autoPlay
+            muted
+            loop
+            preload="none"
+            className="lazy"
+            poster="https://pixabay.com/images/id-3822149/"
+          >
+            <source
+              src="/videos/bg.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
     </div>

@@ -9,7 +9,6 @@ import Login from "../../views/Login/Login";
 import Signup from "../../views/Signup/Signup";
 import SignupSuccess from "../../views/Signup/SignupSuccess";
 import CookiesPopup from "../../components/CookiesPopup/cookiesPopup";
-import { Player } from "video-react";
 
 const AuthCycle = () => {
   const [menu, setMenu] = useState(false);
@@ -24,9 +23,6 @@ const AuthCycle = () => {
   const debounceTimerId = useRef(null);
   const isCarouselInView = useRef(false);
   const scrollRef = useRef();
-  const vidRef = useRef();
-
-  useEffect(() => { vidRef.current.play(); }, []);
 
   setTimeout(() => {
     setLoader(false);
@@ -69,15 +65,20 @@ const AuthCycle = () => {
 
       <div className="login-video-bg">
         <video
-          src="http://techslides.com/demos/sample-videos/small.mp4"
           playsInline
           autoPlay
           muted
           loop
           preload="none"
           className="lazy"
-          ref={vidRef}
-        />
+          poster="https://pixabay.com/images/id-3822149/"
+        >
+          <source
+            src="/videos/bg.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
       </div>
 
     </div>
