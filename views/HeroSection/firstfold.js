@@ -1,7 +1,5 @@
 // Assets
 import Image from "next/image";
-import downArrow from "public/images/arrow-down.svg";
-import bgVid from "static/videos/bg.mp4";
 
 function HeroSection() {
   return (
@@ -25,7 +23,7 @@ function HeroSection() {
         </div>
         <a href="#madeWithCare" className="more-button">
           <div className="scroll-down">
-            <Image src={downArrow} alt="" layout="fill" />
+            <Image src="/images/arrow-down.svg" alt="" layout="fill" />
           </div>
           Discover more
         </a>
@@ -39,7 +37,7 @@ function HeroSection() {
             className="lazy"
             poster="https://pixabay.com/images/id-3822149/"
           >
-            <source src={bgVid} type="video/mp4" />
+            <source src="/videos/bg.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
