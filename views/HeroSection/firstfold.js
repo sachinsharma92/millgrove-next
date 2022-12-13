@@ -1,7 +1,7 @@
 // Assets
 import Image from "next/image";
-import downArrow from "public/images/arrow-down.svg";
-import bgVid from "static/videos/bg.mp4";
+import downArrow from "../../public/images/arrow-down.svg";
+import bgVid from "../../static/videos/bg.mp4";
 
 function HeroSection() {
   return (
