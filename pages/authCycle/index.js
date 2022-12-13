@@ -24,6 +24,9 @@ const AuthCycle = () => {
   const debounceTimerId = useRef(null);
   const isCarouselInView = useRef(false);
   const scrollRef = useRef();
+  const vidRef = useRef();
+
+  useEffect(() => { vidRef.current.play(); }, []);
 
   setTimeout(() => {
     setLoader(false);
@@ -65,7 +68,16 @@ const AuthCycle = () => {
       </div>
 
       <div className="login-video-bg">
-        <video src="http://techslides.com/demos/sample-videos/small.mp4" autoPlay muted playsInline loop />
+        <video
+          src="http://techslides.com/demos/sample-videos/small.mp4"
+          playsInline
+          autoPlay
+          muted
+          loop
+          preload="none"
+          className="lazy"
+          ref={vidRef}
+        />
       </div>
 
     </div>
