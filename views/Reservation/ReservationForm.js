@@ -46,7 +46,7 @@ const ReservationForm = ({ isBoxChecked, setIsBoxChecked }) => {
           <p>I accept the terms for processing my personal data</p>
         </div>
       </form>
-      <div className={styles.requestAVisitBtn}>request a visit</div>
+      <button className={styles.requestAVisitBtn}>request a visit</button>
     </div>
   );
 };

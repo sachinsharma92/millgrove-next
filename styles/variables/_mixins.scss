@@ -88,7 +88,7 @@ $desktop-width-lg: 1500px;
 
 // Mobile-Tablet(P) Mixin
 @mixin mobile-tablet-p {
-  @media (max-width: #{$tablet-p-width}) {
+  @media (max-width: #{$desktop-width}) {
     @content;
   }
 }

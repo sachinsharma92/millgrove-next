@@ -29,7 +29,6 @@ export default function Document() {
 
         {/* Othersss */}
         <script src='https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.5.2/smooth-scrollbar.js' async></script>
-        <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.js" async></script>
       </Head>
 
       <body>
