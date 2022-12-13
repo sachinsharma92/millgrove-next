@@ -1,6 +1,4 @@
-// Assets
-import Image from "next/image";
-
+/* eslint-disable @next/next/no-img-element */
 function HeroSection() {
   return (
     <div className="hero-section-fold">
@@ -23,7 +21,7 @@ function HeroSection() {
         </div>
         <a href="#madeWithCare" className="more-button">
           <div className="scroll-down">
-            <Image src="/images/arrow-down.svg" alt="" layout="fill" />
+            <img src="/images/arrow-down.svg" alt="" />
           </div>
           Discover more
         </a>
