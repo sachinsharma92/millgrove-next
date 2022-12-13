@@ -54,7 +54,6 @@
         margin: 19px auto 74px;
         font-weight: 400;
         font-size: 20px;
-        line-height: 34px;
         text-align: center;
         color: #f9f6ed;
         max-width: 560px;
@@ -231,6 +230,7 @@
       background: linear-gradient(0deg, rgba(#434f50, 0.5), rgba(#434f50, 0.5));
       backdrop-filter: blur(15px);
       content: "";
+      z-index: 1;
 
       @include mobile {
         background: rgba(black, 0.6);

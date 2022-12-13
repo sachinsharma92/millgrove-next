@@ -78,6 +78,7 @@ body {
     background: linear-gradient(0deg, rgba(#434f50, 0.5), rgba(#434f50, 0.5));
     backdrop-filter: blur(20px);
     content: "";
+    z-index: 1;
 
     @include mobile {
       background: rgba(black, 0.6);

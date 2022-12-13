@@ -35,7 +35,7 @@ function HeroSection() {
           Discover more
         </a>
         <div className="mg-bg-video">
-          <ReactPlayer url='https://youtu.be/9_N9rkuJOx0' width="100%" height="100%" playsinline loop muted playing />
+          <video src="/videos/bg.mp4" autoPlay muted playsInline loop />
         </div>
       </div>
     </div>
