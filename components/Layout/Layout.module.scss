@@ -57,11 +57,13 @@
   }
   @include mobile {
     flex-direction: column-reverse;
+    font-size: 16px;
 
     .rightFooter {
       flex-direction: column;
       line-height: 0.2em;
       margin-bottom: 20px;
+      gap: 20px 0;
     }
   }
 }

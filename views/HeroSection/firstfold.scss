@@ -233,8 +233,12 @@
       z-index: 1;
 
       @include mobile {
-        background: rgba(black, 0.6);
-        backdrop-filter: blur(0);
+        background: linear-gradient(
+          0deg,
+          rgba(#434f50, 0.5),
+          rgba(#434f50, 0.5)
+        );
+        backdrop-filter: blur(10px);
       }
     }
 
