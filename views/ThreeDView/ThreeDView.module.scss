@@ -4,6 +4,9 @@
 .wrapper {
   background-color: #434f50;
 
+  @include tablet-p {
+    padding-top: 0;
+  }
   @include mobile {
     padding-top: 0;
   }
@@ -16,6 +19,10 @@
     margin-bottom: 120px;
 
     @include mobile {
+      margin-bottom: 100px;
+    }
+
+    @include tablet-p {
       margin-bottom: 100px;
     }
 
@@ -37,6 +44,15 @@
 
       @include desktop-lg {
         font-size: 18px;
+      }
+
+      @include tablet-p {
+        max-width: 98%;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 14px;
+        line-height: 170%;
+        color: #f9f6ed;
       }
 
       @include mobile {
@@ -63,6 +79,10 @@
     max-width: 1440px;
   }
 
+  @include tablet-p {
+    display: none;
+  }
+
   @include mobile {
     display: none;
   }
@@ -73,6 +93,10 @@
   width: 85%;
   display: none;
 
+  @include tablet-p {
+    display: flex;
+    flex-direction: column;
+  }
   @include mobile {
     display: flex;
     flex-direction: column;
@@ -107,6 +131,11 @@
   color: $cream-40;
   margin: 0;
 
+  @include tablet-p {
+    font-size: 50px;
+    flex-direction: column;
+  }
+
   @include mobile {
     font-size: 40px;
     flex-direction: column;
@@ -115,12 +144,18 @@
   @include iphone5 {
     font-size: 35px;
     flex-direction: column;
+    text-align: center;
   }
 
   .second {
     align-self: center;
     @include fontStyles($brown-50, "Notera", 400, 2.5rem);
     margin: 0 0 0 20px;
+
+    @include tablet-p {
+      font-size: 35px;
+      margin: 10px 0;
+    }
 
     @include mobile {
       font-size: 25px;
@@ -133,6 +168,10 @@
   position: relative;
   height: 400px;
 
+  @include mobile {
+    height: 150px;
+  }
+
   .imgStyle {
     position: absolute;
     top: 0;
@@ -141,6 +180,11 @@
     height: 100%;
     object-fit: cover;
     object-position: top;
+
+    @include mobile {
+      object-fit: contain;
+      object-position: bottom;
+    }
   }
 }
 .interactBtn {
@@ -149,6 +193,11 @@
   bottom: 8%;
   left: 50%;
   transform: translateX(-50%);
+
+  @include tablet-p {
+    display: none;
+  }
+
   @include mobile {
     display: none;
   }

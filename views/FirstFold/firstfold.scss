@@ -66,6 +66,9 @@
       text-transform: uppercase;
       color: #f7f0ec;
 
+      @include tablet-p {
+        display: none;
+      }
       @include mobile {
         display: none;
       }

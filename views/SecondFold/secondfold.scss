@@ -8,6 +8,11 @@
   position: relative;
   z-index: 2;
 
+  @include tablet-p {
+    min-height: auto;
+    padding: 88px 0px 80px;
+  }
+
   @include mobile {
     height: fit-content;
     padding: 88px 0px 50px;

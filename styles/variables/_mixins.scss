@@ -102,7 +102,7 @@ $desktop-width-lg: 1500px;
 
 // Tablet (P) Mixin
 @mixin tablet-p {
-  @media (min-width: #{$tablet-width}) and (max-width: #{$tablet-p-width}) {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width}) {
     @content;
   }
 }

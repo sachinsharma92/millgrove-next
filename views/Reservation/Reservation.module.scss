@@ -10,24 +10,34 @@
   z-index: $z-99;
   min-height: 100vh;
 
+  @include tablet-p {
+    background-color: #ebe5d3;
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
+  }
+
   @include mobile {
     background-color: #ebe5d3;
-    padding: 20px;
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
   }
+
   > div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
-  }
 
-  @include mobile {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 80px 0;
+    @include tablet-p {
+      width: 80%;
+    }
   }
 }
 
@@ -38,6 +48,12 @@
   padding: 4.5rem;
   overflow: hidden;
   margin: 20px 0;
+
+  @include tablet-p {
+    padding: 26px;
+    background: #f9f6ed;
+    width: 100%;
+  }
 
   @include mobile {
     padding: 26px;
@@ -61,14 +77,18 @@
       width: 95%;
       border-color: rgba(#434f50, 0.2);
     }
+
+    @include tablet-p {
+      width: 95%;
+      border-color: rgba(#434f50, 0.2);
+    }
   }
 }
 .halfBorder {
-  //   height: 120%;
-  //   width: 95%;
   position: absolute;
   top: 16px;
   left: 21px;
+
   @media (max-width: 980px) {
     display: none;
   }
@@ -82,6 +102,10 @@
   height: 34rem;
 
   @include mobile {
+    display: none;
+  }
+
+  @include tablet-p {
     display: none;
   }
 
@@ -115,6 +139,10 @@
 .formContainer {
   position: relative;
 
+  @include tablet-p {
+    margin-top: 30px;
+  }
+
   @include mobile {
     margin-top: 30px;
   }
@@ -130,6 +158,10 @@
     border-right: 1px solid #5c5043;
     opacity: 0.1;
 
+    @include tablet-p {
+      display: none;
+    }
+
     @include mobile {
       display: none;
     }
@@ -143,6 +175,11 @@
   position: relative;
   z-index: 2;
 
+  @include tablet-p {
+    width: 100%;
+    margin-top: 30px;
+  }
+
   @include mobile {
     width: 100%;
     margin-top: 30px;
@@ -150,6 +187,10 @@
 
   .inputSection {
     padding-right: 70px;
+
+    @include tablet-p {
+      padding: 0;
+    }
 
     @include mobile {
       padding: 0;
@@ -160,6 +201,10 @@
 .formHeadingWrapper {
   width: 28rem;
   margin-bottom: 1rem;
+
+  @include tablet-p {
+    width: 100%;
+  }
 
   @include mobile {
     width: 100%;
@@ -178,6 +223,12 @@
   margin-bottom: 0;
   position: relative;
   margin-top: 40px;
+
+  @include tablet-p {
+    font-size: 28px;
+    text-align: center;
+    margin-top: 0;
+  }
 
   @include mobile {
     font-size: 28px;
@@ -203,6 +254,10 @@
   background: none;
   @include fontStyles($brown-80, "Manrope", 400, 1.125rem);
 
+  @include tablet-p {
+    font-size: 15px;
+  }
+
   @include mobile {
     font-size: 15px;
   }
@@ -224,6 +279,12 @@
     letter-spacing: 0.01em;
     color: #262e2f;
     margin-top: 13px;
+
+    @include tablet-p {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 130%;
+    }
 
     @include mobile {
       font-weight: 400;
@@ -257,22 +318,27 @@
   margin-bottom: 30px;
   cursor: pointer;
 
-  @include mobile {
+  @include tablet-p {
     display: block;
     margin-bottom: 10px;
     margin-top: 30px;
   }
+
+  @include mobile {
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    padding: 16px 40px;
+  }
 }
 
 .reservationBorder {
-  // display: none;
   position: absolute;
   left: 20px;
   top: 20px;
   width: calc(100% - 40px);
   height: calc(100% - 40px);
   border: 0.664418px solid rgba(67, 79, 80, 0.2);
-  // border-radius: 8px;
   z-index: 0;
   @media (max-width: 980px) {
     display: block;
@@ -285,6 +351,10 @@
   right: 0;
   left: 0;
   margin: 0 auto;
+
+  @include tablet-p {
+    display: block;
+  }
 
   @include mobile {
     display: block;

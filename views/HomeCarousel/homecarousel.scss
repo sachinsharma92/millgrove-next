@@ -14,6 +14,10 @@
     display: none;
   }
 
+  @include tablet-p {
+    display: none;
+  }
+
   .slide-sec {
     padding: 0 80px;
     min-height: 100vh;
@@ -159,6 +163,9 @@
     text-transform: uppercase;
     color: #3a3723;
 
+    @include tablet-p {
+      display: none;
+    }
     @include mobile {
       display: none;
     }

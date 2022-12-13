@@ -20,8 +20,10 @@
       margin: 0 auto;
     }
 
+    @include tablet-p {
+      padding: 0 0px 28px;
+    }
     @include mobile {
-      // min-height: 290px;
       padding: 0 0px 28px;
     }
 
@@ -91,8 +93,14 @@
   .footerLinksWrapper {
     display: flex;
     justify-content: space-between;
-    @include fontStyles($grey-10, "Manrope", 400, 1.125rem);
+    color: $grey-10;
+    font-size: 1.125rem;
     width: 100%;
+
+    @include tablet-p {
+      font-size: 1.7rem;
+      flex-direction: column-reverse;
+    }
 
     @include mobile {
       flex-direction: column-reverse;
@@ -108,6 +116,14 @@
   .rightFooter {
     display: flex;
     gap: 0 20px;
+
+    @include tablet-p {
+      justify-content: center;
+      align-items: center;
+      border-top: 1px solid rgba(#f9f6ed, 0.1);
+      padding-top: 27px;
+      margin-bottom: 27px;
+    }
 
     @include mobile {
       flex-direction: column;
@@ -128,11 +144,19 @@
     letter-spacing: 0.01em;
     justify-content: space-between;
 
+    @include tablet-p {
+      text-align: center;
+      justify-content: center;
+    }
+
     @include mobile {
-      font-weight: 400;
       font-size: 12px;
       text-align: center;
       justify-content: space-between;
+    }
+
+    @include iphone5 {
+      font-size: 11px;
     }
   }
 
@@ -157,12 +181,20 @@
       height: 200px;
       width: 100%;
 
+      @include tablet-p {
+        margin-top: 0px;
+        height: 80px;
+      }
+
       @include mobile {
         margin-top: 40px;
         height: 80px;
       }
 
       .imgbold {
+        @include tablet-p {
+          display: none;
+        }
         @include mobile {
           display: none;
         }

@@ -203,11 +203,23 @@ body {
     max-width: 1440px;
   }
 
-  @include mobile {
+  @include tablet-p {
     width: 100%;
     position: relative;
     height: 297px;
     margin: 0px 0 80px;
     background-size: cover;
+  }
+
+  @include mobile {
+    width: 100%;
+    position: relative;
+    height: 397px;
+    margin: 0px 0 80px;
+    background-size: cover;
+  }
+
+  @include iphone5 {
+    height: 207px;
   }
 }
