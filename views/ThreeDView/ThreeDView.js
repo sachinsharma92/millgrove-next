@@ -43,7 +43,7 @@ const ThreeDView = () => {
 
       <div className={styles.threeDView}>
         <Image
-          src="/images/threeD-view.png"
+          src="/images/three-d.png"
           alt="Three-D view of millgrove properties site"
           width="100%"
           layout="fill"
