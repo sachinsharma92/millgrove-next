@@ -183,7 +183,7 @@
 
       @include tablet-p {
         margin-top: 0px;
-        height: 80px;
+        height: 120px;
       }
 
       @include mobile {
@@ -199,6 +199,24 @@
           display: none;
         }
       }
+    }
+  }
+
+  .topzigBorder {
+    max-width: 100%;
+    margin: 0 auto;
+    padding-top: 50px;
+
+    @include tablet-p {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+
+    img {
+      width: 100%;
     }
   }
 }

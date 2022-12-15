@@ -35,7 +35,7 @@ function HeroSection() {
             className="lazy"
             poster="https://pixabay.com/images/id-3822149/"
           >
-            <source src="/videos/bg.mp4" type="video/mp4" />
+            <source src="https://millgrove.s3.ap-south-1.amazonaws.com/pexels-kindel-media-7578555.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>

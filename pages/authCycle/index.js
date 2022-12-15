@@ -1,14 +1,11 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Firstfold from "../../views/FirstFold/firstfold";
 import Home from "../../views/Home/home";
 //Components
-import { AuthContext } from "../../context/AuthContext";
-import { useIntersection } from "../../hooks/useIntersection";
-import { useMediaQuery } from "../../hooks/useMediaQuery";
+import CookiesPopup from "../../components/CookiesPopup/cookiesPopup";
 import Login from "../../views/Login/Login";
 import Signup from "../../views/Signup/Signup";
 import SignupSuccess from "../../views/Signup/SignupSuccess";
-import CookiesPopup from "../../components/CookiesPopup/cookiesPopup";
 
 const AuthCycle = () => {
   const [menu, setMenu] = useState(false);
@@ -74,7 +71,7 @@ const AuthCycle = () => {
           poster="https://pixabay.com/images/id-3822149/"
         >
           <source
-            src="/videos/bg.mp4"
+            src="https://millgrove.s3.ap-south-1.amazonaws.com/pexels-kindel-media-7578555.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.

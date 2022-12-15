@@ -1,7 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 import axios from "axios";
 import { AuthContext } from "../../context/AuthContext";
 import { useContext, useState } from "react";
-import { RESERVE_VISIT } from "../../utils/assets";
 import { apiKey, baseUrl } from "../../utils/constants";
 import styles from "./Reservation.module.scss";
 import ReservationForm from "./ReservationForm";
@@ -33,8 +33,7 @@ const Reservation = () => {
   };
   return (
     <div className={styles.wrapper}>
-      <div>
-        <div className={styles.verticalDash}></div>
+      <div className={styles.bgSection}>
         <div className={styles.reservationCard}>
           <div className={styles.treeSection}>
             <TreePrint className={styles.treePrint} />
@@ -43,12 +42,47 @@ const Reservation = () => {
             isBoxChecked={isBoxChecked}
             setIsBoxChecked={setIsBoxChecked}
           />
-          <div onClick={requestVisit}>
-            <RESERVE_VISIT className={styles.reserveVisit} />
+        </div>
+      </div>
+
+
+      <div className={styles.theHomeSection}>
+        <div className={styles.groupSec}>
+          <div className={styles.headSec}>
+            <span className={styles.textNotera}>The</span>
+            <div className={`${styles.titleCustom}`}>
+              Homes
+            </div>
+          </div>
+
+          {/* Hide on Desktop */}
+          <button className={styles.discoverBtnMobile}>
+            <img
+              src="/images/discover.svg"
+              alt="Three-D view of millgrove properties site"
+              className={styles.imgStyle}
+            />
+          </button>
+        </div>
+
+        <div className={styles.assetsSec}>
+          <button className={styles.discoverBtn}>
+            <img
+              src="/images/discover.svg"
+              alt="Three-D view of millgrove properties site"
+              className={styles.imgStyle}
+            />
+          </button>
+          <div className={styles.imgBoxStyle}>
+            <img
+              src="/images/home1.jpg"
+              alt="Three-D view of millgrove properties site"
+              className={styles.imgStyle}
+            />
           </div>
         </div>
-        <div className={styles.verticalDash}></div>
       </div>
+
     </div>
   );
 };
