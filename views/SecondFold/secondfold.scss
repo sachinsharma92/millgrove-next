@@ -3,7 +3,7 @@
 
 .mg-second-fold {
   min-height: 100vh;
-  background-color: #f9f6ed;
+  background-color: $cream-40;
   padding: 150px 50px 400px;
   position: relative;
   z-index: 2;
@@ -39,7 +39,7 @@
         font-size: 63px;
         line-height: 110%;
         text-transform: lowercase;
-        color: #9c7e61;
+        color: $brown-70;
 
         @include mobile {
           font-size: 23px;
@@ -65,7 +65,7 @@
       letter-spacing: -0.01em;
       margin-top: 60px;
       text-align: center;
-      color: #9c7e61;
+      color: $brown-70;
 
       @include mobile {
         margin-top: 50px;
@@ -94,7 +94,7 @@
       font-weight: 400;
       font-size: 63.1px;
       letter-spacing: -0.01em;
-      color: #f1efe5;
+      color: $cream-50;
     }
     .mg-welcome-to-logo {
       width: 909px !important;

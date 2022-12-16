@@ -5,12 +5,9 @@ import "../styles/theme.scss";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
-    AOS.init({
-      easing: "ease-out-cubic",
-      once: true,
-      offset: 50,
-    });
-  }, []);
+    AOS.init();
+    AOS.refresh();
+  });
   return (
     <AuthProvider>
       <Component {...pageProps} />

@@ -29,7 +29,7 @@
     text-align: right;
     letter-spacing: 0.01em;
     text-transform: uppercase;
-    color: #f7f0ec;
+    color: $grey-10;
 
     @include tablet-p {
       display: none;
@@ -60,7 +60,7 @@
       cursor: pointer;
       display: flex;
       align-items: center;
-      border: 1px solid #dacfba;
+      border: 1px solid $cream-100;
       border-radius: 150px;
       padding: 10px 21px;
 
@@ -70,7 +70,7 @@
       text-align: center;
       letter-spacing: 0.02em;
       text-transform: uppercase;
-      color: #dacfba;
+      color: $cream-100;
       > svg {
         margin-right: 10px;
       }
@@ -79,7 +79,7 @@
       cursor: pointer;
       display: flex;
       align-items: center;
-      border: 1px solid #dacfba;
+      border: 1px solid $cream-100;
       border-radius: 150px;
       padding: 10px 50px;
 
@@ -89,7 +89,7 @@
       text-align: center;
       letter-spacing: 0.02em;
       text-transform: uppercase;
-      color: #dacfba;
+      color: $cream-100;
     }
     @include mobile {
       padding-top: 20px;

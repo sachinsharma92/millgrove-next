@@ -31,7 +31,7 @@
       font-weight: 200;
       font-size: 70px;
       line-height: 110%;
-      color: #f9f6ed;
+      color: $cream-40;
       letter-spacing: 0.01em;
       text-transform: uppercase;
       margin: 0;
@@ -52,7 +52,7 @@
         text-align: center;
         font-size: 14px;
         line-height: 170%;
-        color: #f9f6ed;
+        color: $cream-40;
       }
 
       @include mobile {
@@ -61,7 +61,7 @@
         text-align: center;
         font-size: 14px;
         line-height: 170%;
-        color: #f9f6ed;
+        color: $cream-40;
       }
 
       @include iphone5 {
@@ -113,8 +113,9 @@
   }
 }
 .description {
-  @include fontStyles($grey-60, "Manrope", 400, 1rem);
   position: relative;
+  color: $grey-60;
+  font-size: 1rem;
   > p {
     width: 49ch;
   }

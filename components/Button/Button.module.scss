@@ -18,12 +18,14 @@
   border-radius: 50%;
 }
 .primary {
-  @include fontStyles($brown-80, "Manrope", 400, 1rem);
+  color: $brown-80;
+  font-size: 1rem;
   background-color: $cream-50;
   border: 1.5px solid $cream-50;
 }
 .secondary {
-  @include fontStyles($cream-100, "Manrope", 400, 1rem);
+  color: $cream-100;
+  font-size: 1rem;
   background-color: transparent;
   border: 1.5px solid $cream-100;
 }

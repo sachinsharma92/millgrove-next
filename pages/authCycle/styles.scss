@@ -4,7 +4,6 @@
 // login-process
 .login-process {
   @include mobile {
-    // height: 100vh;
     overflow-y: scroll;
     overflow-x: hidden;
   }

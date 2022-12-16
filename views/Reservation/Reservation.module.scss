@@ -2,12 +2,12 @@
 @import "../../styles/variables/mixins";
 
 .wrapper {
-  background-color: #f9f6ed;
+  background-color: $cream-40;
   margin: auto;
   text-align: left;
   position: relative;
   z-index: $z-99;
-  background: #9c7e61;
+  background: $brown-70;
   padding: 265px 0 0;
 
   @include tablet-p {
@@ -41,7 +41,7 @@
 }
 
 .reservationCard {
-  background: #f9f6ed;
+  background: $cream-40;
   width: 522px;
   position: relative;
   padding: 26px;
@@ -89,7 +89,7 @@
     height: 68%;
     margin: auto;
     content: "";
-    background: #f9f6ed;
+    background: $cream-40;
   }
 
   .treePrint {
@@ -234,7 +234,7 @@
   text-align: center;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: #f1efe5;
+  color: $cream-50;
   margin: 0 auto;
   margin-top: 40px;
   padding: 16px 70px;
@@ -294,7 +294,7 @@
   @include mobile {
     flex-direction: column-reverse;
     padding: 0 20px;
-    background: #9c7e61;
+    background: $brown-70;
   }
 
   .titleCustom {

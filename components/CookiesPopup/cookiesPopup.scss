@@ -21,13 +21,13 @@
     font-weight: 400;
     font-size: 63.1px;
     letter-spacing: -0.01em;
-    color: #f1efe5;
+    color: $cream-50;
   }
   .mg-cookies-subtext {
     font-style: normal;
     font-weight: 300;
     font-size: 18px;
-    color: #f1efe5;
+    color: $cream-50;
     width: 46ch;
     > span {
       cursor: pointer;
@@ -45,7 +45,7 @@
     align-items: center;
     margin-top: 31px;
     .mg-cookies-understand {
-      background: #f1efe5;
+      background: $cream-50;
       border-radius: 49px;
       padding: 5px 11px;
       cursor: pointer;
@@ -72,7 +72,7 @@
       font-style: normal;
       font-weight: 400;
       font-size: 16px;
-      color: #f1efe5;
+      color: $cream-50;
       > svg {
         margin: 3.5px;
       }

@@ -28,7 +28,7 @@ export default function Document() {
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js" async />
 
         {/* Othersss */}
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.5.2/smooth-scrollbar.js' async></script>
+        {/* <script src='https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.5.2/smooth-scrollbar.js' async></script> */}
       </Head>
 
       <body>
