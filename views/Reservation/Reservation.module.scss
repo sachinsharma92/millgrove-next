@@ -2,7 +2,6 @@
 @import "../../styles/variables/mixins";
 
 .wrapper {
-  background-color: $cream-40;
   margin: auto;
   text-align: left;
   position: relative;
@@ -13,6 +12,7 @@
   @include tablet-p {
     padding: 0;
     margin-top: -1px;
+    background: $green-80;
   }
 
   @include mobile {
@@ -56,7 +56,7 @@
   @include mobile {
     margin: 0;
     width: 100%;
-    padding-bottom: 200px;
+    padding-bottom: 250px;
   }
 }
 
@@ -279,14 +279,14 @@
 
 // The Home Section
 .theHomeSection {
-  background: #293227;
+  background: $green-80;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 80px;
 
   @include tablet-p {
-    padding: 100px 20px;
+    padding: 100px 20px 0px;
     align-items: flex-start;
     margin: -4px 0;
   }
@@ -294,7 +294,6 @@
   @include mobile {
     flex-direction: column-reverse;
     padding: 0 20px;
-    background: $brown-70;
   }
 
   .titleCustom {
@@ -352,7 +351,7 @@
 
     @include mobile {
       width: 95vw;
-      height: 220px;
+      height: 320px;
       margin-top: -140px;
     }
 
@@ -394,6 +393,13 @@
       justify-content: flex-start;
       flex-direction: column;
     }
+
+    @include mobile {
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding-bottom: 50px;
+    }
   }
 
   .discoverBtnMobile {
@@ -401,7 +407,7 @@
     background: none;
     border: none;
     cursor: pointer;
-    width: 70px;
+    width: 100px;
     position: relative;
     top: -2px;
 

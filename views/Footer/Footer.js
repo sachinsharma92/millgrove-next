@@ -6,9 +6,6 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <div className={styles.footerHomepage}>
-      <div className={styles.topzigBorder}>
-        <img src="/images/border-line.svg" alt="" />
-      </div>
       <div className={styles.footerWrapper}>
         <div className={styles.themeText}>
           <div className={styles.themeText2}>
