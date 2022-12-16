@@ -19,7 +19,7 @@ function Firstfold({ setIsRegistering, setIsLoggingIn }) {
       tl.from(".animation-block .animation-text", 1.8, {
         y: 100,
         ease: "power4.out",
-        delay: 1,
+        delay: 0.3,
         skewY: 0,
         stagger: {
           amount: 0.3

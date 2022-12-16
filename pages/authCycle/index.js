@@ -68,10 +68,9 @@ const AuthCycle = () => {
           loop
           preload="none"
           className="lazy"
-          poster="https://pixabay.com/images/id-3822149/"
         >
           <source
-            src="https://millgrove.s3.ap-south-1.amazonaws.com/pexels-kindel-media-7578555.mp4"
+            src="https://d3mpfpyoz2qtu3.cloudfront.net/pexels-kindel-media-7578555.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
