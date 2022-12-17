@@ -30,6 +30,10 @@
     gap: 1rem;
     padding-left: 80px;
 
+    @include desktop-lg {
+      padding-left: 12vw;
+    }
+
     @include tablet-p {
       padding-left: 40px;
     }
@@ -285,6 +289,10 @@
   justify-content: space-between;
   padding: 0 80px;
 
+  @include desktop-lg {
+    padding: 0 0px;
+  }
+
   @include tablet-p {
     padding: 100px 20px 0px;
     align-items: flex-start;
@@ -294,6 +302,18 @@
   @include mobile {
     flex-direction: column-reverse;
     padding: 0 20px;
+  }
+
+  .homeSectionStyle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+
+    @include desktop-lg {
+      max-width: 1440px;
+    }
   }
 
   .titleCustom {

@@ -6,6 +6,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <div className={styles.footerHomepage}>
+      <div className={styles.footerLine}></div>
       <div className={styles.footerWrapper}>
         <div className={styles.themeText}>
           <div className={styles.themeText2}>

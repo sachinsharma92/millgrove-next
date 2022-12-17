@@ -34,7 +34,8 @@ const Reservation = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.bgSection}>
-        <div className={styles.reservationCard}>
+        <div className={styles.reservationCard} data-aos="fade-up"
+          data-aos-duration="1000">
           <div className={styles.treeSection}>
             <TreePrint className={styles.treePrint} />
           </div>
@@ -47,38 +48,41 @@ const Reservation = () => {
 
 
       <div className={styles.theHomeSection}>
-        <div className={styles.groupSec}>
-          <div className={styles.headSec}>
-            <span className={styles.textNotera}>The</span>
-            <div className={`${styles.titleCustom}`}>
-              Homes
+        <div className={styles.homeSectionStyle}>
+          <div className={styles.groupSec}>
+            <div className={styles.headSec}>
+              <span className={styles.textNotera}>The</span>
+              <div className={`${styles.titleCustom}`}>
+                Homes
+              </div>
             </div>
+
+            {/* Hide on Desktop */}
+            <button className={styles.discoverBtnMobile}>
+              <img
+                src="/images/discover.svg"
+                alt="Three-D view of millgrove properties site"
+                className={styles.imgStyle}
+              />
+            </button>
           </div>
 
-          {/* Hide on Desktop */}
-          <button className={styles.discoverBtnMobile}>
-            <img
-              src="/images/discover.svg"
-              alt="Three-D view of millgrove properties site"
-              className={styles.imgStyle}
-            />
-          </button>
-        </div>
-
-        <div className={styles.assetsSec}>
-          <button className={styles.discoverBtn}>
-            <img
-              src="/images/discover.svg"
-              alt="Three-D view of millgrove properties site"
-              className={styles.imgStyle}
-            />
-          </button>
-          <div className={styles.imgBoxStyle}>
-            <img
-              src="/images/home1.jpg"
-              alt="Three-D view of millgrove properties site"
-              className={styles.imgStyle}
-            />
+          <div className={styles.assetsSec}>
+            <button className={styles.discoverBtn}>
+              <img
+                src="/images/discover.svg"
+                alt="Three-D view of millgrove properties site"
+                className={styles.imgStyle}
+              />
+            </button>
+            <div className={styles.imgBoxStyle} data-aos="fade-up"
+              data-aos-duration="1000">
+              <img
+                src="/images/home1.jpg"
+                alt="Three-D view of millgrove properties site"
+                className={styles.imgStyle}
+              />
+            </div>
           </div>
         </div>
       </div>

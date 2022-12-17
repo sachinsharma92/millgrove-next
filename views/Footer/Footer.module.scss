@@ -11,6 +11,16 @@
     padding-top: 0;
   }
 
+  .footerLine {
+    border-top: 1px solid #6d7770;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    @include desktop-lg {
+      max-width: 100%;
+    }
+  }
+
   .footerWrapper {
     display: flex;
     align-items: center;
@@ -18,7 +28,6 @@
     justify-content: space-between;
     position: relative;
     min-height: 100%;
-    border-top: 1px solid #6d7770;
 
     @include desktop-lg {
       max-width: 1440px;
