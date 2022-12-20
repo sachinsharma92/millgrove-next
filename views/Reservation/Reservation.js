@@ -8,7 +8,7 @@ import ReservationForm from "./ReservationForm";
 import TreePrint from "./TreePrint";
 
 const Reservation = () => {
-  const [isBoxChecked, setIsBoxChecked] = useState(false);
+  const [isBoxChecked, setIsBoxChecked] = useState(true);
   const { userToken } = useContext(AuthContext);
 
   const requestVisit = async () => {
@@ -34,27 +34,28 @@ const Reservation = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.bgSection}>
-        <div className={styles.reservationCard} data-aos="fade-up"
-          data-aos-duration="1000">
+        <div
+          className={styles.reservationCard}
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
           <div className={styles.treeSection}>
             <TreePrint className={styles.treePrint} />
           </div>
           <ReservationForm
             isBoxChecked={isBoxChecked}
             setIsBoxChecked={setIsBoxChecked}
+            requestVisit={requestVisit}
           />
         </div>
       </div>
-
 
       <div className={styles.theHomeSection}>
         <div className={styles.homeSectionStyle}>
           <div className={styles.groupSec}>
             <div className={styles.headSec}>
               <span className={styles.textNotera}>The</span>
-              <div className={`${styles.titleCustom}`}>
-                Homes
-              </div>
+              <div className={`${styles.titleCustom}`}>Homes</div>
             </div>
 
             {/* Hide on Desktop */}
@@ -75,8 +76,11 @@ const Reservation = () => {
                 className={styles.imgStyle}
               />
             </button>
-            <div className={styles.imgBoxStyle} data-aos="fade-up"
-              data-aos-duration="1000">
+            <div
+              className={styles.imgBoxStyle}
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
               <img
                 src="/images/home1.jpg"
                 alt="Three-D view of millgrove properties site"
@@ -86,7 +90,6 @@ const Reservation = () => {
           </div>
         </div>
       </div>
-
     </div>
   );
 };

@@ -85,7 +85,12 @@
   margin-bottom: calc(2px + 0.5625vw);
   display: flex;
   justify-content: center;
+  align-items: center;
   position: relative;
+}
+.warningIconWrapper {
+  position: absolute;
+  right: 0;
 }
 
 .formInput {

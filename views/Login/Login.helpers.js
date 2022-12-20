@@ -25,4 +25,13 @@ const verifyPhoneNumber = async ({ e, phoneNos }) => {
   }
 };
 
-export { verifyPhoneNumber };
+const isPhoneNosValid = (phoneNos = "") => {
+  if (!phoneNos) return false;
+  if (phoneNos.slice(0, 3) === "+91") {
+    if (phoneNos.slice(3).length === 10) return true;
+    return false;
+  }
+  return true;
+};
+
+export { verifyPhoneNumber, isPhoneNosValid };

@@ -4,10 +4,8 @@ import PhoneInput from "react-phone-number-input";
 import { MILLGROVE_TREE } from "../../utils/assets";
 import styles from "./Login.module.scss";
 import "react-phone-number-input/style.css";
-import axios from "axios";
-import { apiKey, baseUrl } from "../../utils/constants";
-import Link from "next/link";
-import { verifyPhoneNumber } from "./Login.helpers";
+import { isPhoneNosValid, verifyPhoneNumber } from "./Login.helpers";
+import { WarningOctagon } from "../../public/icons/icons";
 
 const PhoneNumberForm = ({
   setIsEnteringPhoneNos,
@@ -81,7 +79,13 @@ const PhoneNumberForm = ({
               value={phoneNos}
               onChange={handleChange}
             />
+            {error.errorOccured ? (
+              <span className={styles.warningIconWrapper}>
+                <WarningOctagon />
+              </span>
+            ) : null}
           </div>
+
           <div className="error-sec">
             <p className={styles.errorText}>
               {error.errorOccured ? error.msg : ""}
@@ -97,6 +101,7 @@ const PhoneNumberForm = ({
             clickhandler={(e) => continueHandler(e)}
             text={"Continue"}
             classname="button-style48"
+            isDisabled={!isPhoneNosValid(phoneNos)}
           />
         </div>
       </form>

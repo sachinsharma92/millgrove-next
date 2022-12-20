@@ -8,6 +8,7 @@ import styles from "./Signup.module.scss";
 import axios from "axios";
 import { apiKey, baseUrl } from "../../utils/constants";
 import Header from "../../components/Header";
+import { WarningOctagon } from "../../public/icons/icons";
 // import en from "react-phone-number-input/locale/en";
 // import { getCountries, getCountryCallingCode } from "react-phone-number-input";
 
@@ -20,7 +21,7 @@ const Signup = ({
   setIsRegisterationSuccessfull,
 }) => {
   const [userInfo, setUserInfo] = useState({ name: "", phone: "", email: "" });
-  const [isBoxChecked, setIsBoxChecked] = useState(false);
+  const [isBoxChecked, setIsBoxChecked] = useState(true);
   const [error, setError] = useState({
     errorOccured: false,
     nameError: "",
@@ -158,6 +159,11 @@ const Signup = ({
                       className={styles.formInput}
                       placeholder={"Name"}
                     />
+                    {error.errorOccured && !userInfo.name ? (
+                      <span className={styles.warningIconWrapper}>
+                        <WarningOctagon />
+                      </span>
+                    ) : null}
                     <p
                       style={{
                         opacity: error.errorOccured && !userInfo.name ? 1 : 0,
@@ -178,6 +184,11 @@ const Signup = ({
                       placeholder="Phone number"
                       onChange={(e) => updateUserInfo("phone", e)}
                     />
+                    {error.errorOccured && !userInfo.phone ? (
+                      <span className={styles.warningIconWrapper}>
+                        <WarningOctagon />
+                      </span>
+                    ) : null}
                     <p
                       style={{
                         opacity:
@@ -200,7 +211,11 @@ const Signup = ({
                       className={styles.formInput}
                       placeholder={"Email"}
                     />
-
+                    {error.errorOccured && !userInfo.email ? (
+                      <span className={styles.warningIconWrapper}>
+                        <WarningOctagon />
+                      </span>
+                    ) : null}
                     <p
                       style={{
                         opacity: error.errorOccured && !userInfo.email ? 1 : 0,
