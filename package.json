@@ -26,7 +26,8 @@
     "react-use-scrollspy": "^3.0.2",
     "react-visibility-sensor": "^5.1.1",
     "react18-input-otp": "^1.1.1",
-    "scrollmagic": "^2.0.8"
+    "scrollmagic": "^2.0.8",
+    "three": "^0.147.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",

@@ -16,7 +16,7 @@ const Input = ({ placeholder, type = "text", value }) => {
   );
 };
 
-const ReservationForm = ({ isBoxChecked, setIsBoxChecked }) => {
+const ReservationForm = ({ isBoxChecked, setIsBoxChecked, requestVisit }) => {
   const {
     userDetails: { name, email, phone },
   } = useContext(AuthContext);
@@ -24,7 +24,7 @@ const ReservationForm = ({ isBoxChecked, setIsBoxChecked }) => {
   return (
     <div className={styles.formWrapper}>
       <div className={styles.formBg}>
-        <div className={styles.zIndexStyle} >
+        <div className={styles.zIndexStyle}>
           <div className={styles.formHeadingWrapper}>
             <h1 className={styles.formHeading}>
               Request <span>a</span> Visit
@@ -44,11 +44,16 @@ const ReservationForm = ({ isBoxChecked, setIsBoxChecked }) => {
               </div>
             </div>
             <div className={styles.agreementCheck}>
-              <Checkbox isChecked={isBoxChecked} setIsChecked={setIsBoxChecked} />
+              <Checkbox
+                isChecked={isBoxChecked}
+                setIsChecked={setIsBoxChecked}
+              />
               <p>I accept the terms for processing my personal data</p>
             </div>
           </form>
-          <button className={styles.requestAVisitBtn}>request a visit</button>
+          <button onClick={requestVisit} className={styles.requestAVisitBtn}>
+            request a visit
+          </button>
         </div>
 
 
