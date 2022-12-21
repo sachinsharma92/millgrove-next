@@ -1,3 +1,5 @@
+@import "../../styles/variables/colors";
+
 .countrySelectWrapper {
   position: relative;
   width: max-content;
@@ -58,4 +60,17 @@
 }
 .dialCode {
   margin-right: 0.5rem;
+  font-weight: 400;
+  color: $black-100;
+}
+
+.downArrow {
+  svg {
+    transition: 300ms ease-in-out;
+  }
+}
+.downArrow.up {
+  svg {
+    transform: rotate(180deg);
+  }
 }

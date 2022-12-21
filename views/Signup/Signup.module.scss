@@ -101,7 +101,7 @@
   outline: 1px solid transparent;
   padding: calc(2px + 0.390625vw) 0;
   letter-spacing: 0.5px;
-  @include fontStyles($black-100, "Manrope", 400, 1.125rem);
+  @include fontStyles($black-100, "Manrope", 400, 1.25rem);
 }
 
 .agreementCheck {
@@ -188,10 +188,12 @@
     padding: 4px 0;
     border: none;
     background-color: transparent;
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 130%;
-    color: rgba(#262e2f, 0.6);
-
+    color: rgba$black-100;
+    &::placeholder {
+      color: #818180;
+    }
     &:focus {
       outline: 1px solid transparent;
     }

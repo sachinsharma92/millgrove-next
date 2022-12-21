@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Button from "../../components/Button";
-import PhoneInput from "react-phone-number-input";
-import Input from "react-phone-number-input/input";
 import { MILLGROVE_TREE } from "../../utils/assets";
 import styles from "./Login.module.scss";
-import "react-phone-number-input/style.css";
 import { verifyPhoneNumber } from "./Login.helpers";
 import { WarningOctagon } from "../../public/icons/icons";
-import CountrySelect from "./CountrySelect";
 import { checkNonNumericInput } from "../../utils/checkNonNumericInput";
 import { isPhoneNosValid } from "../../utils/isPhoneNosValid";
+import CountrySelect from "../../components/CountrySelect";
 
 const PhoneNumberForm = ({
   setIsEnteringPhoneNos,
@@ -20,7 +17,6 @@ const PhoneNumberForm = ({
   phoneNos,
   setPhoneNos,
 }) => {
-  // const [phoneNos, setPhoneNos] = useState(null);
   const [error, setError] = useState({ errorOccured: false, msg: "" });
   const [selectedCountry, setSelectedCountry] = useState({
     name: "India",

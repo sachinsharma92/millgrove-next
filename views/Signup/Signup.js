@@ -135,8 +135,6 @@ const Signup = ({
   const shouldBtnBeDisabled = () => {
     const data = Object.values(userInfo);
     if (!isBoxChecked) return true;
-    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(userInfo.email);
-    if (!emailRegex) return true;
     if (data.includes("")) return true;
     return false;
   };
@@ -271,7 +269,6 @@ const Signup = ({
                       }}
                       className={styles.errorText}
                     >
-                      {/* {ERROR_MSG} */}
                       {getEmailErrorMessage()}
                     </p>
                   </div>
@@ -286,6 +283,7 @@ const Signup = ({
 
                 <div className={styles.submitBtnWrapper}>
                   <Button
+                    isDisabled={shouldBtnBeDisabled()}
                     text={"Continue"}
                     type="submit"
                     classname="button-style48"

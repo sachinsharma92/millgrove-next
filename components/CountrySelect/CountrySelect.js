@@ -50,7 +50,7 @@ const CountrySelect = ({ selectedCountry, setSelectedCountry }) => {
           />
         </label>
         <span className={styles.dialCode}>+{selectedCountry.dial_code}</span>
-        <span>
+        <span className={`${styles.downArrow} ${showDropdown && styles.up}`}>
           <DownArrow />
         </span>
         {showDropdown && (
