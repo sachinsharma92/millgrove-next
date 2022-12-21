@@ -68,7 +68,7 @@ const CountrySelect = ({ selectedCountry, setSelectedCountry }) => {
                   });
                 }}
               >
-                <Image
+                <img
                   alt={country.name}
                   height="16"
                   width="16"
