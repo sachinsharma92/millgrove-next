@@ -45,8 +45,8 @@ const ReservationForm = ({ isBoxChecked, setIsBoxChecked, requestVisit }) => {
             </div>
             <div className={styles.agreementCheck}>
               <Checkbox
-                isChecked={isBoxChecked}
-                setIsChecked={setIsBoxChecked}
+                isBoxChecked={isBoxChecked}
+                setIsBoxChecked={setIsBoxChecked}
               />
               <p>I accept the terms for processing my personal data</p>
             </div>
@@ -55,7 +55,6 @@ const ReservationForm = ({ isBoxChecked, setIsBoxChecked, requestVisit }) => {
             request a visit
           </button>
         </div>
-
 
         {/* Request Submitted Card here */}
         {/* <div className={styles.zIndexStyle} >

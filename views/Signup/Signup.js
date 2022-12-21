@@ -275,8 +275,8 @@ const Signup = ({
                 </div>
                 <div className={styles.agreementCheck}>
                   <Checkbox
-                    isChecked={isBoxChecked}
-                    setIsChecked={setIsBoxChecked}
+                    isBoxChecked={isBoxChecked}
+                    setIsBoxChecked={setIsBoxChecked}
                   />
                   <p>I accept the terms for processing my personal data</p>
                 </div>
