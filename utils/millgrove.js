@@ -1,23 +1,21 @@
 import gsap from "gsap";
 import { useEffect } from "react";
-
-
-
 export const MillgroveLogo = ({ width, height, className }) => {
   useEffect(() => {
-    gsap.to("#theGradient stop", 1.5, {
-      attr: { offset: "0%" },
-      yoyo: true,
-      repeatDelay: 0.5,
-      // repeat: 1,
-      reversed: 2,
-      ease: Linear.easeNone,
+    gsap.registerPlugin(ScrollTrigger);
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#containerWrap",
-        start: 'top 70%',
+        start: 'top 92%',
+        end: "+=250",
+        scrub: true,
         markers: false,
-      },
+      }
     });
+    tl.to("#theGradient stop", {
+      attr: { offset: "0%" },
+      yoyo: true,
+    })
   }, [])
 
   return (
