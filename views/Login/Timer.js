@@ -3,11 +3,10 @@ import { useState, useEffect } from "react";
 import styles from "./Login.module.scss";
 
 const Timer = (props) => {
-  const { totalSeconds = 0, label } = props;
-  const [seconds, setSeconds] = useState(totalSeconds);
+  const { label } = props;
 
-  const remainingMinutes = Math.floor(seconds / 60);
-  const remainingSeconds = Math.floor(seconds % 60);
+  const remainingMinutes = Math.floor(props.seconds / 60);
+  const remainingSeconds = Math.floor(props.seconds % 60);
 
   const shouldShowTimer = !!(remainingSeconds || remainingMinutes);
 
@@ -17,15 +16,15 @@ const Timer = (props) => {
 
   useEffect(() => {
     let timer = setTimeout(() => {
-      if (seconds > 0) {
-        setSeconds((prev) => {
+      if (props.seconds > 0) {
+        props.setSeconds((prev) => {
           if (prev > 0) {
             return prev - 1;
           }
         });
       }
 
-      if (seconds <= 1) {
+      if (props.seconds <= 1) {
         clearTimeout(timer);
       }
     }, 1000);
@@ -33,11 +32,11 @@ const Timer = (props) => {
     return () => {
       clearTimeout(timer);
     };
-  }, [seconds]);
+  }, [props.seconds]);
 
   return (
     <>
-      {shouldShowTimer && <span>{seconds > 0 ? label : ""} </span>}
+      {shouldShowTimer && <span>{props.seconds > 0 ? label : ""} </span>}
       {shouldShowTimer && (
         <span className={styles.timerCount}>
           {padWithZero(remainingMinutes)}:{padWithZero(remainingSeconds)} secs

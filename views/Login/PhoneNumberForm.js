@@ -73,6 +73,7 @@ const PhoneNumberForm = ({
         <div className="input-relative-sec">
           <div className={styles.phoneNosWrapper}>
             <PhoneInput
+              placeholder="Phone Number"
               international
               countryCallingCodeEditable={false}
               defaultCountry="IN"

@@ -181,7 +181,7 @@ const Signup = ({
                       countryCallingCodeEditable={false}
                       defaultCountry="IN"
                       value={userInfo.phone}
-                      placeholder="Phone number"
+                      placeholder="Phone Number"
                       onChange={(e) => updateUserInfo("phone", e)}
                     />
                     {error.errorOccured && !userInfo.phone ? (
