@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../../components/Button";
-import PhoneInput from "react-phone-number-input";
 import { MILLGROVE_TREE } from "../../utils/assets";
 import styles from "./Login.module.scss";
-import "react-phone-number-input/style.css";
-import { isPhoneNosValid, verifyPhoneNumber } from "./Login.helpers";
+import { verifyPhoneNumber } from "./Login.helpers";
 import { WarningOctagon } from "../../public/icons/icons";
+import { checkNonNumericInput } from "../../utils/checkNonNumericInput";
+import { isPhoneNosValid } from "../../utils/isPhoneNosValid";
+import CountrySelect from "../../components/CountrySelect";
 
 const PhoneNumberForm = ({
   setIsEnteringPhoneNos,
@@ -16,15 +17,19 @@ const PhoneNumberForm = ({
   phoneNos,
   setPhoneNos,
 }) => {
-  // const [phoneNos, setPhoneNos] = useState(null);
   const [error, setError] = useState({ errorOccured: false, msg: "" });
+  const [selectedCountry, setSelectedCountry] = useState({
+    name: "India",
+    dial_code: "91",
+    code: "IN",
+  });
 
   const continueHandler = async (e) => {
     try {
-      const res = await verifyPhoneNumber({
-        e,
-        phoneNos,
-      });
+      e.preventDefault();
+      const res = await verifyPhoneNumber(
+        `+${selectedCountry.dial_code}${phoneNos}`
+      );
       if (res?.success) {
         setOtpToken(res.otpToken);
         setIsEnteringPhoneNos(false);
@@ -72,12 +77,17 @@ const PhoneNumberForm = ({
         </div>
         <div className="input-relative-sec">
           <div className={styles.phoneNosWrapper}>
-            <PhoneInput
-              international
-              countryCallingCodeEditable={false}
-              defaultCountry="IN"
+            <CountrySelect
+              selectedCountry={selectedCountry}
+              setSelectedCountry={setSelectedCountry}
+            />
+            <input
+              className={styles.phoneNumberInput}
+              type={"tel"}
+              placeholder="Phone Number"
               value={phoneNos}
-              onChange={handleChange}
+              onChange={(e) => handleChange(e.target.value)}
+              onKeyDown={(e) => checkNonNumericInput(e)}
             />
             {error.errorOccured ? (
               <span className={styles.warningIconWrapper}>
@@ -101,7 +111,7 @@ const PhoneNumberForm = ({
             clickhandler={(e) => continueHandler(e)}
             text={"Continue"}
             classname="button-style48"
-            isDisabled={!isPhoneNosValid(phoneNos)}
+            isDisabled={!isPhoneNosValid(phoneNos, selectedCountry.dial_code)}
           />
         </div>
       </form>

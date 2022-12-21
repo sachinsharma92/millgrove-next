@@ -12,6 +12,7 @@ import { verifyPhoneNumber } from "./Login.helpers";
 
 const OtpForm = ({ setIsLoggingIn, otpToken, phoneNos, setOtpToken }) => {
   const [otp, setOtp] = useState(null);
+  const [seconds, setSeconds] = useState(60);
   const otpWrapperRef = useRef();
   const { setIsLoggedIn, loginWithCredentials } = useContext(AuthContext);
   const router = useRouter();
@@ -34,6 +35,7 @@ const OtpForm = ({ setIsLoggingIn, otpToken, phoneNos, setOtpToken }) => {
   };
 
   const resendOtp = async (e) => {
+    if (seconds > 0) return;
     try {
       const res = await verifyPhoneNumber({
         e,
@@ -75,7 +77,8 @@ const OtpForm = ({ setIsLoggingIn, otpToken, phoneNos, setOtpToken }) => {
           <span onClick={resendOtp} className={styles.resend}>
             Click here
           </span>{" "}
-          to receive a new code <Timer label={"in"} totalSeconds={60} />
+          to receive a new code{" "}
+          <Timer seconds={seconds} setSeconds={setSeconds} label={"in"} />
         </p>
         <div className={styles.submitBtnWrapper}>
           <Button

@@ -1,21 +1,18 @@
 import React, { useState } from "react";
 import styles from "./Checkbox.module.scss";
 
-const Checkbox = ({ isChecked, setIsChecked }) => {
-  // const [isChecked, setIsChecked] = useState(false)
+const Checkbox = ({ isBoxChecked, setIsBoxChecked }) => {
   return (
-    <div class={styles.round}>
+    <div className={styles.round}>
       <input
-        // onChange={() => {
-        //   console.log("heyyy");
-        //   setIsChecked(!isChecked);
-        // }}
+        onChange={() => {
+          setIsBoxChecked((prev) => !prev);
+        }}
         type="checkbox"
-        checked={isChecked}
-        id="checkbox"
+        checked={isBoxChecked}
+        id="conditions-checkbox"
       />
-      {/* <label for="checkbox"></label> */}
-      <label onClick={() => setIsChecked(!isChecked)} for="checkbox"></label>
+      <label htmlFor="conditions-checkbox"></label>
     </div>
   );
 };
