@@ -5,9 +5,11 @@ import Input from "react-phone-number-input/input";
 import { MILLGROVE_TREE } from "../../utils/assets";
 import styles from "./Login.module.scss";
 import "react-phone-number-input/style.css";
-import { isPhoneNosValid, verifyPhoneNumber } from "./Login.helpers";
+import { verifyPhoneNumber } from "./Login.helpers";
 import { WarningOctagon } from "../../public/icons/icons";
 import CountrySelect from "./CountrySelect";
+import { checkNonNumericInput } from "../../utils/checkNonNumericInput";
+import { isPhoneNosValid } from "../../utils/isPhoneNosValid";
 
 const PhoneNumberForm = ({
   setIsEnteringPhoneNos,
@@ -54,23 +56,8 @@ const PhoneNumberForm = ({
   };
 
   const handleChange = (val) => {
-    console.log({ val });
-    console.log(Number.isNaN(val));
-    // if (Number.isNaN(val) === false) {
-    //   setPhoneNos(null);
-    //   return;
-    // }
     setPhoneNos(val);
     setError({ errorOccured: false, msg: "" });
-  };
-
-  const checkNonNumericInput = (e) => {
-    //allow left,right,bakspace,delete
-    if (e.which === 8 || e.which === 46 || e.which === 37 || e.which === 39)
-      return;
-    if (e.which < 48 || e.which > 57) {
-      e.preventDefault();
-    }
   };
 
   const goToSignupPage = () => {
@@ -101,7 +88,7 @@ const PhoneNumberForm = ({
             <input
               className={styles.phoneNumberInput}
               type={"tel"}
-              placeholder="Enter phone number"
+              placeholder="Phone Number"
               value={phoneNos}
               onChange={(e) => handleChange(e.target.value)}
               onKeyDown={(e) => checkNonNumericInput(e)}

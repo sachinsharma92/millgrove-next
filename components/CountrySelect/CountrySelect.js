@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
 import Image from "next/image";
-import styles from "./Login.module.scss";
-import { allCountries } from "../../utils/countries";
+import styles from "./CountrySelect.module.scss";
 import { DownArrow } from "../../public/icons/icons";
+import { allCountries } from "../../utils/countries";
 
 const CountrySelect = ({ selectedCountry, setSelectedCountry }) => {
   const [myCountries, setMyCountries] = useState(allCountries);

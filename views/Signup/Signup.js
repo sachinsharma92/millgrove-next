@@ -9,10 +9,12 @@ import axios from "axios";
 import { apiKey, baseUrl } from "../../utils/constants";
 import Header from "../../components/Header";
 import { WarningOctagon } from "../../public/icons/icons";
-// import en from "react-phone-number-input/locale/en";
-// import { getCountries, getCountryCallingCode } from "react-phone-number-input";
+import CountrySelect from "../../components/CountrySelect";
+import { checkNonNumericInput } from "../../utils/checkNonNumericInput";
+import { isPhoneNosValid } from "../../utils/isPhoneNosValid";
 
 const ERROR_MSG = "This is a required field, can’t be left empty";
+const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 const Signup = ({
   isRegistering,
@@ -28,11 +30,12 @@ const Signup = ({
     phoneError: "",
     emailError: "",
   });
+  const [selectedCountry, setSelectedCountry] = useState({
+    name: "India",
+    dial_code: "91",
+    code: "IN",
+  });
 
-  const isInvalidPhoneNumber = (str = "") => {
-    if (str.startsWith("+91") && str.slice(3).length !== 10) return true;
-    return false;
-  };
   const isAnyFieldEmpty = () => {
     if (!userInfo.name) {
       setError((prev) => ({
@@ -40,7 +43,6 @@ const Signup = ({
         errorOccured: true,
         nameError: ERROR_MSG,
       }));
-      // return true;
     }
     if (!userInfo.phone) {
       setError((prev) => ({
@@ -48,7 +50,6 @@ const Signup = ({
         errorOccured: true,
         phoneError: ERROR_MSG,
       }));
-      // return true;
     }
     if (!userInfo.email) {
       setError((prev) => ({
@@ -56,19 +57,25 @@ const Signup = ({
         errorOccured: true,
         emailError: ERROR_MSG,
       }));
-      // return true;
     }
-    if (isInvalidPhoneNumber(userInfo.phone)) {
+    if (!emailRegex.test(userInfo.email)) {
       setError((prev) => ({
         ...prev,
         errorOccured: true,
-        phoneError: "Phone number must be 10 digits long.",
+        emailError: "This is not a valid email ID",
       }));
-      // return true;
+    }
+    if (!isPhoneNosValid(userInfo.phone, selectedCountry.dial_code)) {
+      setError((prev) => ({
+        ...prev,
+        errorOccured: true,
+        phoneError: "The number provided is invalid",
+      }));
     }
     if (
       Object.values(userInfo).includes("") ||
-      isInvalidPhoneNumber(userInfo.phone)
+      !isPhoneNosValid(userInfo.phone, selectedCountry.dial_code) ||
+      !emailRegex.test(userInfo.email)
     ) {
       return true;
     }
@@ -79,6 +86,7 @@ const Signup = ({
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (isAnyFieldEmpty()) return;
+
     setError((prev) => ({
       ...prev,
       errorOccured: false,
@@ -86,23 +94,27 @@ const Signup = ({
       phoneError: "",
       emailError: "",
     }));
-    console.log({ baseUrl });
-    const res = await axios.post(
-      `${baseUrl}/client/register`,
-      {
-        name: userInfo.name,
-        email: userInfo.email,
-        phone: userInfo.phone,
-      },
-      {
-        headers: {
-          "rest-api-key": apiKey,
+
+    try {
+      const res = await axios.post(
+        `${baseUrl}/client/register`,
+        {
+          name: userInfo.name,
+          email: userInfo.email,
+          phone: `+${selectedCountry.dial_code}${userInfo.phone}`,
         },
+        {
+          headers: {
+            "rest-api-key": apiKey,
+          },
+        }
+      );
+      if (res?.status === 200) {
+        setIsRegistering(false);
+        setIsRegisterationSuccessfull(true);
       }
-    );
-    if (res?.status === 200) {
-      setIsRegistering(false);
-      setIsRegisterationSuccessfull(true);
+    } catch (err) {
+      console.log(err);
     }
   };
 
@@ -111,11 +123,13 @@ const Signup = ({
       ...prev,
       [`${field}Error`]: "",
     }));
-    if (field === "phone") {
-      setUserInfo({ ...userInfo, [field]: e });
-    } else {
-      setUserInfo({ ...userInfo, [field]: e.target.value });
+    if (e.target.value === "") {
+      setError((prev) => ({
+        ...prev,
+        [`${field}Error`]: ERROR_MSG,
+      }));
     }
+    setUserInfo({ ...userInfo, [field]: e.target.value });
   };
 
   const shouldBtnBeDisabled = () => {
@@ -125,6 +139,20 @@ const Signup = ({
     if (!emailRegex) return true;
     if (data.includes("")) return true;
     return false;
+  };
+
+  const getEmailErrorMessage = () => {
+    if (error.errorOccured && !userInfo.email) {
+      return ERROR_MSG;
+    }
+    if (
+      error.errorOccured &&
+      !emailRegex.test(userInfo.email) &&
+      error.emailError
+    ) {
+      return "This is not a valid email ID";
+    }
+    return "";
   };
 
   return (
@@ -175,16 +203,24 @@ const Signup = ({
                   </div>
 
                   <div className={styles.phoneNosWrapper}>
-                    <PhoneInput
-                      name="phone"
-                      international
-                      countryCallingCodeEditable={false}
-                      defaultCountry="IN"
-                      value={userInfo.phone}
-                      placeholder="Phone Number"
-                      onChange={(e) => updateUserInfo("phone", e)}
+                    <CountrySelect
+                      selectedCountry={selectedCountry}
+                      setSelectedCountry={setSelectedCountry}
                     />
-                    {error.errorOccured && !userInfo.phone ? (
+                    <input
+                      className={styles.phoneNumberInput}
+                      type={"tel"}
+                      placeholder="Phone Number"
+                      value={userInfo.phone}
+                      onChange={(e) => updateUserInfo("phone", e)}
+                      onKeyDown={(e) => checkNonNumericInput(e)}
+                    />
+                    {(error.errorOccured && !userInfo.phone) ||
+                    (!isPhoneNosValid(
+                      userInfo.phone,
+                      selectedCountry.dial_code
+                    ) &&
+                      error.phoneError) ? (
                       <span className={styles.warningIconWrapper}>
                         <WarningOctagon />
                       </span>
@@ -193,7 +229,10 @@ const Signup = ({
                       style={{
                         opacity:
                           (error.errorOccured && !userInfo.phone) ||
-                          isInvalidPhoneNumber(userInfo.phone)
+                          !isPhoneNosValid(
+                            userInfo.phone,
+                            selectedCountry.dial_code
+                          )
                             ? 1
                             : 0,
                       }}
@@ -207,22 +246,33 @@ const Signup = ({
                     <input
                       name="email"
                       onChange={(e) => updateUserInfo("email", e)}
-                      type={"email"}
+                      type={"text"}
                       className={styles.formInput}
                       placeholder={"Email"}
                     />
-                    {error.errorOccured && !userInfo.email ? (
+                    {(error.errorOccured &&
+                      !userInfo.email &&
+                      error.emailError) ||
+                    (error.errorOccured &&
+                      !emailRegex.test(userInfo.email) &&
+                      error.emailError) ? (
                       <span className={styles.warningIconWrapper}>
                         <WarningOctagon />
                       </span>
                     ) : null}
                     <p
                       style={{
-                        opacity: error.errorOccured && !userInfo.email ? 1 : 0,
+                        opacity:
+                          (error.errorOccured && !userInfo.email) ||
+                          (error.errorOccured &&
+                            !emailRegex.test(userInfo.email))
+                            ? 1
+                            : 0,
                       }}
                       className={styles.errorText}
                     >
-                      {ERROR_MSG}
+                      {/* {ERROR_MSG} */}
+                      {getEmailErrorMessage()}
                     </p>
                   </div>
                 </div>

@@ -183,10 +183,7 @@
   @include flex(flex-start, center);
   position: relative;
   border-bottom: 1px solid $black-90-20;
-  > div {
-    width: 100%;
-  }
-
+  gap: 1rem;
   input {
     padding: 4px 0;
     border: none;
