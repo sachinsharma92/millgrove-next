@@ -13,7 +13,6 @@ const nextConfig = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
-  optimizeFonts: false,
 };
 
 module.exports = nextConfig;
