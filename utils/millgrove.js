@@ -9,7 +9,9 @@ export const MillgroveLogo = ({ width, height, className }) => {
       attr: { offset: "0%" },
       yoyo: true,
       repeatDelay: 0.5,
-      ease: "none",
+      // repeat: 1,
+      reversed: 2,
+      ease: Linear.easeNone,
       scrollTrigger: {
         trigger: "#containerWrap",
         start: 'top 70%',
@@ -22,7 +24,7 @@ export const MillgroveLogo = ({ width, height, className }) => {
     <div id="containerWrap">
       <svg id="demo" className={className} width={width} height={height} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1672 223">
         <defs>
-          <linearGradient id="theGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <linearGradient id="theGradient" x1="0%" y2="0%" x2="0%" y1="100%">
             <stop offset="100%" stopColor="#293227" />
             <stop offset="100%" stopColor="#4B5B47" />
           </linearGradient>

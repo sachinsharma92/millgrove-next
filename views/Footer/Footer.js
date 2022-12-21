@@ -2,8 +2,6 @@
 import styles from "./Footer.module.scss";
 import Link from "next/link";
 import { MillgroveLogo } from "../../utils/millgrove";
-import { useEffect } from "react";
-import gsap from "gsap";
 
 const Footer = () => {
 
