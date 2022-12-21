@@ -163,13 +163,13 @@
     position: relative;
     border-bottom: 1px solid $black-90-20;
     padding-bottom: 10px;
-
-    input {
-      width: 100% !important;
+    display: flex;
+    .phoneNumberInput {
+      //   // width: 100% !important;
       border: none;
       font-size: 20px;
-      font-weight: 200;
-      color: $black-90-70;
+      font-weight: 400;
+      color: $black-100;
       background-color: transparent;
       &::placeholder {
         color: rgba(0, 0, 0, 0.2);

@@ -4,7 +4,8 @@ const nextConfig = {
   images: {
     domains: [
       "images.unsplash.com",
-      "images.pexels.com"
+      "images.pexels.com",
+      "purecatamphetamine.github.io",
     ],
   },
   eslint: {
@@ -12,6 +13,6 @@ const nextConfig = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
