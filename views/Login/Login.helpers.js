@@ -1,8 +1,8 @@
 import axios from "axios";
 import { apiKey, baseUrl } from "../../utils/constants";
 
-const verifyPhoneNumber = async ({ e, phoneNos }) => {
-  e.preventDefault();
+const verifyPhoneNumber = async (phoneNos) => {
+  // e.preventDefault();
   try {
     const res = await axios.post(
       `${baseUrl}/client/login`,
@@ -25,10 +25,10 @@ const verifyPhoneNumber = async ({ e, phoneNos }) => {
   }
 };
 
-const isPhoneNosValid = (phoneNos = "") => {
-  if (!phoneNos) return false;
-  if (phoneNos.slice(0, 3) === "+91") {
-    if (phoneNos.slice(3).length === 10) return true;
+const isPhoneNosValid = (phoneNos = "", dialCode = "+91") => {
+  if (!phoneNos || !dialCode) return false;
+  if (dialCode === "91") {
+    if (phoneNos.length === 10) return true;
     return false;
   }
   return true;
