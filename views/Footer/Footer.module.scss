@@ -200,6 +200,7 @@
     // themeTextBold
     .themeText2 {
       position: relative;
+      font-family: "Editorial New";
       height: 200px;
       width: 100%;
 
@@ -220,6 +221,10 @@
         @include mobile {
           display: none;
         }
+      }
+
+      svg {
+        fill: transparent;
       }
     }
   }

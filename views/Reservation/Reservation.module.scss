@@ -314,6 +314,10 @@
     @include desktop-lg {
       max-width: 1440px;
     }
+
+    @include mobile {
+      flex-direction: column-reverse;
+    }
   }
 
   .titleCustom {
@@ -469,5 +473,38 @@
     @include mobile {
       flex-direction: column;
     }
+  }
+}
+
+.requestSubmited {
+  text-align: center;
+}
+
+.requestHeading {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.requestDescription {
+  font-weight: 400;
+  font-size: 20px;
+  color: $black-100;
+  opacity: 0.7;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.millgroveText {
+  font-family: "Notera";
+  font-weight: 400;
+  font-size: 41.11px;
+  letter-spacing: -0.01em;
+  margin-top: 60px;
+  text-align: center;
+  color: $brown-70;
+
+  @include mobile {
+    margin-top: 50px;
+    font-size: 33px;
   }
 }

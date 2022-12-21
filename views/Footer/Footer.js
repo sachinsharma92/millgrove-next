@@ -1,17 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 import styles from "./Footer.module.scss";
-import Image from "next/image";
 import Link from "next/link";
+import { MillgroveLogo } from "../../utils/millgrove";
 
 const Footer = () => {
+
   return (
     <div className={styles.footerHomepage}>
       <div className={styles.footerLine}></div>
       <div className={styles.footerWrapper}>
         <div className={styles.themeText}>
           <div className={styles.themeText2}>
-            <img src="/images/millglove-footer-bold.svg" className={styles.imgbold} alt="" />
-            <img src="/images/millglove-footer.svg" alt="" />
+            <MillgroveLogo className="svgFill" />
           </div>
         </div>
         <div className={styles.footerLinksWrapper}>
