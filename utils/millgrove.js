@@ -1,13 +1,16 @@
 import gsap from "gsap";
 import { useEffect } from "react";
+import { useMediaQuery } from 'react-responsive'
+
 export const MillgroveLogo = ({ width, height, className }) => {
+  const isSmallScreen = useMediaQuery({ query: '(max-width: 767px)' })
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#containerWrap",
         start: 'top 92%',
-        end: "+=250",
+        end: isSmallScreen ? "+=190" : "+=250",
         scrub: true,
         markers: false,
       }
