@@ -207,7 +207,7 @@ const Signup = ({
                     />
                     <input
                       className={styles.phoneNumberInput}
-                      type={"tel"}
+                      type={"text"}
                       placeholder="Phone Number"
                       value={userInfo.phone}
                       onChange={(e) => updateUserInfo("phone", e)}

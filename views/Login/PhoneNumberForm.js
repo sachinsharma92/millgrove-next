@@ -83,7 +83,7 @@ const PhoneNumberForm = ({
             />
             <input
               className={styles.phoneNumberInput}
-              type={"tel"}
+              type={"text"}
               placeholder="Phone Number"
               value={phoneNos}
               onChange={(e) => handleChange(e.target.value)}
