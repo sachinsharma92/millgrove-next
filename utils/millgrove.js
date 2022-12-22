@@ -1,23 +1,24 @@
 import gsap from "gsap";
 import { useEffect } from "react";
-
-
+import { useMediaQuery } from 'react-responsive'
 
 export const MillgroveLogo = ({ width, height, className }) => {
+  const isSmallScreen = useMediaQuery({ query: '(max-width: 767px)' })
   useEffect(() => {
-    gsap.to("#theGradient stop", 1.5, {
-      attr: { offset: "0%" },
-      yoyo: true,
-      repeatDelay: 0.5,
-      // repeat: 1,
-      reversed: 2,
-      ease: Linear.easeNone,
+    gsap.registerPlugin(ScrollTrigger);
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#containerWrap",
-        start: 'top 70%',
+        start: 'top 92%',
+        end: isSmallScreen ? "+=190" : "+=250",
+        scrub: true,
         markers: false,
-      },
+      }
     });
+    tl.to("#theGradient stop", {
+      attr: { offset: "0%" },
+      yoyo: true,
+    })
   }, [])
 
   return (
