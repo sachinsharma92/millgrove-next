@@ -6,6 +6,7 @@ import { apiKey, baseUrl } from "../../utils/constants";
 import styles from "./Reservation.module.scss";
 import ReservationForm from "./ReservationForm";
 import TreePrint from "./TreePrint";
+import RequestSubmittedCard from "./RequestSubmittedCard";
 
 const Reservation = () => {
   const [isBoxChecked, setIsBoxChecked] = useState(true);
@@ -47,6 +48,7 @@ const Reservation = () => {
             setIsBoxChecked={setIsBoxChecked}
             requestVisit={requestVisit}
           />
+          {/* <RequestSubmittedCard /> */}
         </div>
       </div>
 

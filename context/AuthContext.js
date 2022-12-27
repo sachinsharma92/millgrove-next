@@ -10,6 +10,7 @@ const AuthProvider = ({ children }) => {
     authToken: null,
     name: "",
     email: "",
+    phone: "",
   });
   const [userToken, setUserToken] = useState(authDetails?.authToken);
   const [userDetails, setUserDetails] = useState({
