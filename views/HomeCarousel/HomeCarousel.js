@@ -15,23 +15,18 @@ function HomeCarousel() {
     // build scenes
     new ScrollMagic.Scene({ triggerElement: ".slide1" })
       .setClassToggle("#high1", "active") // add class toggle
-      .addIndicators() // add indicators (requires plugin)
       .addTo(controller2);
     new ScrollMagic.Scene({ triggerElement: ".slide2" })
       .setClassToggle("#high2", "active") // add class toggle
-      .addIndicators() // add indicators (requires plugin)
       .addTo(controller2);
     new ScrollMagic.Scene({ triggerElement: ".slide3" })
       .setClassToggle("#high3", "active") // add class toggle
-      .addIndicators() // add indicators (requires plugin)
       .addTo(controller2);
     new ScrollMagic.Scene({ triggerElement: ".slide4" })
       .setClassToggle("#high4", "active") // add class toggle
-      .addIndicators() // add indicators (requires plugin)
       .addTo(controller2);
     new ScrollMagic.Scene({ triggerElement: ".slide5" })
       .setClassToggle("#high5", "active") // add class toggle
-      .addIndicators() // add indicators (requires plugin)
       .addTo(controller2);
 
     let controller = new ScrollMagic.Controller({
