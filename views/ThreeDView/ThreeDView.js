@@ -176,7 +176,9 @@ const ThreeDView = () => {
         </div>
       </div>
 
-      <canvas id="villa" className={styles.villa}></canvas>
+      <div className={styles.threeDModule}>
+        <canvas id="villa" className={styles.villa}></canvas>
+      </div>
       {/* <div
         className={`${styles.threeDView}`}
         data-aos="fade-up"

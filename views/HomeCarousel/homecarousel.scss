@@ -3,7 +3,6 @@
 
 .millglove-slider-section {
   min-height: 100vh;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -18,9 +17,36 @@
     display: none;
   }
 
+  .dot-section {
+    height: 96px;
+    background: $cream-40;
+    position: sticky;
+    bottom: 0;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 29px;
+
+    .dots {
+      width: 16px;
+      height: 16px;
+      display: flex;
+      align-items: center;
+      border-radius: 50%;
+      border: 1px solid $green-100;
+      transition: all 0.5s ease-in-out;
+
+      &.active {
+        background-color: $green-100;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+  }
+
   .slide-sec {
     padding: 0 80px;
-    min-height: 100vh;
+    height: calc(100vh - 96px);
     display: flex;
     align-items: flex-end;
     background: $cream-40;
@@ -35,69 +61,24 @@
   }
 
   .slide1 {
-    .bg-style {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      height: 250px;
-      margin: auto;
-      background: #8b8458;
-    }
+    background: #8b8458;
   }
   .slide2 {
-    .bg-style {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      height: 250px;
-      margin: auto;
-      content: "";
-      background: #4b5b47;
-    }
+    background: #4b5b47;
   }
   .slide3 {
-    .bg-style {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      height: 250px;
-      margin: auto;
-      background: #6b4637;
-    }
+    background: #6b4637;
   }
   .slide4 {
-    .bg-style {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      height: 250px;
-      margin: auto;
-      background: #434f50;
-    }
+    background: #434f50;
   }
   .slide5 {
-    .bg-style {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      height: 250px;
-      margin: auto;
-      background: $brown-70;
-    }
+    background: $brown-70;
   }
 
   .slider-body {
     display: flex;
+    align-items: center;
     gap: 0 59px;
     position: relative;
     padding-bottom: 129px;
@@ -142,7 +123,7 @@
       font-size: 63px;
       line-height: 110%;
       letter-spacing: 0.01em;
-      color: $brown-70;
+      color: white;
       margin-right: 20px;
       margin-top: -20px;
     }
@@ -167,7 +148,7 @@
     text-align: right;
     letter-spacing: 0.01em;
     text-transform: uppercase;
-    color: #3a3723;
+    color: white;
 
     @include tablet-p {
       display: none;
@@ -179,7 +160,7 @@
     a {
       margin-bottom: 8px;
       display: block;
-      color: #3a3723;
+      color: white;
       text-decoration: none;
     }
   }
@@ -188,7 +169,7 @@
     display: flex;
     align-items: flex-start;
     text-transform: uppercase;
-    color: #262e2f;
+    color: white;
 
     span {
       text-transform: capitalize;
@@ -201,6 +182,7 @@
 
     .description {
       font-size: 17px;
+      color: white;
 
       @include desktop-lg {
         font-size: 20px;
