@@ -2,33 +2,8 @@
 import { useEffect, useState } from "react";
 
 function HomeCarousel() {
-  const [slideDotActive, setSlideDotActive] = useState(false)
 
   useEffect(() => {
-
-    var controller2 = new ScrollMagic.Controller({
-      globalSceneOptions: {
-        triggerHook: 1,
-        duration: '87%',
-      }
-    });
-    // build scenes
-    new ScrollMagic.Scene({ triggerElement: ".slide1" })
-      .setClassToggle("#high1", "active") // add class toggle
-      .addTo(controller2);
-    new ScrollMagic.Scene({ triggerElement: ".slide2" })
-      .setClassToggle("#high2", "active") // add class toggle
-      .addTo(controller2);
-    new ScrollMagic.Scene({ triggerElement: ".slide3" })
-      .setClassToggle("#high3", "active") // add class toggle
-      .addTo(controller2);
-    new ScrollMagic.Scene({ triggerElement: ".slide4" })
-      .setClassToggle("#high4", "active") // add class toggle
-      .addTo(controller2);
-    new ScrollMagic.Scene({ triggerElement: ".slide5" })
-      .setClassToggle("#high5", "active") // add class toggle
-      .addTo(controller2);
-
     let controller = new ScrollMagic.Controller({
       globalSceneOptions: {
         triggerHook: 0,
@@ -89,7 +64,7 @@ function HomeCarousel() {
   ]
 
   return (
-    <div id="pinMaster" className="millglove-slider-section">
+    <div className="millglove-slider-section">
       {sliderData.map((item, index) => (
         <section key={index} className={`${item.classStyle} slide-sec`}>
           <div className="slider-body">
@@ -110,13 +85,6 @@ function HomeCarousel() {
           <div className="bg-style"></div>
         </section>
       ))}
-      <div className="dot-section">
-        <span className="dots" id="high1"></span>
-        <span className="dots" id="high2"></span>
-        <span className="dots" id="high3"></span>
-        <span className="dots" id="high4"></span>
-        <span className="dots" id="high5"></span>
-      </div>
     </div>
   );
 }
