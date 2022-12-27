@@ -55,20 +55,6 @@ const ReservationForm = ({ isBoxChecked, setIsBoxChecked, requestVisit }) => {
             request a visit
           </button>
         </div>
-
-        {/* Request Submitted Card here */}
-        {/* <div className={styles.zIndexStyle} >
-          <div className={styles.requestSubmited}>
-            <h1 className={`${styles.formHeading} ${styles.requestHeading}`}>
-              <MILLGROVE_GRADIENT_LEAF className={styles.gradientLeaf} />
-              Request submitted
-            </h1>
-            <p className={`${styles.requestDescription}`}>
-              Your visit request has been submitted, you’ll soon receive an email with the necessary next steps. Hope to see you soon.
-            </p>
-          </div>
-          <div className={`${styles.millgroveText}`}>Millgrove</div>
-        </div> */}
       </div>
     </div>
   );
