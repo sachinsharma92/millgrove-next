@@ -11,12 +11,14 @@ const AuthProvider = ({ children }) => {
     name: "",
     email: "",
     phone: "",
+    visitRequested: false,
   });
   const [userToken, setUserToken] = useState(authDetails?.authToken);
   const [userDetails, setUserDetails] = useState({
     name: authDetails?.name,
     email: authDetails?.email,
     phone: authDetails?.phone,
+    visitRequested: false,
   });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const router = useRouter();
@@ -42,8 +44,8 @@ const AuthProvider = ({ children }) => {
           name: res.data.data.name,
           email: res.data.data.email,
           phone: res.data.data.phone,
+          visitRequested: res.data.data.visitRequested,
         });
-
         localStorage?.setItem(
           "userToken",
           JSON.stringify({
@@ -52,6 +54,7 @@ const AuthProvider = ({ children }) => {
             name: res.data.data.name,
             email: res.data.data.email,
             phone: res.data.data.phone,
+            visitRequested: res.data.data.visitRequested,
           })
         );
         return true;
@@ -64,7 +67,7 @@ const AuthProvider = ({ children }) => {
   function logoutUser() {
     localStorage?.removeItem("userToken");
     setUserToken(null);
-    setUserDetails({ name: "", email: "" });
+    setUserDetails({ name: "", email: "", phone: "", visitRequested: false });
   }
 
   useEffect(() => {
@@ -76,6 +79,7 @@ const AuthProvider = ({ children }) => {
         name: authData?.name,
         email: authData?.email,
         phone: authData?.phone,
+        visitRequested: authData?.visitRequested,
       });
       if (authData?.authToken) {
         setIsLoggedIn(true);
@@ -100,6 +104,7 @@ const AuthProvider = ({ children }) => {
         name: authDetails?.name,
         email: authDetails?.email,
         phone: authDetails?.phone,
+        visitRequested: authDetails?.visitRequested,
       });
       router.push("/");
     }

@@ -10,7 +10,10 @@ import RequestSubmittedCard from "./RequestSubmittedCard";
 
 const Reservation = () => {
   const [isBoxChecked, setIsBoxChecked] = useState(true);
-  const { userToken } = useContext(AuthContext);
+  const {
+    userToken,
+    userDetails: { visitRequested },
+  } = useContext(AuthContext);
 
   const requestVisit = async () => {
     if (!isBoxChecked) return;
@@ -43,12 +46,15 @@ const Reservation = () => {
           <div className={styles.treeSection}>
             <TreePrint className={styles.treePrint} />
           </div>
-          <ReservationForm
-            isBoxChecked={isBoxChecked}
-            setIsBoxChecked={setIsBoxChecked}
-            requestVisit={requestVisit}
-          />
-          {/* <RequestSubmittedCard /> */}
+          {visitRequested ? (
+            <RequestSubmittedCard />
+          ) : (
+            <ReservationForm
+              isBoxChecked={isBoxChecked}
+              setIsBoxChecked={setIsBoxChecked}
+              requestVisit={requestVisit}
+            />
+          )}
         </div>
       </div>
 
