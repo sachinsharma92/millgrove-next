@@ -42,13 +42,6 @@ function HomeCarousel() {
       },
     });
 
-    // var bodyAnim = new TimelineMax();
-    // bodyAnim.to("body", 1, { backgroundColor: "orange" });
-    // bodyAnim.to("body", 1, { backgroundColor: "red" });
-    // bodyAnim.to("body", 1, { backgroundColor: "green" });
-    // bodyAnim.to("body", 1, { backgroundColor: "navy" });
-    // bodyAnim.to("body", 1, { backgroundColor: "purple" })
-
     let slides = document.querySelectorAll("section.slide-sec");
     for (let i = 0; i < slides.length; i++) {
       let animation = TweenMax.to(slides[i], 0.7, {
@@ -71,32 +64,32 @@ function HomeCarousel() {
     {
       classStyle: 'slide1',
       imgUrl: '/images/carousel-img-1.png',
-      title: 'Home',
+      title: 'Homes',
       description: `Millgrove homes embrace grand proportions. They are flooded with natural light and designed with sophisticated elegance and intricate craftsmanship. With an abundance of flexible space within each ‘shell & core’ home, you can finish the interior to suit your personal needs and taste. It is a place to be yourself, on a scale like no other.`
     },
     {
       classStyle: 'slide2',
       imgUrl: '/images/carousel-img-2.png',
       title: 'Grounds',
-      description: `Millgrove homes embrace grand proportions. They are flooded with natural light and designed with sophisticated elegance and intricate craftsmanship. With an abundance of flexible space within each ‘shell & core’ home, you can finish the interior to suit your personal needs and taste. It is a place to be yourself, on a scale like no other.`
+      description: `Cocooned by flourishing greens and blossoming pathways, Millgrove is idyllic. Whether seeking serene time out, reconnecting with family and friends, or just taking a long walk, the sprawling grounds offer an indulgent escape from the bustle of the city. Let nature be your happy place.`
     },
     {
       classStyle: 'slide3',
       imgUrl: '/images/carousel-img-3.png',
       title: 'Comforts',
-      description: `Millgrove homes embrace grand proportions. They are flooded with natural light and designed with sophisticated elegance and intricate craftsmanship. With an abundance of flexible space within each ‘shell & core’ home, you can finish the interior to suit your personal needs and taste. It is a place to be yourself, on a scale like no other.`
+      description: `Millgrove offers a unique opportunity to own a freehold property with the customary comforts found in the best condominiums. Services to each home have been meticulously planned so that you don’t have to worry. It is farmhouse-style living with peace of mind.`
     },
     {
       classStyle: 'slide4',
       imgUrl: '/images/carousel-img-4.png',
       title: 'Location',
-      description: `Millgrove homes embrace grand proportions. They are flooded with natural light and designed with sophisticated elegance and intricate craftsmanship. With an abundance of flexible space within each ‘shell & core’ home, you can finish the interior to suit your personal needs and taste. It is a place to be yourself, on a scale like no other.`
+      description: `Millgrove is delicately distanced from the commotion of the city, yet effortlessly linked to the livelier parts of the National Capital Region. On completion of several nearby government infrastructure projects, Millgrove will become one of the most connected places to live in Delhi NCR.`
     },
     {
       classStyle: 'slide5',
       imgUrl: '/images/carousel-img-5.jpg',
       title: 'Legacy',
-      description: `Millgrove homes embrace grand proportions. They are flooded with natural light and designed with sophisticated elegance and intricate craftsmanship. With an abundance of flexible space within each ‘shell & core’ home, you can finish the interior to suit your personal needs and taste. It is a place to be yourself, on a scale like no other.`
+      description: `At the heart of Millgrove is the desire to do good by its residents. As decades-long custodians of the land, the founding family wish to leave a mark they can be proud of. Dutiful thought, care, and attention to detail has been given at every step of the way to ensure that residents are afforded the finest of living experiences.`
     }
   ]
 
